@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NailBars.Vistas.VistaReservaciones"
+             Visual="Material"
+             NavigationPage.HasNavigationBar="False">
+    
+    <StackLayout BackgroundColor="#e1f4ff"
+                 Margin="10"
+                 >
+        <Label Text="Realice sus Reservaciones"
+               FontSize="22"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center"
+               TextColor="Black"
+               Padding="0, 0, 0, 0" />
+        
+        <Image Source="https://i.ibb.co/QPRryWy/imgSup.png" 
+               HeightRequest="120"/>
+        
+        
+        <Label x:Name="lblTipoReser"
+                   TextColor="Black"                  
+                   FontAttributes="Bold"
+                   FontSize="20"
+                   Padding="10, 20, 0, 0" />
+              
+        <Grid BackgroundColor="#FFA67E"
+              >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+            <Frame Grid.Column="1"
+                   BackgroundColor="#FFA67E"
+                  >
+                <Label Text="Estilista:"
+                       TextColor="Black"
+                       VerticalOptions="Center"></Label>
+            </Frame>
+            <Frame Grid.Column="2"
+                   BackgroundColor="#FFA67E"
+                   >
+                <Picker Title="Seleccione el Estilista"
+                        TitleColor="Black"
+                        TextColor="Black"
+                        x:Name="PickEstilista"
+                        ItemsSource="{Binding Trabajadores}"
+                        SelectedIndexChanged="PickEstilista_SelectedIndexChanged"
+                        ItemDisplayBinding="{Binding nombre}"
+                        SelectedItem="{Binding nombre}"></Picker>
+            </Frame>
+        </Grid>
+        <Grid BackgroundColor="#FFA67E">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Frame Grid.Column="0"
+                   BackgroundColor="#FFA67E">
+                <Label Text="Fecha a Reservar:"
+                       x:Name="lblFechaSelec"
+                       TextColor="Black"
+                       FontSize="16" />
+            </Frame>
+            <Frame Grid.Column="1"
+                   BackgroundColor="#FFA67E">
+                <DatePicker x:Name="fecReservacion"
+                            DateSelected="fecReservacion_DateSelected"
+                            Focused="fecReservacion_Focused"
+                            TextColor="Black"></DatePicker>
+            </Frame>
+        </Grid>
+        <Entry x:Name="txtPrecio"
+               FontAttributes="Bold"
+               PlaceholderColor="#FFA67E"
+               Placeholder="Precio"
+               Keyboard="Chat" />
+        <Label Text="Horas Disponibles" />
+        <ListView x:Name="lstHorarios"
+                  BackgroundColor="#e1f4ff"
+                  SeparatorColor="BlanchedAlmond"
+                  ItemSelected="lstHorarios_ItemSelected"></ListView>
+        
+        <Button Text="Reservar"
+                x:Name="btnhora"
+                BackgroundColor="#5a0e2e"
+                TextColor="#fea67e"
+                Clicked="btnhora_Clicked" />
+    </StackLayout>
+</ContentPage>

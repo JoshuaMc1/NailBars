@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "817523806341",
+    "firebase_url": "https://nailbars-9dde3-default-rtdb.firebaseio.com",
+    "project_id": "nailbars-9dde3",
+    "storage_bucket": "nailbars-9dde3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:817523806341:android:adb1966457fc4c48cb99ec",
+        "android_client_info": {
+          "package_name": "com.companyname.nailbars"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "817523806341-qf0omcph60sh6f9f5joileuojevbomv9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBy6Cc5gDJunzUI5Z7Vn0Sv_GHwxeblPRs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "817523806341-qf0omcph60sh6f9f5joileuojevbomv9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

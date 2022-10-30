@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NailBars.Vistas.Configuraciones.AgregarCategorias">
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry Placeholder="Categoria"
+                   x:Name="txtcategoria" />
+            <Entry Placeholder="Prioridad"
+                   x:Name="txtprioridad" />
+            <Entry Placeholder="Color"
+                   x:Name="txtcolor" />
+            <Button x:Name="btnguardar"
+                    Text="Guardar"
+                    Clicked="btnguardar_Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

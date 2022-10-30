@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms1="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             NavigationPage.HasNavigationBar="False"
+             Visual="Material"
+             x:Class="NailBars.Vistas.Login"
+              >
+    
+    <Grid BackgroundColor="#E2F5FF">
+        <Grid Margin="20,80,20,20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+            <Grid VerticalOptions="Center"
+                  Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                <forms1:AnimationView x:Name="animation"
+                                      Grid.Row="0"
+                                      Animation="login2.json"
+                                      HeightRequest="270"
+                                      WidthRequest="300"
+                                      AutoPlay="True"
+                                      RepeatMode="Infinite"
+                                      VerticalOptions="Center" />
+                <Label Grid.Row="1"
+                       Text="NailBars"
+                       TextColor="#5A0F2E"                     
+                       HorizontalTextAlignment="Center"
+                       FontSize="40"
+                       FontAttributes="Bold" />
+            </Grid>
+            <StackLayout Grid.Row="1">
+                <StackLayout Orientation="Horizontal">
+                    <Image WidthRequest="35"
+                           Source="https://i.ibb.co/ZJ9W0SM/email.png" />
+                    
+                            <Entry Placeholder="Correo"
+                           Keyboard="Email"       
+                           HeightRequest="60" 
+                           WidthRequest="320"
+                           x:Name="txtUsuercorreo"
+                           PlaceholderColor="#7F7F7F"
+                           IsTextPredictionEnabled="True"
+                           TextColor="Black"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"/>
+                    
+                    
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Image WidthRequest="35"
+                           Source="https://i.ibb.co/L1MS01c/padlock.png" />
+                    <Entry Placeholder="Contraseña"
+                           x:Name="txtUserPassword"
+                           IsPassword="True"
+                           HeightRequest="60"
+                           WidthRequest="320"
+                           PlaceholderColor="#7F7F7F"
+                           TextColor="Black"
+                           FontAttributes="Bold"
+                            />
+                </StackLayout>
+                <Button Text="Iniciar"
+                        TextColor="#FFA67E"
+                        BackgroundColor="#5A0F2E"
+                        Margin="0,30,0,10"
+                        FontSize="16"
+                        FontAttributes="Bold"
+                        CornerRadius="30"
+                        x:Name="btniniciar"
+                        Clicked="btniniciar_Clicked"
+                       />
+                <Button Text="Crear Cuenta"
+                        TextColor="#5A0F2E"
+                        BackgroundColor="#E2F5FF"
+                        FontSize="16"
+                        BorderColor="#E2F5FF"  
+                        
+                        FontAttributes="Bold"                       
+                        TextTransform="None"
+                        x:Name="btncrearUser"
+                        Clicked="btncrearUser_Clicked"/>
+            </StackLayout>
+          
+        </Grid>
+    </Grid>
+</ContentPage>

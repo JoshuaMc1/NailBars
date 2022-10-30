@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NailBars.Vistas.MapsNormal">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#E2F5FF">
+            <Image Source="https://i.ibb.co/Z20gqWT/img-Como-Llegar.png"
+                   HeightRequest="80"
+                   Margin="20" />
+            <Image Source="https://i.ibb.co/YB78PRY/img-Mapa-Ruta.png" />
+            <Button Margin="20"
+                    Text="Ruta Mas Cercana al Salon"
+                    x:Name="btnRutaMapa"
+                    Clicked="btnRutaMapa_Clicked"
+                    BackgroundColor="#5A0F2E"
+                    TextColor="#FFA67E" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

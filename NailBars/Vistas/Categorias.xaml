@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NailBars.Vistas.Categorias">
+    
+    <StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="10" />
+                <RowDefinition Height="40" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Text="¿Qué"
+                           FontAttributes="Bold"
+                           TextColor="Black"
+                           FontSize="25"
+                           Grid.Column="1"
+                           HorizontalTextAlignment="End"
+                           VerticalOptions="Center" />
+                    <Frame Grid.Column="2"
+                           Padding="0"
+                           BackgroundColor="#FFE758"
+                           CornerRadius="5"
+                           Margin="0,5,0,5">
+                        <Label Text="necesitas?"
+                               FontAttributes="Bold"
+                               FontSize="25"
+                               HorizontalTextAlignment="Start"
+                               VerticalOptions="Center"
+                               Margin="5,0,5,0"
+                               TextColor="Black" />
+                    </Frame>
+                </Grid>
+            </Grid>
+        </Grid>
+        <Label Grid.Row="2"
+               Text="Categorias"
+               FontSize="22"
+               TextColor="Black"
+               FontAttributes="Bold"
+               Margin="10,0,0,0" />
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="20" />
+            </Grid.RowDefinitions>
+            <Frame Grid.Row="0"
+                   BackgroundColor="WhiteSmoke"
+                   Padding="10"
+                   CornerRadius="8"
+                   Margin="5,0,5,0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="150" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="150" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Frame Grid.Row="0"
+                           Grid.Column="0"
+                           Padding="10"
+                           BackgroundColor="Gray"
+                           CornerRadius="8">
+                        <ImageButton BackgroundColor="Transparent"
+                                     x:Name="btnRetoquedeAcrilico"
+                                     Source="https://i.ibb.co/P4v4Syp/decoracion-y-pintado-de-unas-acrilicas.png"
+                                     Clicked="btnRetoquedeAcrilico_Clicked" />
+                    </Frame>
+                    <Label Grid.Row="1"
+                           Grid.Column="0"
+                           x:Name="lbCategoria1"
+                           Text="Retoque de Acrilico"
+                           FontSize="16"
+                           TextColor="Black"
+                           FontAttributes="Bold"
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="Center"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center" />
+                    
+                    <Frame Grid.Row="0"
+                           Grid.Column="1"
+                           Padding="10"
+                           BackgroundColor="Gray"
+                           CornerRadius="8">
+                        
+                        <ImageButton BackgroundColor="Transparent"
+                                     x:Name="btnAplicaciondeAcrilico"
+                                     Source="https://i.ibb.co/LvmK1G4/esmalte-de-unas.png"
+                                     Clicked="btnAplicaciondeAcrilico_Clicked" />
+                    </Frame>
+                    
+                    <Label Grid.Row="1"
+                           Grid.Column="1"
+                           x:Name="lbCategoria2"
+                           Text="Aplicacion de Acrilico"
+                           FontSize="16"
+                           TextColor="Black"
+                           FontAttributes="Bold"
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="Center"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center" />
+                    
+                    <Frame Grid.Row="2"
+                           Grid.Column="0"
+                           Padding="10"
+                           BackgroundColor="Gray"
+                           CornerRadius="8">
+                        <ImageButton BackgroundColor="Transparent"
+                                     x:Name="btnManicure"
+                                     Source="https://i.ibb.co/N6JFRRp/manicura.png"
+                                     Clicked="btnManicure_Clicked" />
+                    </Frame>
+                    <Label Grid.Row="3"
+                           Grid.Column="0"
+                           x:Name="lbCategoria3"
+                           Text="Manicure"
+                           FontSize="16"
+                           TextColor="Black"
+                           FontAttributes="Bold"
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="Center"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center" />
+                    <Frame Grid.Row="2"
+                           Grid.Column="1"
+                           Padding="10"
+                           BackgroundColor="Gray"
+                           CornerRadius="8">
+                        <ImageButton BackgroundColor="Transparent"
+                                     x:Name="btnPedicure"
+                                     Source="https://i.ibb.co/pQyM0sL/pedicure.png"
+                                     Clicked="btnPedicure_Clicked" />
+                    </Frame>
+                    <Label Grid.Row="3"
+                           Grid.Column="1"
+                           x:Name="lbCategoria4"
+                           Text="Pedicure"
+                           FontSize="16"
+                           TextColor="Black"
+                           FontAttributes="Bold"
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="Center"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center" />
+                </Grid>
+            </Frame>
+        </Grid>
+    </StackLayout>
+</ContentPage>

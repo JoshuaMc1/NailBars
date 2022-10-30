@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:estrellas="clr-namespace:Messier16.Forms.Controls;assembly=Messier16.Forms.Controls"
+             x:Class="NailBars.Vistas.Configuraciones.Servicios">
+    
+    <Grid BackgroundColor="#E2F5FF">
+        <CollectionView x:Name="lstGeneral"
+                        SelectionMode="Single"
+                       
+                        SelectionChanged="lstGeneral_SelectionChanged">
+            <CollectionView.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="190" />
+                        <RowDefinition Height="40" />
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="auto" />
+                                <ColumnDefinition Width="auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Reser"
+                                   FontAttributes="Bold"
+                                   TextColor="Black"
+                                   FontSize="25"
+                                   Grid.Column="1"
+                                   HorizontalTextAlignment="End"
+                                   VerticalOptions="Center" />
+                            <Frame Grid.Column="2"
+                                   Padding="0"
+                                   BackgroundColor="#FFA67E"
+                                   CornerRadius="5"
+                                   Margin="-5,5,0,5">
+                                <Label Text="vaciones"
+                                       FontAttributes="Bold"
+                                       FontSize="25"
+                                       HorizontalTextAlignment="Start"
+                                       VerticalOptions="Center"
+                                       Margin="5,0,5,0"
+                                       TextColor="Black" />
+                            </Frame>
+                        </Grid>
+                    </Grid>
+                    <Label Grid.Row="1"
+                           Text="Hoy"
+                           x:Name="encabezado1"
+                           FontSize="22"
+                           TextColor="Black"
+                           FontAttributes="Bold"
+                           Margin="10,0,0,0" />
+
+                    
+                    <CollectionView Grid.Row="2"
+                                    x:Name="lstReserUser"
+                                    VerticalScrollBarVisibility="Default">
+                        <CollectionView.ItemsLayout>
+                            <GridItemsLayout Orientation="Horizontal"
+                                             Span="1" />
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="20" />
+                                    </Grid.RowDefinitions>
+                                    <Frame Grid.Row="0"
+                                           BackgroundColor="#EEEEEE"
+                                           Padding="10"
+                                           
+                                           CornerRadius="8"
+                                           Margin="5,0,5,0">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="auto" />
+                                                <RowDefinition Height="auto" />
+                                               
+                                            </Grid.RowDefinitions>
+                                            <Frame Grid.Row="0"
+                                                   Padding="10"
+                                                   BackgroundColor="#FFFFFF"
+                                                   CornerRadius="8"
+                                                   >
+                                                <StackLayout>
+                                                    <Label Grid.Row="1"
+                                                           Text="{Binding nombre_usuario}"
+                                                           FontSize="16"
+                                                           TextColor="Black"
+                                                           FontAttributes="Bold"
+                                                           VerticalTextAlignment="Center"
+                                                           HorizontalTextAlignment="Center"
+                                                           VerticalOptions="Center"
+                                                           HorizontalOptions="Center" />
+                                                    
+                                                    <Label Grid.Row="1"
+                                                   Text="{Binding hora_Reserv}"
+                                                   FontSize="16"
+                                                   TextColor="Black"
+                                                   VerticalTextAlignment="Center"
+                                                   HorizontalTextAlignment="Center"
+                                                   VerticalOptions="Center"
+                                                   HorizontalOptions="Center" />
+                                                    <Label Grid.Row="2"
+                                                           Text="{Binding nombreEstilista}"
+                                                           FontSize="16"
+                                                           TextColor="Black"
+                                                           VerticalTextAlignment="Center"
+                                                           HorizontalTextAlignment="Center"
+                                                           VerticalOptions="Center" />
+                                                </StackLayout>
+                                            </Frame >
+                                            <Frame Grid.Row="1"
+                                                   BackgroundColor="white"
+                                                   Padding="0"
+                                                   
+                                                   CornerRadius="8"
+                                                   Margin="5,0,5,0">
+                                                
+                                                 <Label Grid.Row="0"
+                                                   Text="{Binding tipo_Reserv}"
+                                                   FontSize="16"
+                                                   TextColor="Black"
+                                                   VerticalTextAlignment="Center"
+                                                   HorizontalTextAlignment="Center"
+                                                   VerticalOptions="Center"
+                                                   HorizontalOptions="Center" />
+                                            </Frame>  
+                                           
+                                        </Grid>
+                                    </Frame>
+                                    
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                    
+                    
+                    <Label Grid.Row="3"
+                           Text="Historial"
+                           FontSize="22"
+                           TextColor="Black"
+                           FontAttributes="Bold"
+                           Margin="10,0,0,0" />
+                    <!--
+                    <SearchBar Grid.Row="4"
+                               Placeholder="Buscar"
+                               Margin="10"
+                               TextChanged="SearchBar_TextChanged"
+                               MaxLength="20"
+                               x:Name="searchrBar" />-->
+                </Grid>
+            </CollectionView.Header>
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical"
+                                 Span="1" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Frame Grid.Row="0"
+                               BackgroundColor="#FFFFFF"
+                               Padding="0"
+                               CornerRadius="8"
+                               Margin="5,0,5,0">
+                            <Grid>
+                                <Frame Grid.Row="0"
+                                       Padding="10,0,20,10"
+                                       CornerRadius="8"
+                                       BackgroundColor="#FFA67E">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto" />
+                                            <RowDefinition Height="22" />
+                                            <RowDefinition Height="22" />
+                                            <RowDefinition Height="22" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto" />
+                                            <ColumnDefinition Width="auto" />
+                                            <ColumnDefinition Width="auto" />
+                                        </Grid.ColumnDefinitions>
+                                        
+                                        <Label Grid.ColumnSpan="4"
+                                               Grid.Row="0"
+                                               Text="{Binding nombre_usuario}"
+                                              
+                                               FontSize="25"                                               
+                                               TextColor="White"
+                                               FontAttributes="Bold"
+                                               VerticalTextAlignment="Center"
+                                               HorizontalTextAlignment="Start"
+                                               VerticalOptions="Center"
+                                               HorizontalOptions="Start" />
+                                        
+                                        
+                                        <Label Text="Hora: "
+                                               VerticalOptions="Center"
+                                               FontSize="16"
+                                               Grid.Row="1"
+                                               HorizontalTextAlignment="End"
+                                               Grid.Column="3" />
+                                        
+                                        <Label Grid.Row="1"
+                                               Grid.Column="4"                                              
+                                               Text="{Binding hora_Reserv}"
+                                               FontSize="16"
+                                               FontAttributes="Bold"
+                                               TextColor="#5A0F2E"
+                                               VerticalTextAlignment="Center"
+                                               HorizontalTextAlignment="Start"
+                                               VerticalOptions="Center"
+                                               HorizontalOptions="Start" />
+                                        
+                                        <Label Text="Fecha: "
+                                               VerticalOptions="Center"
+                                               FontSize="16"
+                                               Grid.Row="2"
+                                               HorizontalTextAlignment="End"
+                                               Grid.Column="3" />
+                                        <Label Grid.Row="2"
+                                               Grid.Column="4"
+                                               Text="{Binding fecha_Reserv}"
+                                               FontSize="16"
+                                               FontAttributes="Bold"
+                                               TextColor="#5A0F2E"
+                                               VerticalTextAlignment="Center"
+                                               HorizontalTextAlignment="Start"
+                                               VerticalOptions="Center" />
+                                        
+                                        <Label Text="Estilista: "
+                                               VerticalOptions="Center"
+                                               FontSize="16"
+                                               Grid.Row="3"
+                                               HorizontalTextAlignment="End"
+                                               Grid.Column="3" />
+                                        
+                                        <Label Grid.Row="3"
+                                               Grid.Column="4"
+                                               Text="{Binding nombreEstilista}"
+                                               FontSize="16"
+                                               FontAttributes="Bold"
+                                               TextColor="#5A0F2E"
+                                               VerticalTextAlignment="Center"
+                                               HorizontalTextAlignment="Start"
+                                               VerticalOptions="Center" />
+                                        
+                                        <Frame Grid.RowSpan="2"
+                                               Grid.Row="2"
+                                               Grid.Column="0"                                            
+                                               CornerRadius="20"
+                                               HorizontalOptions="CenterAndExpand"
+                                               Padding="10,0,10,0"
+                                               BackgroundColor="#5A0F2E">
+                                            <Label 
+                                               
+                                               Text="{Binding status}"
+                                               FontSize="15"
+                                               FontAttributes="Bold"
+                                                   TextColor="#FFA67E"
+                                               VerticalTextAlignment="Center"
+                                               HorizontalTextAlignment="Center"
+                                               VerticalOptions="Center" />
+                                        </Frame>   
+                                        
+                                    </Grid>
+                                </Frame>
+                                
+                                <Grid Grid.Row="0"
+                                      Padding="10,40,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="90" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <estrellas:RatingBar Grid.Column="0"
+                                                         FillColor="#FFFFFF"
+                                                         MaxRating="5"
+                                                         Rating="{Binding calificacion, Mode=Default}"
+                                                         IsEnabled="False" />
+                                </Grid>
+                            </Grid>
+                       
+                        </Frame>
+                       
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>

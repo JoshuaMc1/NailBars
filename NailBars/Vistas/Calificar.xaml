@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<popup:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:estrellas="clr-namespace:Messier16.Forms.Controls;assembly=Messier16.Forms.Controls"
+             x:Class="NailBars.Vistas.Calificar">
+    
+    <Grid Margin="30">
+        <yummy:PancakeView  CornerRadius="5"
+                            BackgroundGradientStartPoint="0,1"
+                            BackgroundGradientEndPoint="0,0">
+            <yummy:PancakeView.BackgroundGradientStops>
+                <yummy:GradientStopCollection>
+                    <yummy:GradientStop Color="#F54B30"
+                                        Offset="0" />
+                    <yummy:GradientStop Color="#E83C40"
+                                        Offset="0.8" />
+                </yummy:GradientStopCollection>
+            </yummy:PancakeView.BackgroundGradientStops>
+            <Grid VerticalOptions="CenterAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="60" />
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0"
+                       Text="Tu calificación es importante"
+                       HorizontalOptions="Center"
+                       FontAttributes="Bold"
+                       TextColor="White"
+                       FontSize="18"
+                       VerticalOptions="Center"
+                       x:Name="lblTitulo" />
+                <estrellas:RatingBar Grid.Row="1"
+                                     Rating="0"
+                                     MaxRating="5"
+                                     x:Name="EstCalificacion"
+                                     FillColor="#F8AB37" />
+                <Entry Grid.Row="2"
+                       Placeholder="Deja una reseña, cuenta tu experiencia"
+                       TextColor="White"
+                       PlaceholderColor="White"
+                       FontSize="16"
+                       x:Name="txtreseña"
+                       Margin="7,0,7,0" />
+                <Button Grid.Row="3"
+                        TextColor="#262626"
+                        FontAttributes="Bold"
+                        BackgroundColor="#FFD33F"
+                        CornerRadius="5"
+                        HorizontalOptions="Center"
+                        WidthRequest="120"
+                        x:Name="btnguardar"
+                       Clicked="btnguardar_Clicked"
+                        Text="Guardar"
+                        Margin="10" />
+            </Grid>
+        </yummy:PancakeView>
+    </Grid>
+</popup:PopupPage>

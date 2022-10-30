@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NailBars.Vistas.TutorialIntro.Vista2">
+    <Grid BackgroundColor="#221C27">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <Image Source="https://i.ibb.co/9ydCJjf/v2.png"
+               Grid.Row="0"
+               Margin="10,0,10,0" />
+        <Label Text="Contactanos mas "
+               Grid.Row="1"
+               TextColor="White"
+               HorizontalOptions="Center"
+               FontAttributes="Bold"
+               VerticalOptions="Center"
+               FontSize="20" />
+        <Label Text="Rápido"
+               Grid.Row="2"
+               TextColor="White"
+               HorizontalOptions="Center"
+               FontAttributes="Bold"
+               FontSize="60" />
+    </Grid>
+</ContentView>

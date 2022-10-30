@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vistas="clr-namespace:NailBars.Vistas.TutorialIntro"
+             x:Class="NailBars.Vistas.TutorialIntro.Intro1">
+    
+    
+    <Grid BackgroundColor="#201F25">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <CarouselView Grid.Row="0"
+                      IndicatorView="Indicador">
+            <CarouselView.ItemsSource>
+                <x:Array Type="{x:Type ContentView}">
+                    <vistas:Vista1 />
+                    <vistas:Vista2 />
+                    <vistas:Vista3 />
+                </x:Array>
+            </CarouselView.ItemsSource>
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <ContentView Content="{Binding .}" />
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+            <IndicatorView x:Name="Indicador"
+                           IndicatorColor="White"
+                           SelectedIndicatorColor="#FFD340"
+                           Grid.ColumnSpan="2" />
+            <Button Text="Saltar"
+                    Grid.Column="1"
+                    BackgroundColor="#FFD340"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    Margin="0,5,5,5"
+                    CornerRadius="20"
+                    x:Name="btnSaltar"
+                    Clicked="btnSaltar_Clicked" />
+        </Grid>
+    </Grid>
+</ContentPage>
