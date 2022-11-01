@@ -23,6 +23,9 @@ namespace NailBars.Vistas
         public Categorias()
         {
             InitializeComponent();
+
+            var statusbar = new VMPrincipal();
+            statusbar.CambiarColor();
         }
 
         

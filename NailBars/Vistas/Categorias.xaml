@@ -41,13 +41,188 @@
                 </Grid>
             </Grid>
         </Grid>
-        <Label Grid.Row="2"
-               Text="Categorias"
-               FontSize="22"
-               TextColor="Black"
-               FontAttributes="Bold"
-               Margin="10,0,0,0" />
-        <Grid>
+        <ScrollView>
+            <StackLayout 
+                Padding="5" 
+                Margin="5">
+                <Label
+                    Text="Servicios"
+                    FontSize="22"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    Margin="10,0,0,0" />
+                <Frame 
+                    IsClippedToBounds="True"
+                    HasShadow="True"
+                    Padding="0"
+                    BackgroundColor="White" 
+                    CornerRadius="10">
+                    <Frame.Margin>
+                        <OnPlatform 
+                            x:TypeArguments="Thickness"
+                            Android="10"
+                            iOS="10"/>
+                    </Frame.Margin>
+
+                    <StackLayout 
+                        HorizontalOptions="FillAndExpand" 
+                        Orientation="Vertical">
+                        <Image 
+                            Source="drawable/manicure.jpg" 
+                            Aspect="Fill" 
+                            HeightRequest="200" />
+                        <StackLayout 
+                            HorizontalOptions="FillAndExpand" 
+                            Orientation="Vertical" 
+                            Padding="15">
+                            <Label 
+                                TextColor="#222" 
+                                FontSize = "25" 
+                                Text="Manicure"/>
+                            <Label 
+                                Text="Limpieza y corte de unas de las manos" 
+                                FontSize = "16"/>
+                            <Button 
+                                Margin="0,25,0,0" 
+                                Text="Reservar" 
+                                TextColor="White" 
+                                BackgroundColor="#FF4081"
+                                CornerRadius="8"
+                                Clicked="btnManicure_Clicked"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+                <Frame 
+                    IsClippedToBounds="True"
+                    HasShadow="True"
+                    Padding="0"
+                    BackgroundColor="White" 
+                    CornerRadius="10">
+                    <Frame.Margin>
+                        <OnPlatform 
+                            x:TypeArguments="Thickness"
+                            Android="10"
+                            iOS="10"/>
+                    </Frame.Margin>
+
+                    <StackLayout 
+                        HorizontalOptions="FillAndExpand" 
+                        Orientation="Vertical">
+                        <Image 
+                            Source="drawable/pedicure.jpg" 
+                            Aspect="Fill" 
+                            HeightRequest="200" />
+                        <StackLayout 
+                            HorizontalOptions="FillAndExpand" 
+                            Orientation="Vertical" 
+                            Padding="15">
+                            <Label 
+                                TextColor="#222" 
+                                FontSize = "25" 
+                                Text="Pedicure"/>
+                            <Label 
+                                Text="Limpieza  y corte de uñas de los pies" 
+                                FontSize = "16"/>
+                            <Button 
+                                Margin="0,25,0,0" 
+                                Text="Reservar" 
+                                TextColor="White" 
+                                BackgroundColor="#FF4081"
+                                CornerRadius="8"
+                                Clicked="btnPedicure_Clicked"/>
+                        </StackLayout>
+
+                    </StackLayout>
+                </Frame>
+
+                <Frame 
+                    IsClippedToBounds="True"
+                    HasShadow="True"
+                    Padding="0"
+                    BackgroundColor="White" 
+                    CornerRadius="10">
+                    <Frame.Margin>
+                        <OnPlatform 
+                            x:TypeArguments="Thickness"
+                            Android="10"
+                            iOS="10"/>
+                    </Frame.Margin>
+
+                    <StackLayout 
+                        HorizontalOptions="FillAndExpand" 
+                        Orientation="Vertical">
+                        <Image 
+                            Source="drawable/retoquemanos.jpg" 
+                            Aspect="Fill" 
+                            HeightRequest="200" />
+                        <StackLayout 
+                            HorizontalOptions="FillAndExpand" 
+                            Orientation="Vertical" 
+                            Padding="15">
+                            <Label 
+                                TextColor="#222" 
+                                FontSize = "25" 
+                                Text="Retoque Acrílico"/>
+                            <Label 
+                                Text="Retoque Acrílico de manos y pies" 
+                                FontSize = "16"/>
+                            <Button 
+                                Margin="0,25,0,0" 
+                                Text="Reservar" 
+                                TextColor="White" 
+                                BackgroundColor="#FF4081"
+                                CornerRadius="8"
+                                Clicked="btnRetoquedeAcrilico_Clicked"/>
+                        </StackLayout>
+
+                    </StackLayout>
+                </Frame>
+
+                <Frame 
+                    IsClippedToBounds="True"
+                    HasShadow="True"
+                    Padding="0"
+                    BackgroundColor="White" 
+                    CornerRadius="10">
+                    <Frame.Margin>
+                        <OnPlatform 
+                            x:TypeArguments="Thickness"
+                            Android="10"
+                            iOS="10"/>
+                    </Frame.Margin>
+
+                    <StackLayout 
+                        HorizontalOptions="FillAndExpand" 
+                        Orientation="Vertical">
+                        <Image 
+                            Source="drawable/uacrilicas.jpg" 
+                            Aspect="Fill" 
+                            HeightRequest="200" />
+                        <StackLayout 
+                            HorizontalOptions="FillAndExpand" 
+                            Orientation="Vertical" 
+                            Padding="15">
+                            <Label 
+                                TextColor="#222" 
+                                FontSize = "25" 
+                                Text="Colocación y pintado de uñas acrílicas"/>
+                            <Label 
+                                Text="Colocación y pintado de uñas acrílicas en manos y pies" 
+                                FontSize = "16"/>
+                            <Button 
+                                Margin="0,25,0,0" 
+                                Text="Reservar" 
+                                TextColor="White" 
+                                BackgroundColor="#FF4081"
+                                CornerRadius="8"
+                                Clicked="btnAplicaciondeAcrilico_Clicked"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+        <!-- <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
                 <RowDefinition Height="20" />
@@ -157,6 +332,6 @@
                            HorizontalOptions="Center" />
                 </Grid>
             </Frame>
-        </Grid>
+        </Grid> -->
     </StackLayout>
 </ContentPage>

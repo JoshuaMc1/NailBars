@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.OS;
 using Acr.UserDialogs;
 using Plugin.FirebasePushNotification;
+using Plugin.CurrentActivity;
 
 namespace NailBars.Droid
 {
@@ -15,7 +16,7 @@ namespace NailBars.Droid
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
+            CrossCurrentActivity.Current.Init(this, savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             Rg.Plugins.Popup.Popup.Init(this);
