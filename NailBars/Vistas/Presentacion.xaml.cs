@@ -22,7 +22,8 @@ namespace NailBars.Vistas
         public Presentacion()
         {
             InitializeComponent();
-            
+            var statusbar = new VMPrincipal();
+            statusbar.CambiarColor();
             ObtenerIdusuario();
             Cerrarsesion();
 
