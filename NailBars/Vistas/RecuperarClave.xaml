@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms1="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             Visual="Material"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="NailBars.Vistas.RecuperarClave"
+             BackgroundImageSource="FondoR">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="240" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackLayout 
+            Grid.Row="0"
+            Margin="20"
+            Orientation="Vertical"
+            Spacing="10">
+
+            <Frame 
+                Padding="0"
+                Margin="0">
+                <Label 
+                    Text="Restablecer contraseña"
+                    TextColor="#bc1463"
+                    HorizontalOptions="Center"
+                    FontAttributes="Bold"
+                    FontSize="29" />
+            </Frame>
+
+            <forms1:AnimationView 
+                x:Name="animation"
+                Grid.Row="0"
+                Animation="recuperar.json"
+                HeightRequest="300"
+                WidthRequest="300"
+                AutoPlay="True"
+                RepeatMode="Infinite"
+                VerticalOptions="Center"                             
+                IsVisible="true"/>
+        </StackLayout>
+
+
+        <StackLayout 
+            Grid.Row="1"
+            Margin="20,150,20,0"
+            Orientation="Vertical"
+            Spacing="10">
+
+            <Entry 
+                TextColor="#7F7F7F"
+                FontAttributes="Bold"
+                PlaceholderColor="Black"
+                Placeholder="Ingrese su correo electrónico"
+                x:Name="txtCorreo"
+                Keyboard="Email"
+                IsTextPredictionEnabled="True"/>
+
+            <Frame
+                Padding="5"
+                BackgroundColor="#be658c">
+                <Label 
+                    Text="Se le enviara una clave temporal al correo electronico, 
+                    al ingresar con la clave temporal se le recomienda cambiar la clave de su cuenta."
+                    TextColor="White"
+                    FontSize="Caption"
+                    FontAttributes="Bold"/>
+            </Frame>
+
+            <Button 
+                Text="Restablecer contraseña"
+                Margin="0,25,0,0"
+                BackgroundColor="#bc1463"
+                TextColor="White"
+                WidthRequest="360"
+                HeightRequest="45"
+                HorizontalOptions="Center"
+                FontAttributes="Bold"
+                x:Name="btnRecuperar"
+                Clicked="btnRecuperar_Clicked"/>
+        </StackLayout>
+
+    </Grid>
+</ContentPage>

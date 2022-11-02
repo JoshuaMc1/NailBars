@@ -22,20 +22,18 @@ namespace NailBars.Vistas
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RegistroClientes : ContentPage
     {
+        MediaFile file;
+
+        string rutafoto;
+        string Idusuario;
+        string Iduserclientes;
+        string hola;
+
         public RegistroClientes()
         {
             InitializeComponent();
            // Cerrarsesion();
         }
-
-        MediaFile file;
-        
-        string rutafoto;
-        string Idusuario;
-        string Iduserclientes;
-        string hola;
-        
-          
 
         private async void btnCrearcuenta_Clicked(object sender, EventArgs e)
         {
@@ -48,7 +46,6 @@ namespace NailBars.Vistas
                         hola = txtContraseña.Text;
                         if (!string.IsNullOrEmpty(txtContraseña.Text) && hola.Length > 6)
                         {
-
                             UserDialogs.Instance.ShowLoading("Creando Usuario...");
 
                             await Crearcuenta();
@@ -57,9 +54,7 @@ namespace NailBars.Vistas
 
                             await SubirImagenesStore();
                             await InsertarUsuarios();
-
-                                                       // await EditarFoto();
-
+                            // await EditarFoto();
                         }
                         else
                         {
@@ -78,13 +73,9 @@ namespace NailBars.Vistas
             }
             else
             {
-
                 await DisplayAlert("Imagen Obligatoria", "LLenar los campos", "Ok");
-
-
             }
-
-            }
+        }
 
         private async void btnagregarimagen_Clicked(object sender, EventArgs e)
         {
@@ -101,7 +92,6 @@ namespace NailBars.Vistas
                 });
                 if (file == null)
                 {
-                   
                     return;
                 }
                 else
@@ -113,32 +103,24 @@ namespace NailBars.Vistas
 
                         return rutaImagen;
                     });
-                   
                 }
-
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
             }
-
         }
 
         private async Task SubirImagenesStore()
         {
             VMusuarios funcion = new VMusuarios();
             rutafoto = await funcion.SubirImagenesStorage(file.GetStream(), Idusuario);
-
-            
-
         }
 
         private async Task InsertarUsuarios()
         {
-            
             VMusuarios funcion = new VMusuarios();
             MusuariosClientes parametros = new MusuariosClientes();
-
 
             parametros.Nombres = txtNombres.Text;
             parametros.IdUsuariosClientes = "-";
@@ -169,24 +151,13 @@ namespace NailBars.Vistas
             await funcion.EditarFoto(parametros);
             UserDialogs.Instance.HideLoading();
             Cerrarsesion();
-            await DisplayAlert("Listo", "Vuelva abrir la aplicaion", "OK");
+            await DisplayAlert("Listo", "Registro exitoso", "OK");
+            //await DisplayAlert("Listo", "Vuelva abrir la aplicaion", "OK");
 
             //Cerrar la app
-            Process.GetCurrentProcess().CloseMainWindow();
-
-
-
+            //Process.GetCurrentProcess().CloseMainWindow();
+            await Navigation.PushAsync(new Login());
         }
-
-
-
-
-
-
-
-
-
-
 
         private void Cerrarsesion()
         {
@@ -196,7 +167,7 @@ namespace NailBars.Vistas
         private async Task Crearcuenta()
         {
             var funcion = new VMcrearcuenta();
-           await funcion.crearcuenta(txtCorreo.Text, txtContraseña.Text);
+            await funcion.crearcuenta(txtCorreo.Text, txtContraseña.Text);
         }
 
         private async Task IniciarSesion()
@@ -217,21 +188,12 @@ namespace NailBars.Vistas
                 var RefrescarContenido = await authProvider.RefreshAuthAsync(guardarId);
                 Preferences.Set("MyFirebaseRefreshToken", JsonConvert.SerializeObject(RefrescarContenido));
                 //el ID
-                Idusuario = guardarId.User.LocalId;
-
-               
+                Idusuario = guardarId.User.LocalId;  
             }
             catch (Exception)
             {
-
                 await DisplayAlert("Alerta","Sesion expirada","OK");
             }
-
-            
-
         }
-
-
-
     }
 }

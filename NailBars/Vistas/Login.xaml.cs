@@ -127,6 +127,11 @@ namespace NailBars.Vistas
 
         }
 
+        private async void btnRecuperar_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new RecuperarClave());
+        }
+
         /*
         private async Task ObtenerIdusuario()
         {

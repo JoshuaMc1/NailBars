@@ -34,7 +34,7 @@ namespace NailBars.Droid.Resources.statusbar
                 {
                     var currentWindow = GetCurrentWindow();
                     currentWindow.DecorView.SystemUiVisibility = (StatusBarVisibility)SystemUiFlags.LayoutStable;
-                    currentWindow.SetStatusBarColor(Android.Graphics.Color.Rgb(255, 64, 129));
+                    currentWindow.SetStatusBarColor(Android.Graphics.Color.Rgb(188, 36, 108));
                 });
             }
         }

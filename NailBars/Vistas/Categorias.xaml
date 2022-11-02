@@ -1,56 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="NailBars.Vistas.Categorias">
+             x:Class="NailBars.Vistas.Categorias"
+             BackgroundImageSource="FondoSUR.jpeg">
     
     <StackLayout>
-        <Grid>
+        <Grid
+            Margin="0, 0, 0, 12">
             <Grid.RowDefinitions>
-                <RowDefinition Height="50" />
-                <RowDefinition Height="10" />
-                <RowDefinition Height="40" />
+                <RowDefinition Height="120" />
             </Grid.RowDefinitions>
-            <Grid Grid.Row="0">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="auto" />
-                        <ColumnDefinition Width="auto" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-                    <Label Text="¿Qué"
-                           FontAttributes="Bold"
-                           TextColor="Black"
-                           FontSize="25"
-                           Grid.Column="1"
-                           HorizontalTextAlignment="End"
-                           VerticalOptions="Center" />
-                    <Frame Grid.Column="2"
-                           Padding="0"
-                           BackgroundColor="#FFE758"
-                           CornerRadius="5"
-                           Margin="0,5,0,5">
-                        <Label Text="necesitas?"
-                               FontAttributes="Bold"
-                               FontSize="25"
-                               HorizontalTextAlignment="Start"
-                               VerticalOptions="Center"
-                               Margin="5,0,5,0"
-                               TextColor="Black" />
-                    </Frame>
-                </Grid>
-            </Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackLayout
+                Grid.Row="0"
+                Grid.Column="0" 
+                VerticalOptions="CenterAndExpand">
+
+                <Label
+                    Text="Servicios disponibles"
+                    FontSize="28"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                    Margin="0,0,0,0" />
+            </StackLayout>
         </Grid>
         <ScrollView>
             <StackLayout 
                 Padding="5" 
                 Margin="5">
-                <Label
-                    Text="Servicios"
-                    FontSize="22"
-                    TextColor="Black"
-                    FontAttributes="Bold"
-                    Margin="10,0,0,0" />
                 <Frame 
                     IsClippedToBounds="True"
                     HasShadow="True"
@@ -86,7 +66,7 @@
                                 Margin="0,25,0,0" 
                                 Text="Reservar" 
                                 TextColor="White" 
-                                BackgroundColor="#FF4081"
+                                BackgroundColor="#bc246c"
                                 CornerRadius="8"
                                 Clicked="btnManicure_Clicked"/>
                         </StackLayout>
@@ -128,7 +108,7 @@
                                 Margin="0,25,0,0" 
                                 Text="Reservar" 
                                 TextColor="White" 
-                                BackgroundColor="#FF4081"
+                                BackgroundColor="#bc246c"
                                 CornerRadius="8"
                                 Clicked="btnPedicure_Clicked"/>
                         </StackLayout>
@@ -171,7 +151,7 @@
                                 Margin="0,25,0,0" 
                                 Text="Reservar" 
                                 TextColor="White" 
-                                BackgroundColor="#FF4081"
+                                BackgroundColor="#bc246c"
                                 CornerRadius="8"
                                 Clicked="btnRetoquedeAcrilico_Clicked"/>
                         </StackLayout>
@@ -214,7 +194,7 @@
                                 Margin="0,25,0,0" 
                                 Text="Reservar" 
                                 TextColor="White" 
-                                BackgroundColor="#FF4081"
+                                BackgroundColor="#bc1463"
                                 CornerRadius="8"
                                 Clicked="btnAplicaciondeAcrilico_Clicked"/>
                         </StackLayout>

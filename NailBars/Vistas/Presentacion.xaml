@@ -2,30 +2,19 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NailBars.Vistas.Presentacion">
-    
-   
-    <Grid BackgroundColor="#151515">
-        <StackLayout VerticalOptions="CenterAndExpand">
-            <Image Source="logo.png"
-               HeightRequest="450"
-               x:Name="logo"/>
+
+        <Grid
+            BackgroundColor="#bc1463">
+            <StackLayout VerticalOptions="CenterAndExpand">
+                <Image Source="logo2.png"
+                        HeightRequest="450"
+                        x:Name="logo"/>
             <Label Text="NailBars" 
                    TextColor="White"
                    HorizontalOptions="Center"
                    FontSize="30"
                    FontAttributes="Bold"
                    Margin="0,-90,0,0"/>
-            <Label Text="from" 
-                   TextColor="#F8F9FA"
-                   HorizontalOptions="Center"
-                   HeightRequest="100"/>
-            <Label Text="N A I L B A R S 504"
-                   TextColor="#EC4827"
-                   FontSize="14"
-                   FontAttributes="Bold"
-                   HorizontalOptions="Center"/>
         </StackLayout>
-    
-    </Grid>
-    
+        </Grid>
 </ContentPage>

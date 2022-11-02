@@ -19,6 +19,9 @@ namespace NailBars.Vistas
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Presentacion : ContentPage
     {
+        string tipoUser;
+        string Iduserlogin;
+
         public Presentacion()
         {
             InitializeComponent();
@@ -28,9 +31,6 @@ namespace NailBars.Vistas
             Cerrarsesion();
 
         }
-
-        string tipoUser;
-        string Iduserlogin;
 
         public async Task Animacion()
         {
@@ -43,62 +43,43 @@ namespace NailBars.Vistas
                 tipoUser = fila.tipoUser;
             }
 
-
             logo.Opacity = 0;
             await logo.FadeTo(1, 2000);
             if (!string.IsNullOrEmpty(Preferences.Get("MyFirebaseRefreshToken", "")))
             {
-
-               
-
                 if (tipoUser == "Cliente")
                 {
-
                     //esto es pq se van a convertir las paginas de toolvar en navigationpage
-
                     Application.Current.MainPage = new NavigationPage(new Contenedor());
-
-
                 }
                 else if (tipoUser == "admin")
                 {
-
-
                     //esto es pq se van a convertir las paginas de toolvar en navigationpage
-
                     Application.Current.MainPage = new NavigationPage(new ContenedorAdmin());
-
                 }
                 else if (tipoUser == "Empleado")
                 {
-
-
                     //esto es pq se van a convertir las paginas de toolvar en navigationpage
-
                     Application.Current.MainPage = new NavigationPage(new ContenedorEmpleado());
-
                 }
                 // Application.Current.MainPage = new NavigationPage(new Contenedor());
             }
             else
             {
                 Application.Current.MainPage = new Intro1();
-
             }
-
-
         }
+
         private void Cerrarsesion()
         {
             Preferences.Remove("MyFirebaseRefreshToken");
         }
 
-
         private async Task ObtenerIdusuario()
         {
             try
             {
-               var authProvider = new FirebaseAuthProvider(new FirebaseConfig(Conexionfirebase.WebapyFirebase));
+                var authProvider = new FirebaseAuthProvider(new FirebaseConfig(Conexionfirebase.WebapyFirebase));
 
                 //validar si el usuario se ha validado o no dentro de la aplicacion
                 var guardarId = JsonConvert.DeserializeObject<FirebaseAuth>(Preferences.Get("MyFirebaseRefreshToken", ""));
@@ -115,9 +96,6 @@ namespace NailBars.Vistas
                 Animacion();
                // await DisplayAlert("Alerta", "Sesion expirada", "OK");
             }
-
-
         }
-
     }
 }

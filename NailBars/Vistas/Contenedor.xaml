@@ -6,17 +6,17 @@
             NavigationPage.HasNavigationBar="False"
              x:Class="NailBars.Vistas.Contenedor"
             BarTextColor="White"
-            BarBackgroundColor="#FF4081"
+            BarBackgroundColor="#bc246c"
             SelectedTabColor="White"
             UnselectedTabColor="Black">
     
-    <local1:Categorias Title="Menu"
+    <local1:Categorias Title="Inicio"
                        IconImageSource="home.png" />
     <local2:Servicios Title="Historial"
                       IconImageSource="servicios.png" />
     <local1:MapsNormal Title="Mapa"   
                        IconImageSource="mapa.png" />
-    <local1:MiPerfil   Title="Mi Cuenta"               
+    <local1:MiPerfil   Title="Perfil"               
                        IconImageSource="user.png" />
 
 </TabbedPage>

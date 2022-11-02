@@ -5,98 +5,110 @@
              xmlns:forms1="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
              xmlns:circularImage="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
              NavigationPage.HasNavigationBar="False"
-             Visual="Material">
+             Visual="Material"
+             BackgroundImageSource="FondoR">
     
     
-    <Grid BackgroundColor="#E2F5FF" 
-          >
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="240" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <StackLayout Grid.Row="0"
-                     Margin="20"
-                     Orientation="Vertical"
-                     Spacing="10">
+        <StackLayout 
+            Grid.Row="0"
+            Margin="20"
+            Orientation="Vertical"
+            Spacing="10">
+         
+             <Label 
+                 Text="Registro"
+                 TextColor="#bc1463"
+                 HorizontalOptions="Center"
+                 FontAttributes="Bold"
+                 FontSize="30" />
             
-             <Label Text="Perfil de Usuario"
-                   TextColor="#5A0F2E"
-               HorizontalOptions="Center"
-               FontAttributes="Bold"
-               FontSize="30" />
-            
-        <forms1:AnimationView x:Name="animation"
-                              Grid.Row="0"
-                              Animation="foto perfil.json"
-                              HeightRequest="300"
-                              WidthRequest="300"
-                              AutoPlay="True"
-                              RepeatMode="Infinite"
-                              VerticalOptions="Center"                             
-                              IsVisible="true"/>
+            <forms1:AnimationView 
+                x:Name="animation"
+                Grid.Row="0"
+                Animation="perfil.json"
+                HeightRequest="300"
+                WidthRequest="300"
+                AutoPlay="True"
+                RepeatMode="Infinite"
+                VerticalOptions="Center"                             
+                IsVisible="true"/>
        
-            <circularImage:CircleImage 
-                                       HeightRequest="300"
-                                       WidthRequest="300"
-                                       HorizontalOptions="Start"
-                                       BorderThickness="4"
-                                       Margin="34,20,0,0"
-                                       BorderColor="#FFFFFF"
-                                       x:Name="imagenCelular"
-                                       IsVisible="false" />
+            <circularImage:CircleImage      
+                HeightRequest="300"
+                WidthRequest="300"
+                HorizontalOptions="Start"
+                BorderThickness="4"
+                Margin="34,20,0,0"
+                BorderColor="#FFFFFF"
+                x:Name="imagenCelular"
+                IsVisible="false" 
+                Aspect="AspectFill"/>
         </StackLayout>
            
         
-        <StackLayout Grid.Row="1"
-                     Margin="20,150,20,0"
-                     Orientation="Vertical"
-                     Spacing="10"
-                     >
-            <StackLayout Orientation="Horizontal" HeightRequest="50">
-                <Button Text="Subir Foto"
-                        
-                        BackgroundColor="#5A0F2E"
-                        TextColor="#FFA67E"
-                        CornerRadius="10"
-                        x:Name="btnagregarimagen"
-                        Clicked="btnagregarimagen_Clicked" />
-            </StackLayout>
-            <Entry TextColor="#7F7F7F"
-                   FontAttributes="Bold"
-                   PlaceholderColor="Black"
-                   Placeholder="Nombres" 
-                   Keyboard="Chat"
-                   IsTextPredictionEnabled="True"
-                   x:Name="txtNombres"/>
+        <StackLayout 
+            Grid.Row="1"
+            Margin="20,150,20,0"
+            Orientation="Vertical"
+            Spacing="10">
             
-            <Entry TextColor="#7F7F7F"
-                   FontAttributes="Bold"
-                   PlaceholderColor="Black"
-                   Placeholder="Correo"
-                   x:Name="txtCorreo"
-                   Keyboard="Email"
-                   IsTextPredictionEnabled="True"
-                   />
-            <Entry TextColor="#7F7F7F"
-                   FontAttributes="Bold"
-                   PlaceholderColor="Black"
-                   
-                   Placeholder="Contraseña"
-                   x:Name="txtContraseña"
-                   IsPassword="True"
-                   IsTextPredictionEnabled="True">
-                
-            </Entry>
-            <Button Text="Crear Cuenta"
-                    BackgroundColor="#5A0F2E"
-                    TextColor="#FFA67E"                 
-                    CornerRadius="30"
-                    WidthRequest="340"
-                    HeightRequest="50"
-                    HorizontalOptions="Center"
-                    x:Name="btnCrearcuenta"
-                    Margin="20"
-                    Clicked="btnCrearcuenta_Clicked"/>
+            <StackLayout 
+                Orientation="Horizontal" 
+                HeightRequest="50"     
+                HorizontalOptions="Center"  
+                Margin="0,0,0,15">
+                <Button 
+                    Text="Seleccionar foto"
+                    BackgroundColor="#bc1463"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    x:Name="btnagregarimagen"
+                    Clicked="btnagregarimagen_Clicked"
+                    WidthRequest="360"
+                    HeightRequest="45"/>
+            </StackLayout>
+            <Entry 
+                TextColor="#7F7F7F"
+                FontAttributes="Bold"
+                PlaceholderColor="Black"
+                Placeholder="Nombres" 
+                Keyboard="Chat"
+                IsTextPredictionEnabled="True"
+                x:Name="txtNombres"/>
+            
+            <Entry 
+                TextColor="#7F7F7F"
+                FontAttributes="Bold"
+                PlaceholderColor="Black"
+                Placeholder="Correo electrónico"
+                x:Name="txtCorreo"
+                Keyboard="Email"
+                IsTextPredictionEnabled="True"/>
+
+            <Entry 
+                TextColor="#7F7F7F"
+                FontAttributes="Bold"
+                PlaceholderColor="Black"
+                Placeholder="Contraseña"
+                x:Name="txtContraseña"
+                IsPassword="True"
+                IsTextPredictionEnabled="True"/>
+            
+            <Button 
+                Text="Crear Cuenta"
+                Margin="0,25,0,0"
+                BackgroundColor="#bc1463"
+                TextColor="White"
+                WidthRequest="360"
+                HeightRequest="45"
+                HorizontalOptions="Center"
+                x:Name="btnCrearcuenta"
+                Clicked="btnCrearcuenta_Clicked"/>
         </StackLayout>
         
     </Grid>
