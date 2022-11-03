@@ -14,6 +14,8 @@
                        IconImageSource="home.png" />
     <local2:Servicios Title="Historial"
                       IconImageSource="servicios.png" />
+    <local1:DashboardClientas   Title="Dashboard"               
+                       IconImageSource="dashboard.png" />
     <local1:MapsNormal Title="Mapa"   
                        IconImageSource="mapa.png" />
     <local1:MiPerfil   Title="Perfil"               

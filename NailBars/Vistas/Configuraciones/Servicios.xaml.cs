@@ -91,7 +91,6 @@ namespace NailBars.Vistas.Configuraciones
 
             if (tipo == "Cliente")
             {
-                encabezado1.Text = "Hoy";
 
                 VmReservaciones consulta = new VmReservaciones();
                 MoReservaciones parametro5 = new MoReservaciones();
@@ -103,16 +102,12 @@ namespace NailBars.Vistas.Configuraciones
                 parametro2.id_Cliente = Idusuario;
                 parametro2.fecha_Reserv = date;
 
-                lstReserUser.ItemsSource = await consulta2.ObtenerDatosHoy(parametro2);
-
-
 
 
 
             }
             else if (tipo == "admin")
             {
-                encabezado1.Text = "Pendientes Hoy!!";
 
 
                 string fec = DateTime.Now.ToString("d/M/yyyy");
@@ -122,14 +117,12 @@ namespace NailBars.Vistas.Configuraciones
                 MoReservaciones parametro1 = new MoReservaciones();
                 parametro1.fecha_Reserv = fec;
 
-                lstReserUser.ItemsSource = await consulta2.getResrOfDate(fec, "Pendiente");
                 lstGeneral.ItemsSource = await consulta.getReservaciones(parametro1);
                 //lista2 = await consulta.getReservaciones(parametro1);
 
             }
             else if (tipo == "Empleado")
             {
-                encabezado1.Text = "Pendientes Hoy!!";
 
 
                 string fec = DateTime.Now.ToString("d/M/yyyy");
@@ -141,8 +134,6 @@ namespace NailBars.Vistas.Configuraciones
                 parametro1.status = "Pendiente";
                 parametro1.nombreEstilista = nombreestilista;
 
-
-                lstReserUser.ItemsSource = await consulta2.getResevacionesEstilista(parametro1);
                 lstGeneral.ItemsSource = await consulta.getGeneralEstilista(parametro1);
                 //lista2 = await consulta.getReservaciones(parametro1);
 
