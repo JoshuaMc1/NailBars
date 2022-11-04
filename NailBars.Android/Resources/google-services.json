@@ -1,34 +1,42 @@
 {
   "project_info": {
-    "project_number": "817523806341",
-    "firebase_url": "https://nailbars-9dde3-default-rtdb.firebaseio.com",
-    "project_id": "nailbars-9dde3",
-    "storage_bucket": "nailbars-9dde3.appspot.com"
+    "project_number": "849374331136",
+    "firebase_url": "https://nailbars-c75a5-default-rtdb.firebaseio.com",
+    "project_id": "nailbars-c75a5",
+    "storage_bucket": "nailbars-c75a5.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:817523806341:android:adb1966457fc4c48cb99ec",
+        "mobilesdk_app_id": "1:849374331136:android:cba9f153923e7c54bbb3e5",
         "android_client_info": {
           "package_name": "com.companyname.nailbars"
         }
       },
       "oauth_client": [
         {
-          "client_id": "817523806341-qf0omcph60sh6f9f5joileuojevbomv9.apps.googleusercontent.com",
+          "client_id": "849374331136-b87grj8buldl9froa4ekhjdlgl314s5l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.companyname.nailbars",
+            "certificate_hash": "659705604fe5f0d0296e7f55b5a37adf3f02d748"
+          }
+        },
+        {
+          "client_id": "849374331136-pevfa6tf2j9o8uud50ehbnont2s40fl5.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBy6Cc5gDJunzUI5Z7Vn0Sv_GHwxeblPRs"
+          "current_key": "AIzaSyAy1Qsw2oJh1DDuKx5FYtWBdqMJ4wPPrm8"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "817523806341-qf0omcph60sh6f9f5joileuojevbomv9.apps.googleusercontent.com",
+              "client_id": "849374331136-pevfa6tf2j9o8uud50ehbnont2s40fl5.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
