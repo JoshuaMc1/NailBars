@@ -12,6 +12,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -23,7 +24,6 @@ namespace NailBars.Vistas
     public partial class RegistroClientes : ContentPage
     {
         MediaFile file;
-
         string rutafoto;
         string Idusuario;
         string Iduserclientes;
@@ -43,38 +43,28 @@ namespace NailBars.Vistas
                 {
                     if (!string.IsNullOrEmpty(txtCorreo.Text))
                     {
-                        hola = txtContraseña.Text;
-                        if (!string.IsNullOrEmpty(txtContraseña.Text) && hola.Length > 6)
+                        if (txtCorreo.Text.Contains("@") && txtCorreo.Text.Contains("."))
                         {
-                            UserDialogs.Instance.ShowLoading("Creando Usuario...");
+                            hola = txtContraseña.Text;
+                            if (!string.IsNullOrEmpty(txtContraseña.Text) && hola.Length > 6)
+                            {
+                                var responce = await Crearcuenta();
+                                if (responce)
+                                {
+                                    UserDialogs.Instance.ShowLoading("Creando Usuario...");
+                                    await IniciarSesion();
+                                    await ObtenerIdusuario();
 
-                            await Crearcuenta();
-                            await IniciarSesion();
-                            await ObtenerIdusuario();
-
-                            await SubirImagenesStore();
-                            await InsertarUsuarios();
-                            // await EditarFoto();
-                        }
-                        else
-                        {
-                            await DisplayAlert("Contraseña", "Dede de tener almenos 7 caracteres", "Ok");
-                        }
-                    }
-                    else
-                    {
-                        await DisplayAlert("Campos Vacios", "LLenar los campos", "Ok");
-                    }
-                }
-                else
-                {
-                    await DisplayAlert("Campos Vacios", "LLenar los campos", "Ok");
-                }
-            }
-            else
-            {
-                await DisplayAlert("Imagen Obligatoria", "LLenar los campos", "Ok");
-            }
+                                    await SubirImagenesStore();
+                                    await InsertarUsuarios();
+                                    DependencyService.Get<INotification>().CreateNotification("NailBars", "Usuario creado exitosamente");
+                                    // await EditarFoto();
+                                } else await DisplayAlert("Advertencia", "El correo electronico ya existe", "Ok");
+                            } else await DisplayAlert("Contraseña", "Dede de tener almenos 7 caracteres", "Ok");
+                        } else await DisplayAlert("Invalido", "El correo electronico no es valido", "Ok");
+                    } else await DisplayAlert("Campos Vacios", "LLenar los campos", "Ok");
+                } else await DisplayAlert("Campos Vacios", "LLenar los campos", "Ok");
+            } else await DisplayAlert("Imagen Obligatoria", "LLenar los campos", "Ok");
         }
 
         private async void btnagregarimagen_Clicked(object sender, EventArgs e)
@@ -164,16 +154,16 @@ namespace NailBars.Vistas
             Preferences.Remove("MyFirebaseRefreshToken");
         }
 
-        private async Task Crearcuenta()
+        private async Task<bool> Crearcuenta()
         {
             var funcion = new VMcrearcuenta();
-            await funcion.crearcuenta(txtCorreo.Text, txtContraseña.Text);
+            return await funcion.crearcuenta(txtCorreo.Text, txtContraseña.Text);
         }
 
         private async Task IniciarSesion()
         {
             var funcion = new VMcrearcuenta();
-            await funcion.ValidarCuenta(txtCorreo.Text, txtContraseña.Text);
+            await funcion.ValidarCuentaRegistro(txtCorreo.Text, txtContraseña.Text);
         }
 
         private async Task ObtenerIdusuario()
