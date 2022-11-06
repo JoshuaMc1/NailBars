@@ -7,7 +7,6 @@
 
     <Grid BackgroundColor="White">
         <CollectionView x:Name="lstGeneral"
-                        SelectionMode="Single"
                        
                         SelectionChanged="lstGeneral_SelectionChanged">
             <CollectionView.Header>
