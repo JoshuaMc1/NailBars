@@ -209,22 +209,25 @@ namespace NailBars.Vistas
 
                                                     await db.InsertReservacion(reservacion);
                                                     UserDialogs.Instance.HideLoading();
+                        Application.Current.MainPage = new NavigationPage(new PagoReservacion());
 
-                                                    await DisplayAlert("Listo", "Reservacion enviada", "OK");
+                        
 
                                                     
 
 
-                                                    Application.Current.MainPage = new NavigationPage(new Contenedor());
+                                                    //Application.Current.MainPage = new NavigationPage(new Contenedor());
                     }
                                                 else
                                                 {
-                                                 await DisplayAlert("Aviso", "Estilista nos disponible", "OK");
+                        
+                        await DisplayAlert("Aviso", "Estilista nos disponible", "OK");
                                                  } 
                                              }
                                             else
                                             {
-                                                await DisplayAlert("Listo", "Reservacion enviada", "OK");
+                    Application.Current.MainPage = new NavigationPage(new PagoReservacion());
+                    //await DisplayAlert("Listo", "Reservacion enviada", "OK");
                                             }
             }
             else
