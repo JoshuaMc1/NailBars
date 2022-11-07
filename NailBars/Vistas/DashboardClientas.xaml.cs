@@ -147,9 +147,16 @@ namespace NailBars.Vistas
 
         }
 
-        private void lstGeneral_SelectionChanged(object sender, SelectionChangedEventArgs e)
+
+        private async void lstGeneral_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            
+
 
         }
+
+
+
+
     }
 }

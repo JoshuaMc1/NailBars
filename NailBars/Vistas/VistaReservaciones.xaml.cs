@@ -209,14 +209,13 @@ namespace NailBars.Vistas
 
                                                     await db.InsertReservacion(reservacion);
                                                     UserDialogs.Instance.HideLoading();
-                        await Navigation.PushAsync(new PagoReservacion());
 
-                        //await DisplayAlert("Listo", "Reservacion enviada", "OK");
+                                                    await DisplayAlert("Listo", "Reservacion enviada", "OK");
 
                                                     
 
 
-                                                   // Application.Current.MainPage = new NavigationPage(new Contenedor());
+                                                    Application.Current.MainPage = new NavigationPage(new Contenedor());
                     }
                                                 else
                                                 {
@@ -225,14 +224,11 @@ namespace NailBars.Vistas
                                              }
                                             else
                                             {
-
-                    await Navigation.PushAsync(new PagoReservacion());
-                    //await DisplayAlert("Listo", "Reservacion enviada", "OK");
+                                                await DisplayAlert("Listo", "Reservacion enviada", "OK");
                                             }
             }
             else
             {
-                
                 await DisplayAlert("Aviso", "Seleccionar Hora!!", "OK");
             }
                                 
