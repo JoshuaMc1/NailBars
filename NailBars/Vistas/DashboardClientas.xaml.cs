@@ -87,12 +87,8 @@ namespace NailBars.Vistas
 
             if (tipo == "Cliente")
             {
-                encabezado1.Text = "Hoy";
+                encabezado1.Text = "Reservación para Hoy";
 
-                VmReservaciones consulta = new VmReservaciones();
-                MoReservaciones parametro5 = new MoReservaciones();
-                parametro5.id_Cliente = Idusuario;
-                lstGeneral.ItemsSource = await consulta.ObtenerDatosReservaciones(parametro5);
 
                 VmReservaciones consulta2 = new VmReservaciones();
                 MoReservaciones parametro2 = new MoReservaciones();
@@ -119,7 +115,7 @@ namespace NailBars.Vistas
                 parametro1.fecha_Reserv = fec;
 
                 lstReserUser.ItemsSource = await consulta2.getResrOfDate(fec, "Pendiente");
-                lstGeneral.ItemsSource = await consulta.getReservaciones(parametro1);
+                //lstGeneral.ItemsSource = await consulta.getReservaciones(parametro1);
                 //lista2 = await consulta.getReservaciones(parametro1);
 
             }
@@ -139,7 +135,7 @@ namespace NailBars.Vistas
 
 
                 lstReserUser.ItemsSource = await consulta2.getResevacionesEstilista(parametro1);
-                lstGeneral.ItemsSource = await consulta.getGeneralEstilista(parametro1);
+                //lstGeneral.ItemsSource = await consulta.getGeneralEstilista(parametro1);
                 //lista2 = await consulta.getReservaciones(parametro1);
 
             }
@@ -148,12 +144,6 @@ namespace NailBars.Vistas
         }
 
 
-        private async void lstGeneral_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            
-
-
-        }
 
 
 

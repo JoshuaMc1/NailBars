@@ -5,76 +5,30 @@
              x:Class="NailBars.Vistas.DashboardClientas">
 
 
-    <Grid BackgroundColor="White">
-        <CollectionView x:Name="lstGeneral"
-                        SelectionMode="Single"
-                       
-                        SelectionChanged="lstGeneral_SelectionChanged">
-            <CollectionView.Header>
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="50" />
-                        <RowDefinition Height="40" />
-                        <RowDefinition Height="190" />
-                        <RowDefinition Height="40" />
-                    </Grid.RowDefinitions>
+    <StackLayout>
 
 
 
-                    <Grid Grid.Row="0">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="auto" />
-                                <ColumnDefinition Width="auto" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <Label Text="Dash"
-                                   FontAttributes="Bold"
-                                   TextColor="Black"
-                                   FontSize="25"
-                                   Grid.Column="1"
-                                   HorizontalTextAlignment="End"
-                                   VerticalOptions="Center" />
-                            <Frame Grid.Column="2"
-                                   Padding="0"
-                                   >
-                                <Label Text="board"
-                                       FontAttributes="Bold"
-                                       FontSize="25"
-                                       HorizontalTextAlignment="Start"
-                                       VerticalOptions="Center"
-                                       TextColor="Black" />
-                            </Frame>
-                        </Grid>
-                    </Grid>
-                    <Label Grid.Row="1"
-                           Text="Hoy"
+        <Label Text="Dashboard" FontAttributes="Bold" Margin="0,15,0,15"
+               TextColor="Black" FontSize="25" HorizontalTextAlignment="Center"/>
+                <Label Text="Reservaciones para Hoy"
                            x:Name="encabezado1"
                            FontSize="22"
                            TextColor="Black"
                            FontAttributes="Bold"
                            Margin="10,0,0,0" />
-                    <CollectionView Grid.Row="2"
+                    <CollectionView 
                                     x:Name="lstReserUser"
-                                    VerticalScrollBarVisibility="Default">
-                        <CollectionView.ItemsLayout>
-                            <GridItemsLayout Orientation="Horizontal"
-                                             Span="1" />
-                        </CollectionView.ItemsLayout>
+                                    VerticalScrollBarVisibility="Always">
+                        
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
-                                <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="*" />
-                                        <RowDefinition Height="20" />
-                                    </Grid.RowDefinitions>
-                                    <Frame Grid.Row="0"
+                                <Grid >
+                                    <Frame  
                                            BackgroundColor="White"
-                                           Padding="10"
                                            
                                            CornerRadius="8"
-                                           Margin="5,0,5,0">
+                                           Margin="20,0,20,0">
                                         <Grid>
                                             <Grid.RowDefinitions>
                                                 <RowDefinition Height="auto" />
@@ -82,19 +36,16 @@
 
                                             </Grid.RowDefinitions>
                                             <Frame Grid.Row="0"
-                                                   Padding="10"
                                                    BackgroundColor="#bc246c"
-                                                   CornerRadius="8"
+                                                   CornerRadius="5"
                                                    >
-                                                <StackLayout>
+                                                <StackLayout >
                                                     <Label Grid.Row="1"
                                                            Text="{Binding nombre_usuario}"
                                                            FontSize="16"
                                                            TextColor="White"
                                                            FontAttributes="Bold"
-                                                           VerticalTextAlignment="Center"
                                                            HorizontalTextAlignment="Center"
-                                                           VerticalOptions="Center"
                                                            HorizontalOptions="Center" />
 
                                                     <Label Grid.Row="1"
@@ -139,11 +90,8 @@
                         </CollectionView.ItemTemplate>
                     </CollectionView>
 
-                </Grid>
-            </CollectionView.Header>
             
-        </CollectionView>
-    </Grid>
+    </StackLayout>
 
 
 </ContentPage>
