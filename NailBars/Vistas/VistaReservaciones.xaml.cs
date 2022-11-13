@@ -209,7 +209,7 @@ namespace NailBars.Vistas
 
                                                     await db.InsertReservacion(reservacion);
                                                     UserDialogs.Instance.HideLoading();
-                        Application.Current.MainPage = new NavigationPage(new PagoReservacion());
+                        Application.Current.MainPage = new NavigationPage(new TipoPagos());
 
                         
 
@@ -227,7 +227,7 @@ namespace NailBars.Vistas
                                             else
                                             {
                     Application.Current.MainPage = new NavigationPage(new PagoReservacion());
-                    //await DisplayAlert("Listo", "Reservacion enviada", "OK");
+                    //await DisplayAlert("Aviso", "Selecciona el tipo de pago, para guardar tu reservación", "OK");
                                             }
             }
             else

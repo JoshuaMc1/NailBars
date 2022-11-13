@@ -8,7 +8,7 @@
     <Page.Resources>
         <ResourceDictionary>
             <local1:CardNumberToImageConverter x:Key="CardConverter" 
-                   Amex="amex.png" Dinners="dinners.png" Discover="discover.png" JCB="jcb.png"
+                   Amex="Atlantida.png" Dinners="dinners.png" Discover="discover.png" JCB="Atlantida.png"
                                               MasterCard="mastercard.png" Visa="visa.jpg"
                                               NotRecognized="nocard.png"/>
         </ResourceDictionary>

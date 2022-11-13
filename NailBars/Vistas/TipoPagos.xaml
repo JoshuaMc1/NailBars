@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NailBars.Vistas.TipoPagos"
+             BackgroundImageSource="FondoSUR.jpeg">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Label Text="Seleccione el tipo de Pago:" FontAttributes="Bold" Padding="60"
+               FontSize="Title" HorizontalTextAlignment="Center" TextColor="Black"/>
+            
+            <Button 
+                 Margin="60,0,60,10" 
+                 Text="Pagar en Sitio" 
+                 TextColor="White" 
+                 BackgroundColor="#bc246c"
+                 CornerRadius="8"
+                 Clicked="ButtonPagarSitio_Clicked"/>
+
+            <Button 
+                 Margin="60,7,60,10" 
+                 Text="Pagar Con Tarjeta" 
+                 TextColor="White" 
+                 BackgroundColor="#bc246c"
+                 CornerRadius="8"
+                 Clicked="ButtonPagarTarjeta_Clicked"/>
+
+            <Button 
+                 Margin="60,7,60,10" 
+                 Text="Transferencia Bancaria" 
+                 TextColor="White" 
+                 BackgroundColor="#bc246c"
+                 CornerRadius="8"
+                 Clicked="ButtonTransferencia_Clicked"/>
+
+            <Label Text="Tarjetas Aceptables:" FontAttributes="Italic" Padding="20"
+               FontSize="Title" HorizontalTextAlignment="Center" TextColor="Black"/>
+
+            <ScrollView>
+                <Frame>
+                    <StackLayout 
+                        HorizontalOptions="FillAndExpand" 
+                        Orientation="Horizontal">
+                        <Image 
+                            Source="drawable/Atlantida.png" 
+                            Aspect="Fill" 
+                            HeightRequest="70" 
+                            WidthRequest="120"/>
+                        <Image
+                            Source="drawable/Bac.png" 
+                            Aspect="Fill" 
+                            HeightRequest="70" 
+                            WidthRequest="120"
+                            />
+                        <Image
+                            Source="drawable/Banpais.png" 
+                            Aspect="Fill" 
+                            HeightRequest="70" 
+                            WidthRequest="120"
+                            />
+                    </StackLayout>
+                </Frame>
+            </ScrollView>
+            <ScrollView>
+                <Frame>
+                    <StackLayout 
+                        HorizontalOptions="FillAndExpand" 
+                        Orientation="Horizontal">
+                        <Image 
+                            Source="drawable/Lafise.png" 
+                            Aspect="Fill" 
+                            HeightRequest="70" 
+                            WidthRequest="120"/>
+                        <Image
+                            Source="drawable/Davivienda.jpg" 
+                            Aspect="Fill" 
+                            HeightRequest="70" 
+                            WidthRequest="120"
+                            />
+                        <Image
+                            Source="drawable/Ficohsa.jpg" 
+                            Aspect="Fill" 
+                            HeightRequest="70" 
+                            WidthRequest="120"
+                            />
+                    </StackLayout>
+                </Frame>
+            </ScrollView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
