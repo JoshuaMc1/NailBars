@@ -30,11 +30,5 @@ namespace NailBars.Vistas
             Application.Current.MainPage = new NavigationPage(new PagoReservacion());
         }
 
-        private async void ButtonTransferencia_Clicked(object sender, EventArgs e)
-        {
-            await DisplayAlert("Aviso", "Pagar con Transferencia Bancaria?", "Si");
-            Application.Current.MainPage = new NavigationPage(new PagoReservacion());
-        }
-
     }
 }

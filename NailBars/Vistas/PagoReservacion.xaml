@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local1="clr-namespace:NailBars.Modelo"
              xmlns:fastEntry="clr-namespace:XamarinFastEntrySample.FastEntry;assembly=XamarinFastEntry.Behaviors" 
-             x:Class="NailBars.Vistas.PagoReservacion">
+             x:Class="NailBars.Vistas.PagoReservacion"
+             BackgroundImageSource="FondoSUR.jpeg">
 
     <Page.Resources>
         <ResourceDictionary>
@@ -15,40 +16,51 @@
     </Page.Resources>
 
     <StackLayout >
-        <Label Text="Información de Pago" FontAttributes="Bold" Padding="5"
+
+        <Label Text="Pago con tarjeta" FontAttributes="Bold" Padding="50"
                FontSize="Title" HorizontalTextAlignment="Center" TextColor="Black"/>
-        <Label Text="Registre su tarjeta de credito/debito" FontSize="Medium" Margin="5,15,0,5" TextColor="Black"/>
-        <StackLayout BackgroundColor="Wheat" Padding="10" Margin="10,0,10,0">
-        <Label Text="Número de Tarjeta:" FontSize="20" Margin="5,0,0,0" TextColor="Black"/>
-        <Grid >
-            <Entry  x:Name="txttarjeta" Text="{Binding CardNumber, Mode=TwoWay}" Keyboard="Numeric" Placeholder="Número de Tarjeta"
-                 Margin="5,0,0,0"  IsTextPredictionEnabled="True"
+        <Label Text="Información de Pago:" FontSize="Medium" Margin="5,15,0,5" TextColor="Black"/>
+        <StackLayout BackgroundColor="White" Padding="10" Margin="10,0,10,0">
+            <Label Text="Número completo de la Tarjeta:" FontSize="20" Margin="5,0,0,0" TextColor="Black"/>
+            <Grid >
+                <Entry  x:Name="txttarjeta" Text="{Binding CardNumber, Mode=TwoWay}" Keyboard="Numeric" Placeholder="#### #### #### ####"
+                 Margin="5,0,150,0"  IsTextPredictionEnabled="True"
+                        TextColor="Black">
+                    <Entry.Behaviors>
+                        <fastEntry:XamarinFastEntryBehaviour Mask="#### #### #### ####" />
+                    </Entry.Behaviors>
+                </Entry>
+
+            </Grid>
+
+            <Label Text="Fecha Vencimiento (mm/yy):" TextColor="Black" FontSize="20" Margin="5,0,0,0"/>
+            <Entry x:Name="txtexpiracion" Text="{Binding Expiration, Mode=TwoWay}" Keyboard="Numeric"
+               Placeholder="Expiración(11/12) " Margin="5,0,200,0"   IsTextPredictionEnabled="True"
                         TextColor="Black">
                 <Entry.Behaviors>
-                    <fastEntry:XamarinFastEntryBehaviour Mask="#### #### #### ####" />
+                    <fastEntry:XamarinFastEntryBehaviour Mask="##/##" />
                 </Entry.Behaviors>
             </Entry>
-            <Image Grid.Row="0" Grid.Column="1" Source="{Binding CardNumber,Converter={StaticResource CardConverter}}"/>
-        </Grid>
-        <Label Text="Fecha de vencimiento:" TextColor="Black" FontSize="20" Margin="5,0,0,0"/>
-        <Entry x:Name="txtexpiracion" Text="{Binding Expiration, Mode=TwoWay}" Keyboard="Numeric"
-               Placeholder="(MM/YY) " Margin="5,0,200,0"   IsTextPredictionEnabled="True"
-                        TextColor="Black">
-            <Entry.Behaviors>
-                <fastEntry:XamarinFastEntryBehaviour Mask="##/##" />
-            </Entry.Behaviors>
-        </Entry>
 
-        <Label Text="CVV" FontSize="20" Margin="5,0,0,0" TextColor="Black"/>
-        <Entry x:Name="txtcvv" Text="{Binding CVV, Mode=TwoWay}" Keyboard="Numeric" 
-               Placeholder="CVV" Margin="5,0,200,0"   IsTextPredictionEnabled="True"
+            <Label Text="CVV/CVC" FontSize="20" Margin="5,0,0,0" TextColor="Black"/>
+            <Entry x:Name="txtcvv" Text="{Binding CVV, Mode=TwoWay}" Keyboard="Numeric" 
+               Placeholder="###" Margin="5,0,320,0"   IsTextPredictionEnabled="True"
                         TextColor="Black">
-            <Entry.Behaviors>
-                <fastEntry:XamarinFastEntryBehaviour Mask="###" />
-            </Entry.Behaviors>
-        </Entry>
+                <Entry.Behaviors>
+                    <fastEntry:XamarinFastEntryBehaviour Mask="###" />
+                </Entry.Behaviors>
+            </Entry>
 
-        <Button Text="Realizar Pago" x:Name="Pago" Clicked="Pago_Clicked" CornerRadius="25" Margin="50,15,50,0"
+            <Label Text="Monto a Pagar:" FontSize="20" Margin="5,0,0,0" TextColor="Black"/>
+            <Entry x:Name="txtpagardinero" Text="{Binding Pagardinero, Mode=TwoWay}" Keyboard="Numeric" 
+               Placeholder="###" Margin="5,0,300,0"   IsTextPredictionEnabled="True"
+                        TextColor="Black">
+                <Entry.Behaviors>
+                    <fastEntry:XamarinFastEntryBehaviour Mask="###.00" />
+                </Entry.Behaviors>
+            </Entry>
+
+            <Button Text="Realizar Pago" x:Name="Pago" Clicked="Pago_Clicked" CornerRadius="25" Margin="50,15,50,0"
                 TextColor="White" BackgroundColor="#bc246c"/>
         </StackLayout>
     </StackLayout>

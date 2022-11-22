@@ -8,7 +8,7 @@
 
             <Label Text="Seleccione el tipo de Pago:" FontAttributes="Bold" Padding="60"
                FontSize="Title" HorizontalTextAlignment="Center" TextColor="Black"/>
-            
+
             <Button 
                  Margin="60,0,60,10" 
                  Text="Pagar en Sitio" 
@@ -24,14 +24,6 @@
                  BackgroundColor="#bc246c"
                  CornerRadius="8"
                  Clicked="ButtonPagarTarjeta_Clicked"/>
-
-            <Button 
-                 Margin="60,7,60,10" 
-                 Text="Transferencia Bancaria" 
-                 TextColor="White" 
-                 BackgroundColor="#bc246c"
-                 CornerRadius="8"
-                 Clicked="ButtonTransferencia_Clicked"/>
 
             <Label Text="Tarjetas Aceptables:" FontAttributes="Italic" Padding="20"
                FontSize="Title" HorizontalTextAlignment="Center" TextColor="Black"/>

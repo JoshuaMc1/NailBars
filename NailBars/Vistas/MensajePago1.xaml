@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NailBars.Vistas.MensajePago1"
+             BackgroundImageSource="FondoSUR.jpeg">
+
+    <StackLayout>
+
+        <Label Text="DETALLE" FontAttributes="Bold" Padding="50"
+               FontSize="Title" HorizontalTextAlignment="Center" TextColor="Black"/>
+        <Label Text="Información de Pago:" FontSize="Medium" Margin="5,15,0,5" TextColor="Black"/>
+        <StackLayout BackgroundColor="White" Padding="10" Margin="10,0,10,0">
+
+            <Label x:Name="txtsubir" Text="El pago de la cantidad de 130 Lempiras por el servicio de Manicure ha sido completado con éxito!" FontSize="20" Margin="5,0,0,0" TextColor="Black"/>
+            <Label Text="Te esperamos!!" FontSize="20" Margin="5,0,0,0" TextColor="Black"/>
+
+
+            <Button Text="Reservar" x:Name="Reservaaa" Clicked="Reservaa_Clicked" CornerRadius="25" Margin="50,15,50,0"
+                TextColor="White" BackgroundColor="#bc246c"/>
+
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
