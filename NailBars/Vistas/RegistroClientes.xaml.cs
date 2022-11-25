@@ -7,12 +7,7 @@ using Newtonsoft.Json;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -32,7 +27,6 @@ namespace NailBars.Vistas
         public RegistroClientes()
         {
             InitializeComponent();
-           // Cerrarsesion();
         }
 
         private async void btnCrearcuenta_Clicked(object sender, EventArgs e)
@@ -75,7 +69,6 @@ namespace NailBars.Vistas
             await CrossMedia.Current.Initialize();
             try
             {
-                //para poder acceder a la galeria y agregar la img que queramos  NOTA: NIVEL LOCAL aun no se sube la imagen
                 file = await CrossMedia.Current.PickPhotoAsync(new PickMediaOptions()
                 {
                     PhotoSize = PhotoSize.Medium
@@ -88,7 +81,6 @@ namespace NailBars.Vistas
                 {
                     imagenCelular.Source = ImageSource.FromStream(() =>
                     {
-                        //GetStream extrae toda la ruta de la imagen
                         var rutaImagen = file.GetStream();
 
                         return rutaImagen;
@@ -142,10 +134,6 @@ namespace NailBars.Vistas
             UserDialogs.Instance.HideLoading();
             Cerrarsesion();
             await DisplayAlert("Listo", "Registro exitoso", "OK");
-            //await DisplayAlert("Listo", "Vuelva abrir la aplicaion", "OK");
-
-            //Cerrar la app
-            //Process.GetCurrentProcess().CloseMainWindow();
             await Navigation.PushAsync(new Login());
         }
 
@@ -172,12 +160,10 @@ namespace NailBars.Vistas
             {
                 var authProvider = new FirebaseAuthProvider(new FirebaseConfig(Conexionfirebase.WebapyFirebase));
 
-                //validar si el usuario se ha validado o no dentro de la aplicacion
                 var guardarId = JsonConvert.DeserializeObject<FirebaseAuth>(Preferences.Get("MyFirebaseRefreshToken", ""));
 
                 var RefrescarContenido = await authProvider.RefreshAuthAsync(guardarId);
                 Preferences.Set("MyFirebaseRefreshToken", JsonConvert.SerializeObject(RefrescarContenido));
-                //el ID
                 Idusuario = guardarId.User.LocalId;  
             }
             catch (Exception)

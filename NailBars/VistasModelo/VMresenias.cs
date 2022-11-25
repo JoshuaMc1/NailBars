@@ -11,20 +11,19 @@ namespace NailBars.VistasModelo
 {
     public class VMresenias
     {
-
         public async Task InsertarReseña(Mresenias parametros)
         {
             await Conexionfirebase.firebase
                 .Child("Resenias")
                 .PostAsync(new Mresenias()
                 {
-                    calificacion = parametros.calificacion,                    
+                    calificacion = parametros.calificacion,
                     idusuario = parametros.idusuario,
                     reseña = parametros.reseña,
                     idreservacion = parametros.idreservacion,
-                    
                 });
         }
+
         public async Task EditarReseña(Mresenias parametros)
         {
             var data = (await Conexionfirebase.firebase
@@ -38,8 +37,7 @@ namespace NailBars.VistasModelo
                 .PutAsync(data.Object);
         }
 
-
-        public async Task<List<Mresenias>> obtenerdatos (Mresenias parametrosPedir)
+        public async Task<List<Mresenias>> obtenerdatos(Mresenias parametrosPedir)
         {
             var Resenias = new List<Mresenias>();
             var data = (await Conexionfirebase.firebase
@@ -56,7 +54,5 @@ namespace NailBars.VistasModelo
             }
             return Resenias;
         }
-
-
     }
 }

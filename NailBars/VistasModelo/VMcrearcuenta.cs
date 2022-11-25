@@ -11,7 +11,6 @@ namespace NailBars.VistasModelo
 {
     public class VMcrearcuenta
     {
-
         public async Task<bool> crearcuenta(string correo, string contraseña)
         {
             try
@@ -19,8 +18,8 @@ namespace NailBars.VistasModelo
                 var authProvider = new FirebaseAuthProvider(new FirebaseConfig(Conexionfirebase.WebapyFirebase));
                 await authProvider.CreateUserWithEmailAndPasswordAsync(correo, contraseña);
                 return true;
-            } 
-            catch(Exception)
+            }
+            catch (Exception)
             {
                 return false;
             }
@@ -33,13 +32,12 @@ namespace NailBars.VistasModelo
             string gettoken = auth.FirebaseToken;
             var content = await auth.GetFreshAuthAsync();
             var serializartoken = JsonConvert.SerializeObject(auth);
-            Preferences.Set("MyFirebaseRefreshToken",serializartoken);
+            Preferences.Set("MyFirebaseRefreshToken", serializartoken);
 
             if (content.User.IsEmailVerified == false)
             {
                 await authProvider.SendEmailVerificationAsync(gettoken);
             }
-            // await App.Current.MainPage.DisplayAlert("Conectado","Cuenta Aprobada","OK");
         }
 
         public async Task ValidarCuenta(string correo, string contraseña)
@@ -60,7 +58,6 @@ namespace NailBars.VistasModelo
                     await authProvider.SendEmailVerificationAsync(gettoken);
                 }
             }
-            // await App.Current.MainPage.DisplayAlert("Conectado","Cuenta Aprobada","OK");
         }
     }
 }

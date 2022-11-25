@@ -11,6 +11,5 @@ namespace NailBars.VistasModelo
 {
     public class VMadmin
     {
-
     }
 }

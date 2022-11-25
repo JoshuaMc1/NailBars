@@ -4,7 +4,7 @@
              x:Class="NailBars.Vistas.VistaReservaciones"
              Visual="Material"
              NavigationPage.HasNavigationBar="False"
-             BackgroundImageSource="FondoSur.jpg">
+             BackgroundColor="White">
 
     <StackLayout 
                  Margin="10"

@@ -11,9 +11,5 @@ namespace NailBars.Modelo
         public string Prioridad { get; set; }
         public string Foto { get; set; }
         public string Color { get; set; }
-        //Parametros  para contador de negocios
-      
-
-
     }
 }

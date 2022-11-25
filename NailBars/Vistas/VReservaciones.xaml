@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NailBars.Vistas.VReservaciones"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <Frame
+                    BackgroundColor="AliceBlue"
+                    Padding="0">
+                    <Image
+                        x:Name="txtImgServicio"
+                        Aspect="AspectFill"
+                        HeightRequest="250"/>
+                </Frame>
+            </StackLayout>
+            <ScrollView
+                HeightRequest="460">
+                <StackLayout
+                    BackgroundColor="White">
+                    <StackLayout
+                        Margin="0, 0, 0, 10"
+                        Padding="20, 10, 20, 0">
+                        <Label
+                            x:Name="txtServicio"
+                            TextColor="Black"
+                            FontAttributes="Bold"
+                            FontSize="24"/>
+                        <StackLayout
+                            Margin="0, 15, 0, 10">
+                            <Label
+                                Text="Descripción del servicio"
+                                TextColor="Gray"
+                                FontSize="16"/>
+                            <Label
+                                x:Name="txtDesc1"
+                                TextColor="Gray"
+                                FontSize="15"/>
+                            <Label
+                                x:Name="txtDesc2"
+                                TextColor="Gray"
+                                FontSize="15"/>
+                            <Label
+                                x:Name="txtDesc3"
+                                TextColor="Gray"
+                                FontSize="15"/>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout
+                        Margin="0, 0, 0, 10"
+                        Padding="20, 10, 20, 0">
+                        <Label
+                            Text="Seleccione una estilista"
+                            TextColor="Gray"
+                            FontSize="16"/>
+                        <StackLayout>
+                            <CollectionView
+                                x:Name="txtListaEstilista"
+                                HeightRequest="180"
+                                SelectionMode="Single"
+                                SelectionChanged="txtListaEstilista_SelectionChanged">
+                                <CollectionView.EmptyView>
+                                    <ActivityIndicator 
+                                        IsRunning="True"
+                                        VerticalOptions="CenterAndExpand"
+                                        Color="#B9296B"/>
+                                </CollectionView.EmptyView>
+                                <CollectionView.ItemsLayout>
+                                    <LinearItemsLayout 
+                                        Orientation="Horizontal"
+                                        ItemSpacing="20" />
+                                </CollectionView.ItemsLayout>
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Frame
+                                            Padding="0">
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height=".9*"/>
+                                                    <RowDefinition Height=".2*"/>
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Frame
+                                                    Grid.Row="0"
+                                                    Grid.Column="0"
+                                                    Padding="0"
+                                                    WidthRequest="160"
+                                                    HeightRequest="100"
+                                                    CornerRadius="15">
+                                                    <Image
+                                                        Source="{Binding Icono}"
+                                                        Aspect="Fill"/>
+                                                </Frame>
+                                                <StackLayout
+                                                    Grid.Row="1"
+                                                    Grid.Column="0"
+                                                    Padding="2"
+                                                    HorizontalOptions="CenterAndExpand">
+                                                    <Label
+                                                        Text="{Binding nombre}"
+                                                        TextColor="Black"
+                                                        FontSize="16"
+                                                        FontAttributes="Bold"/>
+                                                </StackLayout>
+                                            </Grid>
+                                        </Frame>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout
+                        Margin="0, 0, 0, 10"
+                        Padding="20, 10, 20, 0">
+                        <Label
+                            Text="Seleccione la fecha de la reservación"
+                            TextColor="Gray"
+                            FontSize="16"/>
+                        <Frame
+                            Padding="6"
+                            CornerRadius="6"
+                            BackgroundColor="White">
+                            <DatePicker
+                                x:Name="txtFechaReservacion"
+                                DateSelected="txtFechaReservacion_DateSelected"
+                                Focused="txtFechaReservacion_Focused"
+                                TextColor="Black"
+                                Format="D"/>
+                        </Frame>
+                    </StackLayout>
+                    <StackLayout
+                        Margin="0, 0, 0, 10"
+                        Padding="20, 10, 20, 0">
+                        <Label
+                            Text="Seleccione la hora de la reservación"
+                            TextColor="Gray"
+                            FontSize="16"/>
+                        <Frame
+                            Padding="6"
+                            CornerRadius="6"
+                            BackgroundColor="White">
+                            <Picker
+                                x:Name="txtHorario"
+                                SelectedIndexChanged="txtHorario_SelectedIndexChanged"
+                                TextColor="Black">
+                            </Picker>
+                        </Frame>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+            <StackLayout
+                Padding="6"
+                VerticalOptions="EndAndExpand"
+                BackgroundColor="White">
+                <Frame
+                    Padding="15"
+                    BackgroundColor="#B9296B"
+                    CornerRadius="10">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <StackLayout
+                            Grid.Row="0"
+                            Grid.Column="0">
+                            <Label
+                                Text="Precio"
+                                TextColor="White"
+                                FontSize="18"
+                                FontAttributes="Bold"/>
+                            <Label
+                                x:Name="txtPrecio"
+                                TextColor="White"
+                                FontSize="20"
+                                FontAttributes="Bold"/>
+                        </StackLayout>
+                        <Button
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            x:Name="txtReservar"
+                            Text="Reservar"
+                            BackgroundColor="White"
+                            TextColor="#B9296B"
+                            CornerRadius="8"
+                            FontAttributes="Bold"
+                            Clicked="txtReservar_Clicked"/>
+                    </Grid>
+                </Frame>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

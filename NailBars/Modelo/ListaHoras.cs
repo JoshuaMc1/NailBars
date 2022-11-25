@@ -5,11 +5,8 @@ using Xamarin.Forms;
 
 namespace NailBars.Modelo
 {
-    public class ListaHoras 
+    public class ListaHoras
     {
-    
         public string hora { get; set; }
-
-
     }
 }

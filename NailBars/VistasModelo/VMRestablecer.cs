@@ -1,8 +1,6 @@
 ﻿using Firebase.Auth;
 using NailBars.Servicios;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace NailBars.VistasModelo
@@ -16,7 +14,8 @@ namespace NailBars.VistasModelo
                 var authProvider = new FirebaseAuthProvider(new FirebaseConfig(Conexionfirebase.WebapyFirebase));
                 await authProvider.SendPasswordResetEmailAsync(correo);
                 return true;
-            } catch(Exception)
+            }
+            catch (Exception)
             {
                 return false;
             }

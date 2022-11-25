@@ -76,7 +76,6 @@ namespace NailBars.Vistas
         {
             VMusuarios funcion = new VMusuarios();
             rutafoto = await funcion.SubirImagenesStorage(file.GetStream(), Idusuario);
-
         }
 
         private async Task InsertarUsuarios()
@@ -136,16 +135,11 @@ namespace NailBars.Vistas
                             UserDialogs.Instance.ShowLoading("Creando Usuario...");
 
                             await Crearcuenta();
-                            await IniciarSesion();                          
+                            await IniciarSesion();
                             await ObtenerIdusuario();
-                            
-
-
                             await SubirImagenesStore();
                             await InsertarUsuarios();
                             await saveTrabajador();
-                           // await EditarFoto();
-
                         }
                         else
                         {
@@ -228,6 +222,7 @@ namespace NailBars.Vistas
             VMusuarios consulta = new VMusuarios();
             Trabajadores dato = new Trabajadores();
             dato.nombre = txtNombres.Text;
+            dato.Icono = rutafoto;
             await consulta.SaveTrabajador(dato);
         }
 

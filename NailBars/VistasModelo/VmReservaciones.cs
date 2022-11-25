@@ -11,7 +11,6 @@ namespace NailBars.VistasModelo
 {
     public class VmReservaciones
     {
-
         List<MoReservaciones> Reservaciones = new List<MoReservaciones>();
 
         public async Task<string> InsertReservacion(MoReservaciones reservacion)
@@ -63,7 +62,7 @@ namespace NailBars.VistasModelo
 
         public async Task<List<MoReservaciones>> getReservaciones(MoReservaciones parametros)
         {
-           List<MoReservaciones> lstReservaciones = new List<MoReservaciones>();
+            List<MoReservaciones> lstReservaciones = new List<MoReservaciones>();
 
             var data = (await Conexionfirebase.firebase
                 .Child("Reservaciones")
@@ -89,7 +88,6 @@ namespace NailBars.VistasModelo
 
         public async Task<List<MoReservaciones>> getReservacionesStilista(MoReservaciones idCliente)
         {
-
             List<MoReservaciones> list2 = new List<MoReservaciones>();
 
             var data = (await Conexionfirebase.firebase
@@ -102,8 +100,6 @@ namespace NailBars.VistasModelo
             {
                 var lstHorarios = new MoReservaciones();
                 lstHorarios.hora_Reserv = rdr.Object.hora_Reserv;
-
-
 
                 list2.Add(lstHorarios);
             }
@@ -126,9 +122,7 @@ namespace NailBars.VistasModelo
                 obtenerhoras.nombreEstilista = rdr.Object.nombreEstilista;
                 obtenerhoras.status = rdr.Object.status;
 
-
                 Reservaciones.Add(obtenerhoras);
-
             }
             return Reservaciones;
         }
@@ -153,7 +147,6 @@ namespace NailBars.VistasModelo
                     hora_Reserv = parametros.hora_Reserv,
                     fecha_Reserv = parametros.fecha_Reserv,
                     calificacion = parametros.calificacion
-
                 });
         }
 
@@ -180,10 +173,8 @@ namespace NailBars.VistasModelo
                 reser.tipo_Reserv = rdr.Object.tipo_Reserv;
 
                 Reservaciones.Add(reser);
-
             }
             return Reservaciones;
-
         }
 
         public async Task postUserReservacion(MoReservaciones datos)
@@ -208,7 +199,6 @@ namespace NailBars.VistasModelo
                 .Where(b => b.Object.fecha_Reserv == parametros.fecha_Reserv);
             foreach (var rdr in data)
             {
-
                 var ope = new MoReservaciones();
                 ope.id_Reserv = rdr.Key;
                 ope.id_Cliente = rdr.Object.id_Cliente;
@@ -222,7 +212,6 @@ namespace NailBars.VistasModelo
                 ope.tipo_Reserv = rdr.Object.tipo_Reserv;
 
                 Reservaciones.Add(ope);
-
             }
 
             return Reservaciones;
@@ -257,7 +246,6 @@ namespace NailBars.VistasModelo
             var data = (await Conexionfirebase.firebase
                 .Child("Reservaciones")
                 .OnceAsync<MoReservaciones>()).Where((a) => a.Key == parametros.id_Reserv).FirstOrDefault();
-            //eliminar
             await Conexionfirebase.firebase.Child("Reservaciones").Child(data.Key).DeleteAsync();
         }
 
@@ -272,7 +260,6 @@ namespace NailBars.VistasModelo
                 .Where(c => c.Object.status == parametros.status);
             foreach (var rdr in data)
             {
-
                 var ope = new MoReservaciones();
                 ope.id_Reserv = rdr.Key;
                 ope.id_Cliente = rdr.Object.id_Cliente;
@@ -286,7 +273,6 @@ namespace NailBars.VistasModelo
                 ope.tipo_Reserv = rdr.Object.tipo_Reserv;
 
                 Reservaciones.Add(ope);
-
             }
 
             return Reservaciones;
@@ -314,7 +300,6 @@ namespace NailBars.VistasModelo
                 ope.tipo_Reserv = rdr.Object.tipo_Reserv;
 
                 Reservaciones.Add(ope);
-
             }
 
             return Reservaciones;

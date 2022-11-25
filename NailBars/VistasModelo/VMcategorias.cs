@@ -11,13 +11,11 @@ namespace NailBars.VistasModelo
 {
     public class VMcategorias
     {
-
         List<Trabajadores> estilistas = new List<Trabajadores>();
         List<MusuariosClientes> Usuarios = new List<MusuariosClientes>();
 
         public async Task InsertarCategorias(Mcategorias parametros)
         {
-
             await Conexionfirebase.firebase
                 .Child("Categorias")
                 .PostAsync(new Mcategorias()
@@ -26,14 +24,11 @@ namespace NailBars.VistasModelo
                     Color = parametros.Color,
                     Foto = parametros.Foto,
                     Prioridad = parametros.Prioridad
-                    
                 });
         }
 
-
         public async Task InsertarTrabajadoras(Trabajadores parametros)
         {
-
             await Conexionfirebase.firebase
                 .Child("Trabajadores")
                 .PostAsync(new Trabajadores()
@@ -43,14 +38,8 @@ namespace NailBars.VistasModelo
                     Icono = parametros.Icono,
                     Correo = parametros.Correo,
                     tipoUser = parametros.tipoUser,
-
                 });
         }
-
-
-
-
-
 
         public async Task<List<Mcategorias>> MostrarCategoriasNormal()
         {
@@ -68,13 +57,11 @@ namespace NailBars.VistasModelo
                 parametros.Foto = dt.Object.Foto;
                 parametros.Idcategoria = dt.Key;
                 parametros.Color = dt.Object.Color;
-               // parametrosNegocios.idcategoria = dt.Key;
-               
+
                 Categorias.Add(parametros);
             }
             return Categorias;
         }
-
 
         public async Task<List<Trabajadores>> getestilistas()
         {
@@ -85,14 +72,12 @@ namespace NailBars.VistasModelo
             foreach (var rdr in data)
             {
                 Trabajadores parametros = new Trabajadores();
-               // parametros.idt = rdr.Key;
+                parametros.idt = rdr.Key;
                 parametros.nombre = rdr.Object.nombre;
-
+                parametros.Icono = rdr.Object.Icono;
                 estilistas.Add(parametros);
-                
             }
             return estilistas;
         }
-
     }
 }

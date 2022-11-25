@@ -1,5 +1,4 @@
-﻿using Acr.UserDialogs;
-using NailBars.Servicios;
+﻿using NailBars.Servicios;
 using NailBars.VistasModelo;
 using System;
 

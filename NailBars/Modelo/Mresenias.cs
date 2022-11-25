@@ -11,7 +11,5 @@ namespace NailBars.Modelo
         public string calificacion { get; set; }
         public string idusuario { get; set; }
         public string reseña { get; set; }
-      
-
     }
 }
