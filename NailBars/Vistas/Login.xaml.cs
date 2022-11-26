@@ -6,6 +6,8 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using NailBars.VistasModelo;
 using NailBars.Modelo;
+using NailBars.Components;
+using Rg.Plugins.Popup.Extensions;
 
 namespace NailBars.Vistas
 {
@@ -37,12 +39,12 @@ namespace NailBars.Vistas
                 }
                 else
                 {
-                    await DisplayAlert("Alerta", "Ingrese su contraseña", "OK");
+                    await App.Current.MainPage.Navigation.PushPopupAsync(new JMDialog("Advertencia", "Debe ingresar su contraseña.", JMDialog.Warning), true);
                 }
             }
             else
             {
-                await DisplayAlert("Alerta", "Ingrese su correo", "OK");
+                await App.Current.MainPage.Navigation.PushPopupAsync(new JMDialog("Advertencia", "Debe ingresar su correo electrónico.", JMDialog.Warning), true);
             }
         }
 
@@ -84,7 +86,7 @@ namespace NailBars.Vistas
             catch (Exception)
             {
                 UserDialogs.Instance.HideLoading();
-                await DisplayAlert("Alerta", "Correo o Contraseña incorrectos", "OK");
+                await App.Current.MainPage.Navigation.PushPopupAsync(new JMDialog("Aviso", "El correo electrónico o la contraseña son incorrectos.", JMDialog.Danger), true);
                 await Navigation.PushAsync(new Login());
             }
         }

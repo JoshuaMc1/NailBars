@@ -9,7 +9,7 @@ namespace NailBars
         {
             InitializeComponent();
 
-            MainPage = new Presentacion();
+            MainPage = new NavigationPage(new Presentacion());
         }
 
         protected override void OnStart()

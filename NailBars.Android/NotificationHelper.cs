@@ -48,7 +48,9 @@ namespace NailBars.Droid
                     .SetVibrate(new long[0])
                     .SetDefaults((int)NotificationDefaults.Sound | (int)NotificationDefaults.Vibrate)
                     .SetVisibility((int)NotificationVisibility.Public)
-                    .SetSmallIcon(Resource.Drawable.logo2);
+                    .SetStyle(new NotificationCompat.BigTextStyle().BigText(message))
+                    .SetSmallIcon(Resource.Drawable.logo2)
+                    .SetShowWhen(true);
 
                 NotificationManager notificationManager = mContext.GetSystemService(Context.NotificationService) as NotificationManager;
                 if (global::Android.OS.Build.VERSION.SdkInt >= global::Android.OS.BuildVersionCodes.O) 

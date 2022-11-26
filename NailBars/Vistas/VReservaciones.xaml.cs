@@ -1,12 +1,12 @@
 ﻿using Acr.UserDialogs;
-using Firebase.Auth;
+using NailBars.Components;
 using NailBars.Modelo;
 using NailBars.VistasModelo;
+using Rg.Plugins.Popup.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
@@ -105,7 +105,7 @@ namespace NailBars.Vistas
             {
                 var itemSelected = (Trabajadores)e.CurrentSelection.FirstOrDefault();
                 NombreEstilista = itemSelected.nombre;
-                await DisplayAlert("Aviso", "A seleccionado a: " + NombreEstilista, "Ok");
+                await App.Current.MainPage.Navigation.PushPopupAsync(new JMDialog("Notificación", "A seleccionado a: " + NombreEstilista + " como estilista que le atendera.", JMDialog.Information), true);
                 if (FechaReservacion != "" && FechaReservacion != null)
                 {
                     await ObtenerDatoUsuario();
@@ -151,7 +151,7 @@ namespace NailBars.Vistas
                     }
                     else
                     {
-                        await DisplayAlert("Aviso", "Estilista nos disponible", "OK");
+                        await App.Current.MainPage.Navigation.PushPopupAsync(new JMDialog("Advertencia", "La estilista no esta disponible.", JMDialog.Warning), true);
                     }
                 }
                 else
@@ -161,7 +161,7 @@ namespace NailBars.Vistas
             }
             else
             {
-                await DisplayAlert("Aviso", "Seleccionar Hora!!", "OK");
+                await App.Current.MainPage.Navigation.PushPopupAsync(new JMDialog("Advertencia", "Debe seleccionar una hora!", JMDialog.Warning), true);
             }
         }
 
@@ -175,7 +175,7 @@ namespace NailBars.Vistas
             }
             else
             {
-                await DisplayAlert("Aviso", "Seleccione un estilista para ver horarios disponibles", "Ok");
+                await App.Current.MainPage.Navigation.PushPopupAsync(new JMDialog("Información", "Seleccione un estilista para ver los horarios disponibles...", JMDialog.Information), true);
             }
         }
 

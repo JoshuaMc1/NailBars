@@ -1,11 +1,13 @@
 ﻿using Acr.UserDialogs;
 using Firebase.Auth;
+using NailBars.Components;
 using NailBars.Modelo;
 using NailBars.Servicios;
 using NailBars.VistasModelo;
 using Newtonsoft.Json;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
+using Rg.Plugins.Popup.Extensions;
 using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
@@ -19,10 +21,7 @@ namespace NailBars.Vistas
     public partial class RegistroClientes : ContentPage
     {
         MediaFile file;
-        string rutafoto;
-        string Idusuario;
-        string Iduserclientes;
-        string hola;
+        string rutafoto, Idusuario, Iduserclientes;
 
         public RegistroClientes()
         {
@@ -39,8 +38,7 @@ namespace NailBars.Vistas
                     {
                         if (txtCorreo.Text.Contains("@") && txtCorreo.Text.Contains("."))
                         {
-                            hola = txtContraseña.Text;
-                            if (!string.IsNullOrEmpty(txtContraseña.Text) && hola.Length > 6)
+                            if (!string.IsNullOrEmpty(txtContraseña.Text) && txtContraseña.Text.Length > 6)
                             {
                                 var responce = await Crearcuenta();
                                 if (responce)
@@ -53,12 +51,12 @@ namespace NailBars.Vistas
                                     await InsertarUsuarios();
                                     DependencyService.Get<INotification>().CreateNotification("NailBars", "Usuario creado exitosamente");
                                     // await EditarFoto();
-                                } else await DisplayAlert("Advertencia", "El correo electronico ya existe", "Ok");
-                            } else await DisplayAlert("Contraseña", "Dede de tener almenos 7 caracteres", "Ok");
-                        } else await DisplayAlert("Invalido", "El correo electronico no es valido", "Ok");
-                    } else await DisplayAlert("Campos Vacios", "LLenar los campos", "Ok");
-                } else await DisplayAlert("Campos Vacios", "LLenar los campos", "Ok");
-            } else await DisplayAlert("Imagen Obligatoria", "LLenar los campos", "Ok");
+                                } else await App.Current.MainPage.Navigation.PushPopupAsync(new JMDialog("Advertencia", "El correo electronico ya existe.", JMDialog.Warning), true);
+                            } else await App.Current.MainPage.Navigation.PushPopupAsync(new JMDialog("Advertencia", "Dede de tener al menos 7 caracteres.", JMDialog.Warning), true);
+                        } else await App.Current.MainPage.Navigation.PushPopupAsync(new JMDialog("Advertencia", "El correo electrónico no es valido.", JMDialog.Warning), true);
+                    } else await App.Current.MainPage.Navigation.PushPopupAsync(new JMDialog("Advertencia", "Debe ingresar su correo electrónico.", JMDialog.Warning), true);
+                } else await App.Current.MainPage.Navigation.PushPopupAsync(new JMDialog("Advertencia", "Debe ingresar su nombre.", JMDialog.Warning), true);
+            } else await App.Current.MainPage.Navigation.PushPopupAsync(new JMDialog("Advertencia", "Debe seleccionar o tomar una foto.", JMDialog.Warning), true); 
         }
 
         private async void btnagregarimagen_Clicked(object sender, EventArgs e)
@@ -133,7 +131,7 @@ namespace NailBars.Vistas
             await funcion.EditarFoto(parametros);
             UserDialogs.Instance.HideLoading();
             Cerrarsesion();
-            await DisplayAlert("Listo", "Registro exitoso", "OK");
+            await App.Current.MainPage.Navigation.PushPopupAsync(new JMDialog("Satisfactorio", "Se a registrado exitosamente.", JMDialog.Success), true);
             await Navigation.PushAsync(new Login());
         }
 
@@ -168,7 +166,7 @@ namespace NailBars.Vistas
             }
             catch (Exception)
             {
-                await DisplayAlert("Alerta","Sesion expirada","OK");
+                await App.Current.MainPage.Navigation.PushPopupAsync(new JMDialog("Aviso", "Su sesión a expirado.", JMDialog.Danger), true);
             }
         }
     }

@@ -1,5 +1,7 @@
-﻿using NailBars.Servicios;
+﻿using NailBars.Components;
+using NailBars.Servicios;
 using NailBars.VistasModelo;
+using Rg.Plugins.Popup.Extensions;
 using System;
 
 using Xamarin.Forms;
@@ -25,12 +27,12 @@ namespace NailBars.Vistas
                     var result = await funcion.RestablecerClvae(txtCorreo.Text);
                     if (result)
                     {
-                        await DisplayAlert("Informacion", "Correo enviado exitosamente.", "Ok");
+                        await App.Current.MainPage.Navigation.PushPopupAsync(new JMDialog("Satisfactorio", "El correo electrónico se a enviado satisfactoriamente.", JMDialog.Success), true);
                         DependencyService.Get<INotification>().CreateNotification("NailBars", "El correo se a enviado exitosamente, para poder restablecer la contraseña debe dar click en el enlace enviado.");
                         await Navigation.PushAsync(new Login());
-                    } else await DisplayAlert("Advertencia", "Por favor revise si su correo esta escrito correctamente", "Ok");
-                } else await DisplayAlert("Advertencia", "El correo electronico no es valido", "Ok");
-            } else await DisplayAlert("Campo vacio", "Debe ingresar el correo electronico", "Ok");
+                    } else await App.Current.MainPage.Navigation.PushPopupAsync(new JMDialog("Advertencia", "Por favor revise si su correo electrónico esta escrito correctamente.", JMDialog.Warning), true);
+                } else await App.Current.MainPage.Navigation.PushPopupAsync(new JMDialog("Advertencia", "El correo electrónico no es valido.", JMDialog.Warning), true);
+            } else await App.Current.MainPage.Navigation.PushPopupAsync(new JMDialog("Advertencia", "Debe ingresar su correo electrónico.", JMDialog.Warning), true);
         }
     }
 }
