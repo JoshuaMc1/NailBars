@@ -2,22 +2,59 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NailBars.Vistas.MensajePago1"
+             BackgroundColor="#bc246c"
+             NavigationPage.HasNavigationBar="False"
              BackgroundImageSource="FondoSUR.jpeg">
 
-    <StackLayout>
+    <ContentPage.Content>
 
-        <Label Text="DETALLE" FontAttributes="Bold" Padding="50"
-               FontSize="Title" HorizontalTextAlignment="Center" TextColor="Black"/>
-        <Label Text="Información de Pago:" FontSize="Medium" Margin="5,15,0,5" TextColor="Black"/>
-        <StackLayout BackgroundColor="White" Padding="10" Margin="10,0,10,0">
+        <StackLayout>
 
-            <Label x:Name="txtsubir" Text="El pago de la cantidad de 130 Lempiras por el servicio de Manicure ha sido completado con éxito!" FontSize="20" Margin="5,0,0,0" TextColor="Black"/>
-            <Label Text="Te esperamos!!" FontSize="20" Margin="5,0,0,0" TextColor="Black"/>
+            <Label Text="DETALLE"
+               FontAttributes="Bold"
+               Margin="0,50,0,70"
+               FontSize="Title"
+               HorizontalTextAlignment="Center"
+               TextColor="Black"/>
+            <Label Text="Información de Pago:"
+               FontSize="Medium"
+               Margin="15,10,0,0"
+               TextColor="Black"/>
+            <StackLayout BackgroundColor="White"
+                     Padding="15"
+                     Margin="20,20,20,20">
+
+                <Label Text="El pago por el servicio se ha completado con éxito!"
+                   FontSize="20"
+                   Margin="5,0,0,0"
+                   TextColor="Black"/>
+                <Label Text="Por favor tome una captura del ticked para validar de forma más rapida el pago de su servicio"
+                   FontSize="20"
+                   Margin="5,0,0,0"
+                   TextColor="Black"/>
+                <Label Text="Te esperamos!!"
+                   FontSize="20"
+                   Margin="5,0,0,0"
+                   TextColor="Black"/>
 
 
-            <Button Text="Reservar" x:Name="Reservaaa" Clicked="Reservaa_Clicked" CornerRadius="25" Margin="50,15,50,0"
+                <Button Text="Aceptar" x:Name="Reservaaa" Clicked="Reservaa_Clicked" CornerRadius="25" Margin="50,15,50,0"
                 TextColor="White" BackgroundColor="#bc246c"/>
 
+            </StackLayout>
+            <Label Text="Ciudad de Siguatepeque, Honduras"
+                   FontSize="15"
+                   Margin="5,90,0,0"
+                   TextColor="Black"/>
+            <Label Text="NailBars Corporación"
+                   FontSize="15"
+                   Margin="5,0,0,0"
+                   TextColor="Black"/>
+            <Image Source="logo.png"
+                   VerticalOptions="Start"
+                   HorizontalOptions="Start"
+                   Margin="10,-20,0,0"
+                   WidthRequest="150"/>
         </StackLayout>
-    </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

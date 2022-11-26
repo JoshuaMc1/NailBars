@@ -2,16 +2,16 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NailBars.Vistas.TutorialIntro.Vista3">
-    <Grid BackgroundColor="#221C27">
+    <Grid BackgroundColor="#bc1463">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
-        <Image Source="https://i.ibb.co/3m6wZDV/v3.png"
+        <Image Source="https://i.pinimg.com/originals/9b/88/7e/9b887e82500a95a697b1302b2d0b8a16.jpg"
                Grid.Row="0"
                Margin="10,0,10,0" />
-        <Label Text="Has tu reservacion"
+        <Label Text="Has tu reservación"
                Grid.Row="1"
                TextColor="White"
                HorizontalOptions="Center"

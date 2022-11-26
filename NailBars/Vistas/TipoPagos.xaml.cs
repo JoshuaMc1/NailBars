@@ -1,4 +1,6 @@
-﻿using System;
+﻿using NailBars.Components;
+using Rg.Plugins.Popup.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -20,13 +22,13 @@ namespace NailBars.Vistas
 
         private async void ButtonPagarSitio_Clicked(object sender, EventArgs e)
         {
-            await DisplayAlert("Aviso", "Pagar en el Sitio?", "Si");
+            await App.Current.MainPage.Navigation.PushPopupAsync(new JMDialog("Aviso", "¿Desea pagar en el local?", JMDialog.Danger), true);
             Application.Current.MainPage = new NavigationPage(new Contenedor());
         }
 
         private async void ButtonPagarTarjeta_Clicked(object sender, EventArgs e)
         {
-            await DisplayAlert("Aviso", "Pagar con Tarjeta Crédito o Debito?", "Si");
+            await App.Current.MainPage.Navigation.PushPopupAsync(new JMDialog("Aviso", "¿Desea pagar con Tarjeta Crédito o Debito?", JMDialog.Danger), true);
             Application.Current.MainPage = new NavigationPage(new PagoReservacion());
         }
 

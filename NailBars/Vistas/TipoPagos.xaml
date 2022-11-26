@@ -7,7 +7,7 @@
     <ContentPage.Content>
         <StackLayout>
 
-            <Label Text="Seleccione el tipo de Pago:" FontAttributes="Bold" Padding="60"
+            <Label Text="Seleccione el tipo de Pago:" FontAttributes="Bold" Margin="0,55,0,100"
                FontSize="Title" HorizontalTextAlignment="Center" TextColor="Black"/>
 
             <Button 

@@ -19,17 +19,7 @@ namespace NailBars.Vistas
 
         public async void Reservaa_Clicked(object sender, EventArgs e)
         {
-            String subir = txtsubir.Text;
-
-            if (txtsubir == null)
-            {
-                await DisplayAlert("Error", "No se puede reallizar el Pago", "OK");
-            }
-            else
-            {
-                await DisplayAlert("AVISO", "RESERVACIÓN EXITOSA", "ACEPTAR");
-                Application.Current.MainPage = new NavigationPage(new Contenedor());
-            }
+            Application.Current.MainPage = new NavigationPage(new Contenedor());
 
         }
     }

@@ -2,27 +2,17 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NailBars.Vistas.TutorialIntro.Vista2">
-    <Grid BackgroundColor="#221C27">
+    <Grid BackgroundColor="#bc1463">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
-        <Image Source="https://i.ibb.co/9ydCJjf/v2.png"
+        <Image Source="https://us.123rf.com/450wm/topvectors/topvectors1704/topvectors170401024/76831165-mujer-que-tiene-un-tratamiento-del-pedicure-en-el-balneario-o-el-sal%C3%B3n-de-belleza-colorido-vector-de.jpg?ver=6"
                Grid.Row="0"
                Margin="10,0,10,0" />
-        <Label Text="Contactanos mas "
+        <Image Source="logounas.png"
                Grid.Row="1"
-               TextColor="White"
-               HorizontalOptions="Center"
-               FontAttributes="Bold"
-               VerticalOptions="Center"
-               FontSize="20" />
-        <Label Text="Rápido"
-               Grid.Row="2"
-               TextColor="White"
-               HorizontalOptions="Center"
-               FontAttributes="Bold"
-               FontSize="60" />
+               HeightRequest="150" />
     </Grid>
 </ContentView>

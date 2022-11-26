@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using NailBars.VistasModelo;
+using NailBars.Components;
+using Rg.Plugins.Popup.Extensions;
 
 namespace NailBars.Vistas
 {
@@ -23,22 +25,21 @@ namespace NailBars.Vistas
         }
 
 
-        public async void Pago_Clicked(object sender, EventArgs e)
+        private async void Btnpagar_Clicked(object sender, EventArgs e)
         {
             String ntarjeta = txttarjeta.Text;
             String cvv = txtcvv.Text;
             String expiracion = txtexpiracion.Text;
-            String pagardinero = txtpagardinero.Text;
-            if (ntarjeta == null || cvv == null || expiracion == null || pagardinero == null)
+            if (ntarjeta == null || cvv == null || expiracion == null)
             {
-                await DisplayAlert("Error", "Campos Vacios", "OK");
+                await App.Current.MainPage.Navigation.PushPopupAsync(new JMDialog("Advertencia", "Hay campos vacios", JMDialog.Warning), true);
+                
             }
             else
             {
-                await DisplayAlert("AVISO", "EL PAGO SE REALIZO EXITOSAMENTE", "ACEPTAR");
+                await App.Current.MainPage.Navigation.PushPopupAsync(new JMDialog("Satisfactorio", "El pago se realizo correctamente", JMDialog.Success), true);
                 Application.Current.MainPage = new NavigationPage(new MensajePago1());
             }
-
         }
 
     }

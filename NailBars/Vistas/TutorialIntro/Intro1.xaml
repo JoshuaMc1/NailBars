@@ -2,10 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vistas="clr-namespace:NailBars.Vistas.TutorialIntro"
+             BackgroundColor="#bc1463"
              x:Class="NailBars.Vistas.TutorialIntro.Intro1">
-    
-    
-    <Grid BackgroundColor="#201F25">
+
+
+    <Grid BackgroundColor="#bc1463">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="50" />
@@ -32,14 +33,14 @@
             </Grid.ColumnDefinitions>
             <IndicatorView x:Name="Indicador"
                            IndicatorColor="White"
-                           SelectedIndicatorColor="#FFD340"
+                           SelectedIndicatorColor="#ff7360"
                            Grid.ColumnSpan="2" />
-            <Button Text="Saltar"
+            <Button Text="Omitir"
                     Grid.Column="1"
-                    BackgroundColor="#FFD340"
+                    BackgroundColor="#ff7360"
                     TextColor="Black"
                     FontAttributes="Bold"
-                    Margin="0,5,5,5"
+                    Margin="0,0,5,10"
                     CornerRadius="20"
                     x:Name="btnSaltar"
                     Clicked="btnSaltar_Clicked" />

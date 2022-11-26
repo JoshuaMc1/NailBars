@@ -4,64 +4,145 @@
              xmlns:local1="clr-namespace:NailBars.Modelo"
              xmlns:fastEntry="clr-namespace:XamarinFastEntrySample.FastEntry;assembly=XamarinFastEntry.Behaviors" 
              x:Class="NailBars.Vistas.PagoReservacion"
+             NavigationPage.HasNavigationBar="False"
              BackgroundImageSource="FondoSUR.jpeg">
 
     <Page.Resources>
         <ResourceDictionary>
-            <local1:CardNumberToImageConverter x:Key="CardConverter" 
-                   Amex="Atlantida.png" Dinners="dinners.png" Discover="discover.png" JCB="Atlantida.png"
-                                              MasterCard="mastercard.png" Visa="visa.jpg"
-                                              NotRecognized="nocard.png"/>
+            <local1:CardNumberToImageConverter x:Key="CardConverter"
+                   Amex="amex.png"
+                   Dinners="dinners.png"
+                   Discover="discover.png"
+                   JCB="jcb.png"
+                   MasterCard="mastercard.png"
+                   Visa="visa.jpg"
+                   NotRecognized="nocard.png"/>
         </ResourceDictionary>
     </Page.Resources>
+    <Grid Padding="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
 
-    <StackLayout >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
 
-        <Label Text="Pago con tarjeta" FontAttributes="Bold" Padding="50"
-               FontSize="Title" HorizontalTextAlignment="Center" TextColor="Black"/>
-        <Label Text="Información de Pago:" FontSize="Medium" Margin="5,15,0,5" TextColor="Black"/>
-        <StackLayout BackgroundColor="White" Padding="10" Margin="10,0,10,0">
-            <Label Text="Número completo de la Tarjeta:" FontSize="20" Margin="5,0,0,0" TextColor="Black"/>
-            <Grid >
-                <Entry  x:Name="txttarjeta" Text="{Binding CardNumber, Mode=TwoWay}" Keyboard="Numeric" Placeholder="#### #### #### ####"
-                 Margin="5,0,150,0"  IsTextPredictionEnabled="True"
-                        TextColor="Black">
+        <Label Text="Información de Pago"
+               Margin="0,40,0,60"
+               FontAttributes="Bold"
+               Grid.Row="0"
+               Grid.Column="0"
+               Grid.ColumnSpan="3"
+               HorizontalOptions="Center"
+               FontSize="30"/>
+
+        <Label Text="Ingrese la información de su tarjeta de crédito/débito"
+               FontSize="Medium"
+               Grid.Row="1"
+               Padding="10"
+               Grid.Column="0"/>
+        <StackLayout Padding="25"
+                     Margin="15,15,15,15"
+                     BackgroundColor="White"
+                     Grid.Row="2"
+                     Grid.Column="0"
+                     Grid.ColumnSpan="3"
+                     VerticalOptions="Center">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+
+                <Label Text="* Número de la tarjeta"
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   Grid.Row="0"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"/>
+                <Entry Text="{Binding CardNumber, Mode=TwoWay}"
+                   x:Name="txttarjeta"
+                   Keyboard="Numeric"
+                   Margin="0,0,20,20"
+                   Placeholder="Número de tarjeta"
+                   Grid.Row="2"
+               Grid.Column="0">
                     <Entry.Behaviors>
-                        <fastEntry:XamarinFastEntryBehaviour Mask="#### #### #### ####" />
+                        <fastEntry:XamarinFastEntryBehaviour Mask="#### #### #### ####" 
+                                                     MaxLength="19"/>
+                    </Entry.Behaviors>
+                </Entry>
+                <Image Grid.Row="2"
+                   Margin="0,0,0,20"
+               Grid.Column="1"
+               Source="{Binding CardNumber,Converter={StaticResource CardConverter}}"/>
+
+                <Label Text="* Vigencia"
+                   FontAttributes="Bold"
+                   FontSize="18"
+                   Grid.Row="3"
+                   Grid.Column="0"
+                   VerticalOptions="Center"/>
+                <Entry Text="{Binding Expiration, Mode=TwoWay}"
+                   Keyboard="Numeric"
+                   Placeholder="MM/YY"
+                   x:Name="txtexpiracion"
+                   Margin="0,0,100,20"
+               Grid.Row="4"
+               Grid.Column="0">
+                    <Entry.Behaviors>
+                        <fastEntry:XamarinFastEntryBehaviour Mask="##/##" 
+                                                     MaxLength="19"/>
                     </Entry.Behaviors>
                 </Entry>
 
+                <Label Text="* CVV"
+                   FontAttributes="Bold"
+                   FontSize="18"
+               Grid.Row="3"
+               Grid.Column="1"
+               VerticalOptions="Center"/>
+                <Entry Text="{Binding CVC, Mode=TwoWay}"
+               Keyboard="Numeric"
+                   x:Name="txtcvv"
+                   Margin="0,0,0,20"
+               Placeholder="CVV"
+               Grid.Row="4"
+               Grid.Column="1">
+                    <Entry.Behaviors>
+                        <fastEntry:XamarinFastEntryBehaviour Mask="###" 
+                                                     MaxLength="3"/>
+                    </Entry.Behaviors>
+                </Entry>
+
+
+                <Button Text="Pagar con tarjeta"
+                    x:Name="btnpagar"
+                    Clicked="Btnpagar_Clicked"
+                Grid.Row="5"
+                Grid.ColumnSpan="3"
+                CornerRadius="10" 
+                TextColor="White"
+                BackgroundColor="#bc1463"
+                Margin="30,10,30,10"/>
             </Grid>
-
-            <Label Text="Fecha Vencimiento (mm/yy):" TextColor="Black" FontSize="20" Margin="5,0,0,0"/>
-            <Entry x:Name="txtexpiracion" Text="{Binding Expiration, Mode=TwoWay}" Keyboard="Numeric"
-               Placeholder="Expiración(11/12) " Margin="5,0,200,0"   IsTextPredictionEnabled="True"
-                        TextColor="Black">
-                <Entry.Behaviors>
-                    <fastEntry:XamarinFastEntryBehaviour Mask="##/##" />
-                </Entry.Behaviors>
-            </Entry>
-
-            <Label Text="CVV/CVC" FontSize="20" Margin="5,0,0,0" TextColor="Black"/>
-            <Entry x:Name="txtcvv" Text="{Binding CVV, Mode=TwoWay}" Keyboard="Numeric" 
-               Placeholder="###" Margin="5,0,320,0"   IsTextPredictionEnabled="True"
-                        TextColor="Black">
-                <Entry.Behaviors>
-                    <fastEntry:XamarinFastEntryBehaviour Mask="###" />
-                </Entry.Behaviors>
-            </Entry>
-
-            <Label Text="Monto a Pagar:" FontSize="20" Margin="5,0,0,0" TextColor="Black"/>
-            <Entry x:Name="txtpagardinero" Text="{Binding Pagardinero, Mode=TwoWay}" Keyboard="Numeric" 
-               Placeholder="###" Margin="5,0,300,0"   IsTextPredictionEnabled="True"
-                        TextColor="Black">
-                <Entry.Behaviors>
-                    <fastEntry:XamarinFastEntryBehaviour Mask="###.00" />
-                </Entry.Behaviors>
-            </Entry>
-
-            <Button Text="Realizar Pago" x:Name="Pago" Clicked="Pago_Clicked" CornerRadius="25" Margin="50,15,50,0"
-                TextColor="White" BackgroundColor="#bc246c"/>
         </StackLayout>
-    </StackLayout>
+
+
+    </Grid>
 </ContentPage>

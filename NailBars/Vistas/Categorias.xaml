@@ -6,8 +6,7 @@
              BackgroundImageSource="FondoSUR.jpeg">
 
     <StackLayout>
-        <Grid
-            Margin="0, 0, 0, 16">
+        <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="120" />
             </Grid.RowDefinitions>
@@ -24,8 +23,7 @@
                     FontSize="28"
                     TextColor="White"
                     FontAttributes="Bold"
-                    HorizontalOptions="Center"
-                    Margin="0,0,0,0" />
+                    HorizontalOptions="Center"/>
             </StackLayout>
         </Grid>
         <ScrollView>
