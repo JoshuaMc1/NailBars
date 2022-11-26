@@ -11,7 +11,7 @@ namespace NailBars
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Intro1());
+            MainPage = new NavigationPage(new Presentacion());
            
         }
 

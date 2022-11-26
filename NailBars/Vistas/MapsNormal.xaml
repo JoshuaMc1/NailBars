@@ -1,25 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:forms1="http://xamarin.com/schemas/2014/forms"
+             BackgroundImageSource="FondoSUR"
              x:Class="NailBars.Vistas.MapsNormal">
-    <ContentPage.Content>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
 
-            <Image Source="mapanuevo.png" Aspect="Fill"
-                   HeightRequest="{OnPlatform Android=500}"
-                   WidthRequest="{OnPlatform  Android=200}">
-            </Image>
-            <Button CornerRadius="8" Margin="35,0,35,50"
-                    Text="Ruta Mas Cercana al Salon"
+    <StackLayout >
+        <Label Text="Salón NailBars"
+               FontAttributes="Bold" 
+               HorizontalOptions="Center"
+               TextColor="white"
+               VerticalOptions="CenterAndExpand"
+               FontSize="30" 
+               Margin="0,30,0,60"/>
+
+        <forms1:CarouselView x:Name="MainCarouselView" Margin="0,-120,0,-10" >
+            <forms1:CarouselView.ItemTemplate>
+                <DataTemplate >
+                    <Image Source="{Binding .}" Margin="0,0,0,-20"></Image>
+                </DataTemplate>
+            </forms1:CarouselView.ItemTemplate>
+        </forms1:CarouselView >
+        <StackLayout Margin="0,-30,0,0">
+            <Label Text="NailBars es un salón de belleza, ubicado en la ciudad de Siguatepeque, contamos con un grupo de especialistas para ofrecer el mejor servicio a nuestros clientes." 
+               HorizontalOptions="Center" 
+               FontSize="15"
+               Margin="10,20,10,80"
+               VerticalOptions="CenterAndExpand" />
+
+            <Button CornerRadius="8" Margin="50,0,50,50"
+                    Text="Ir al Salón"
                     x:Name="btnRutaMapa"
                     Clicked="btnRutaMapa_Clicked"
-                    VerticalOptions="End"
                     BackgroundColor="#bc1463"
                     TextColor="White" />
-        </Grid>
-       
-    </ContentPage.Content>
+        </StackLayout>
+    </StackLayout>
 </ContentPage>

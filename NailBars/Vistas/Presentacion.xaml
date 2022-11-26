@@ -7,8 +7,7 @@
         <Grid
             BackgroundColor="#bc1463">
             <StackLayout VerticalOptions="CenterAndExpand">
-                <Image Source="logo2.png"
-                        HeightRequest="450"
+                <Image Source="logo2.png"                        HeightRequest="450"
                         x:Name="logo"/>
             <Label Text="NailBars" 
                    TextColor="White"

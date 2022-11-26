@@ -28,7 +28,7 @@
                    FontSize="20"
                    Margin="5,0,0,0"
                    TextColor="Black"/>
-                <Label Text="Por favor tome una captura del ticked para validar de forma más rapida el pago de su servicio"
+                <Label Text="Por favor tome una captura del ticket para validar de forma más rápida el pago de su servicio"
                    FontSize="20"
                    Margin="5,0,0,0"
                    TextColor="Black"/>
