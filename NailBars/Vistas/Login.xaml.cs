@@ -67,7 +67,6 @@ namespace NailBars.Vistas
                 {
                     var funcion = new VMcrearcuenta();
                     await funcion.ValidarCuenta(txtUsuercorreo.Text, txtUserPassword.Text);
-
                     Application.Current.MainPage = new NavigationPage(new Contenedor());
                 }
                 else if (tipoUser == "admin")
@@ -81,6 +80,7 @@ namespace NailBars.Vistas
                 {
                     var funcion = new VMcrearcuenta();
                     await funcion.ValidarCuenta(txtUsuercorreo.Text, txtUserPassword.Text);
+
                     Application.Current.MainPage = new NavigationPage(new ContenedorEmpleado());
                 }
                 UserDialogs.Instance.HideLoading();

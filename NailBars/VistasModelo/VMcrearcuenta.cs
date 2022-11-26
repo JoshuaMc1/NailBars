@@ -6,6 +6,8 @@ using NailBars.Servicios;
 using Newtonsoft.Json;
 using Xamarin.Essentials;
 using System.Threading.Tasks;
+using NailBars.Components;
+using Rg.Plugins.Popup.Extensions;
 
 namespace NailBars.VistasModelo
 {
@@ -48,12 +50,20 @@ namespace NailBars.VistasModelo
             var content = await auth.GetFreshAuthAsync();
             var serializartoken = JsonConvert.SerializeObject(auth);
             Preferences.Set("MyFirebaseRefreshToken", serializartoken);
+            string message = "";
+            bool send = false;
 
             if (content.User.IsEmailVerified == false)
             {
-                var action = await App.Current.MainPage.DisplayAlert("Alert", "Su correo electrónico no se ha activado, ¿desea enviar el código de activación de nuevo?", "Si", "No");
+                var popup = new JMConfirmation("Advertencia", "Su correo electrónico no se ha activado ¿desea enviar el código de activación de nuevo?", JMConfirmation.Warning);
+                popup.OnDialogClosed += (s, arg) =>
+                {
+                    message = arg.Message;
+                    send = arg.Success;
+                };
+                await App.Current.MainPage.Navigation.PushPopupAsync(popup, true);
 
-                if (action)
+                if (message.Equals("Accept") || send)
                 {
                     await authProvider.SendEmailVerificationAsync(gettoken);
                 }

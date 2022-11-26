@@ -1,12 +1,93 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
              x:Class="NailBars.Components.JMConfirmation">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
-</ContentPage>
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation 
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="1.2"
+            ScaleOut="0.8"
+            DurationIn="400"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"/>
+    </pages:PopupPage.Animation>
+    <StackLayout 
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" 
+            Padding="25, 25, 25, 25">
+        <Frame
+            CornerRadius="8"
+            HeightRequest="200"
+            VerticalOptions="Center"
+            x:Name="txtVentana"
+            BackgroundColor="#ccf4d0">
+            <StackLayout>
+                <Grid
+                    Padding="8">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        x:Name="txtTitulo"
+                        Text="Titulo"
+                        FontSize="20"
+                        FontAttributes="Bold"
+                        TextColor="#101c1f"/>
+                    <ScrollView
+                        Grid.Row="1"
+                        Grid.Column="0">
+                        <Label
+                            x:Name="txtMensaje"
+                            Text="Mensaje"
+                            FontSize="18"
+                            FontAttributes="Bold"
+                            TextColor="#101c1f"/>
+                    </ScrollView>
+                </Grid>
+                <StackLayout
+                        VerticalOptions="End">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Text="Aceptar"
+                            x:Name="btnAceptar"
+                            BackgroundColor="#101c1f"
+                            CornerRadius="8"
+                            TextColor="White"
+                            HeightRequest="40"
+                            Clicked="btnAceptar_Clicked"/>
+                        <Button
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Text="Cancelar"
+                            x:Name="btnCancelar"
+                            BackgroundColor="#101c1f"
+                            CornerRadius="8"
+                            TextColor="White"
+                            HeightRequest="40"
+                            Clicked="btnCancelar_Clicked"/>
+                    </Grid>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</pages:PopupPage>
