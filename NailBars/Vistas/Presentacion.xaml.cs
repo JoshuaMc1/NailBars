@@ -29,7 +29,6 @@ namespace NailBars.Vistas
             statusbar.CambiarColor();
             ObtenerIdusuario();
             Cerrarsesion();
-
         }
 
         public async Task Animacion()

@@ -20,6 +20,8 @@ namespace NailBars.Vistas
         public Login()
         {
             InitializeComponent();
+            var statusbar = new VMPrincipal();
+            statusbar.Transparente();
         }
 
         private async void btncrearUser_Clicked(object sender, EventArgs e)

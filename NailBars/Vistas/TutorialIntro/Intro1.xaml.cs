@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NailBars.VistasModelo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,8 @@ namespace NailBars.Vistas.TutorialIntro
         public Intro1()
         {
             InitializeComponent();
+            var statusbar = new VMPrincipal();
+            statusbar.Transparente();
         }
 
         private void btnSaltar_Clicked(object sender, EventArgs e)

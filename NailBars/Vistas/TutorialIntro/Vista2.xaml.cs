@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NailBars.VistasModelo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,8 @@ namespace NailBars.Vistas.TutorialIntro
         public Vista2()
         {
             InitializeComponent();
+            var statusbar = new VMPrincipal();
+            statusbar.Transparente();
         }
     }
 }

@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vistas="clr-namespace:NailBars.Vistas.TutorialIntro"
              BackgroundColor="#bc1463"
-             x:Class="NailBars.Vistas.TutorialIntro.Intro1">
+             x:Class="NailBars.Vistas.TutorialIntro.Intro1"
+             NavigationPage.HasNavigationBar="False">
 
 
     <Grid BackgroundColor="#bc1463">
