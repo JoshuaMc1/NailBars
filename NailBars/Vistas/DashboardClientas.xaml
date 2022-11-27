@@ -6,14 +6,11 @@
 
 
     <StackLayout>
-
-
-
-        <Label Text="Dashboard" FontAttributes="Bold" Margin="0,15,0,15"
+        <Label Text="Dashboard" FontAttributes="Bold" Margin="0,40,0,20"
                TextColor="Black" FontSize="25" HorizontalTextAlignment="Center"/>
-                <Label Text="Reservaciones para Hoy"
+                <Label Text="Reservaciones pendientes para hoy"
                            x:Name="encabezado1"
-                           FontSize="22"
+                           FontSize="20"
                            TextColor="Black"
                            FontAttributes="Bold"
                            Margin="10,0,0,0" />
@@ -28,61 +25,79 @@
                                            BackgroundColor="White"
                                            
                                            CornerRadius="8"
-                                           Margin="20,0,20,0">
+                                           Margin="20,10,20,10">
                                         <Grid>
                                             <Grid.RowDefinitions>
                                                 <RowDefinition Height="auto" />
                                                 <RowDefinition Height="auto" />
 
                                             </Grid.RowDefinitions>
-                                            <Frame Grid.Row="0"
+                                <Frame Grid.Row="0"
                                                    BackgroundColor="#bc246c"
                                                    CornerRadius="5"
                                                    >
-                                                <StackLayout >
-                                                    <Label Grid.Row="1"
-                                                           Text="{Binding nombre_usuario}"
-                                                           FontSize="16"
-                                                           TextColor="White"
-                                                           FontAttributes="Bold"
-                                                           HorizontalTextAlignment="Center"
-                                                           HorizontalOptions="Center" />
+                                    <StackLayout >
+                                        <Grid>
 
-                                                    <Label Grid.Row="1"
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+
+
+
+                                            <Label Grid.Row="0"
+                                               Grid.Column="0"
+                                               Text="{Binding nombre_usuario}"
+                                               FontSize="18"
+                                               Padding="1"
+                                               TextColor="White"
+                                               FontAttributes="Bold" />
+
+                                            <Label Text="* Hora de reservación: "
+                                               Grid.Row="1"
+                                               Grid.Column="0"
+                                               FontSize="16"
+                                               TextColor="White"/>
+
+                                            <Label Grid.Row="1"
+                                               Grid.Column="1"
                                                    Text="{Binding hora_Reserv}"
                                                    FontSize="16"
-                                                   TextColor="White"
-                                                   VerticalTextAlignment="Center"
-                                                   HorizontalTextAlignment="Center"
-                                                   VerticalOptions="Center"
-                                                   HorizontalOptions="Center" />
-                                                    <Label Grid.Row="2"
+                                                   TextColor="White" />
+                                            <Label Text="* Nombre del estilista : "
+                                               Grid.Row="2"
+                                               Grid.Column="0"
+                                               FontSize="16"
+                                               TextColor="White"/>
+                                            <Label Grid.Row="2"
+                                               Grid.Column="1"
                                                            Text="{Binding nombreEstilista}"
                                                            FontSize="16"
-                                                           TextColor="White"
-                                                           VerticalTextAlignment="Center"
-                                                           HorizontalTextAlignment="Center"
-                                                           VerticalOptions="Center" />
-                                                </StackLayout>
-                                            </Frame >
-                                            <Frame Grid.Row="1"
-                                                   BackgroundColor="#bc246c"
-                                                   Padding="0"
-                                                   
-                                                   CornerRadius="8"
-                                                   Margin="5,0,5,0">
-
-                                                <Label Grid.Row="0"
+                                                           TextColor="White"/>
+                                            <Label Text="* Tipo de servicio : "
+                                               Grid.Row="3"
+                                               Grid.Column="0"
+                                               FontSize="16"
+                                               TextColor="White"/>
+                                            <Label Grid.Row="3"
+                                               Grid.Column="1"
                                                    Text="{Binding tipo_Reserv}"
                                                    FontSize="16"
-                                                   TextColor="White"
-                                                   VerticalTextAlignment="Center"
-                                                   HorizontalTextAlignment="Center"
-                                                   VerticalOptions="Center"
-                                                   HorizontalOptions="Center" />
-                                            </Frame>
-
+                                                   TextColor="White" />
                                         </Grid>
+                                    </StackLayout>
+                                </Frame >
+
+                            </Grid>
                                     </Frame>
 
                                 </Grid>

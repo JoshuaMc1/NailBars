@@ -87,7 +87,7 @@ namespace NailBars.Vistas
 
             if (tipo == "Cliente")
             {
-                encabezado1.Text = "Reservación para Hoy";
+                encabezado1.Text = "Reservaciones pendientes para Hoy";
 
 
                 VmReservaciones consulta2 = new VmReservaciones();
@@ -104,7 +104,7 @@ namespace NailBars.Vistas
             }
             else if (tipo == "admin")
             {
-                encabezado1.Text = "Pendientes Hoy!!";
+                encabezado1.Text = "Reservaciones pendientes para Hoy!!";
 
 
                 string fec = DateTime.Now.ToString("d/M/yyyy");
@@ -121,7 +121,7 @@ namespace NailBars.Vistas
             }
             else if (tipo == "Empleado")
             {
-                encabezado1.Text = "Pendientes Hoy!!";
+                encabezado1.Text = "Reservaciones pendientes para Hoy!!";
 
 
                 string fec = DateTime.Now.ToString("d/M/yyyy");
