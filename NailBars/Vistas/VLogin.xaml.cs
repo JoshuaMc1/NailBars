@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -20,9 +19,9 @@ namespace NailBars.Vistas
             statusbar.Translucido();
         }
 
-        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        private async void RecuperarClaveTapped(object sender, EventArgs e)
         {
-            DisplayAlert("Hola", "Hola", "Ok");
+            await Navigation.PushAsync(new VRecuperarClave());
         }
 
         private async void GoBackTapped(object sender, EventArgs e)

@@ -1,12 +1,99 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="NailBars.Vistas.VRecuperarClave">
+             Visual="Material"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="NailBars.Vistas.VRecuperarClave"
+             BackgroundImageSource="drawable-xxxhdpi/Login">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <StackLayout
+                HorizontalOptions="StartAndExpand"
+                Padding="10"
+                Margin="10, 35, 0, 0"
+                WidthRequest="270">
+                <Grid
+                    HorizontalOptions="Start"
+                    Margin="0, 0, 0, 35"
+                    x:Name="btnGoBack">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width=".1*"/>
+                        <ColumnDefinition Width=".8*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GoBackTapped"/>
+                    </Grid.GestureRecognizers>
+                    <Image
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Source="flecha"
+                        Aspect="AspectFit"
+                        HeightRequest="20"
+                        WidthRequest="20"/>
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Text="Atras"
+                        FontSize="19"
+                        FontAttributes="Bold"
+                        TextColor="White"/>
+                </Grid>
+                <Label
+                    Text="Recuperar Contraseña"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    FontSize="28"
+                    LineBreakMode="WordWrap"/>
+            </StackLayout>
+            <StackLayout
+                VerticalOptions="EndAndExpand"
+                Padding="35, 35, 35, 15">
+                <StackLayout
+                    Margin="0, 0, 0, 8">
+                    <Frame
+                        Padding="0"
+                        CornerRadius="6"
+                        HasShadow="True">
+                        <Entry
+                            TextColor="White"
+                            BackgroundColor="#E63488"
+                            Keyboard="Email"
+                            Placeholder="Correo electrónico"
+                            PlaceholderColor="White"
+                            IsTextPredictionEnabled="True"
+                            ClearButtonVisibility="WhileEditing"/>
+                    </Frame>
+                </StackLayout>
+                <StackLayout
+                    Margin="0, 0, 0, 30">
+                    <Frame
+                        Padding="8"
+                        BackgroundColor="#E63488"
+                        CornerRadius="10">
+                        <Label 
+                            Text="Se le enviara una clave temporal al correo electronico, 
+                            al ingresar con la clave temporal se le recomienda cambiar la clave de su cuenta."
+                            TextColor="White"
+                            FontSize="12"
+                            FontAttributes="Bold"
+                            LineBreakMode="WordWrap"/>
+                    </Frame>
+                </StackLayout>
+                <StackLayout
+                    Margin="0, 0, 0, 10">
+                    <Button
+                        Text="Recuperar contraseña"
+                        BackgroundColor="#E63488"
+                        TextColor="White"
+                        CornerRadius="10"
+                        Margin="0, 0, 0, 5"
+                        HeightRequest="50"
+                        x:Name="btnRecuperar"/>
+                </StackLayout>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

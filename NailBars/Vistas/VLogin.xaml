@@ -105,7 +105,7 @@
                         HorizontalTextAlignment="End">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer
-                                Tapped="TapGestureRecognizer_Tapped"/>
+                                Tapped="RecuperarClaveTapped"/>
                         </Label.GestureRecognizers>
                     </Label>
                 </StackLayout>

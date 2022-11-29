@@ -16,5 +16,10 @@ namespace NailBars.Vistas
 		{
 			InitializeComponent ();
 		}
-	}
+
+        private async void GoBackTapped(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }
+    }
 }

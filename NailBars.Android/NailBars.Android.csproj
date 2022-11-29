@@ -330,9 +330,6 @@
     <AndroidResource Include="Resources\drawable\drawable-xxxhdpi\Login.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\drawable-xxxhdpi\Pantallapresentacion.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\drawable-xxxhdpi\Registro.png" />
   </ItemGroup>
   <ItemGroup>
@@ -343,6 +340,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\drawable-xxxhdpi\Pantallapresentacion.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

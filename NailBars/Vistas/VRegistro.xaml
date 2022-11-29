@@ -2,11 +2,146 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NailBars.Vistas.VRegistro"
+             Visual="Material"
              NavigationPage.HasNavigationBar="False"
              BackgroundImageSource="drawable-xxxhdpi/Registro">
     <ContentPage.Content>
         <StackLayout>
-            
+            <StackLayout
+                HorizontalOptions="StartAndExpand"
+                Padding="10"
+                Margin="10, 35, 0, 0">
+                <Grid
+                    HorizontalOptions="Start"
+                    Margin="0, 0, 0, 20"
+                    x:Name="btnGoBack">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width=".1*"/>
+                        <ColumnDefinition Width=".8*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GoBackTapped"/>
+                    </Grid.GestureRecognizers>
+                    <Image
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Source="flecha"
+                        Aspect="AspectFit"
+                        HeightRequest="20"
+                        WidthRequest="20"/>
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Text="Atras"
+                        FontSize="19"
+                        FontAttributes="Bold"
+                        TextColor="White"/>
+                </Grid>
+                <Label
+                    Text="Registro"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    FontSize="28"/>
+            </StackLayout>
+            <StackLayout
+                VerticalOptions="EndAndExpand"
+                Padding="35, 35, 35, 15"
+                HeightRequest="490">
+                <ScrollView>
+                    <StackLayout>
+                        <StackLayout
+                            Padding="60, 5, 60, 20">
+                            <Frame 
+                                CornerRadius="100"
+                                Padding="0">
+                                <Image 
+                                    x:Name="txtImagen"
+                                    HeightRequest="200" 
+                                    WidthRequest="200"
+                                    Aspect="Fill"  
+                                    Source="https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Tapped="ImageTapped"
+                                            NumberOfTapsRequired="1" />
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </Frame>
+                            <StackLayout>
+                                <Label 
+                                    Text="Pulse en la imagen para editar" 
+                                    HorizontalOptions="CenterAndExpand"
+                                    FontAttributes="Bold"
+                                    FontSize="14"
+                                    TextColor="White"/>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout
+                            Margin="0, 0, 0, 12">
+                            <Frame
+                                Padding="0"
+                                CornerRadius="6"
+                                HasShadow="True">
+                                <Entry
+                                    TextColor="White"
+                                    BackgroundColor="#E63488"
+                                    Keyboard="Default"
+                                    Placeholder="Nombres"
+                                    PlaceholderColor="White"
+                                    IsTextPredictionEnabled="True"
+                                    ClearButtonVisibility="WhileEditing"/>
+                            </Frame>
+                        </StackLayout>
+                        <StackLayout
+                            Margin="0, 0, 0, 12">
+                            <Frame
+                                Padding="0"
+                                CornerRadius="6"
+                                HasShadow="True">
+                                <Entry
+                                    TextColor="White"
+                                    BackgroundColor="#E63488"
+                                    Keyboard="Email"
+                                    Placeholder="Correo electrónico"
+                                    PlaceholderColor="White"
+                                    IsTextPredictionEnabled="True"
+                                    ClearButtonVisibility="WhileEditing"/>
+                            </Frame>
+                        </StackLayout>
+                        <StackLayout
+                            Margin="0, 0, 0, 52">
+                            <Frame
+                                Padding="0"
+                                CornerRadius="6"
+                                HasShadow="True">
+                                <Entry
+                                    TextColor="White"
+                                    BackgroundColor="#E63488"
+                                    Keyboard="Default"
+                                    Placeholder="Contraseña"
+                                    PlaceholderColor="White"
+                                    IsTextPredictionEnabled="True"
+                                    IsPassword="True"
+                                    ClearButtonVisibility="WhileEditing"/>
+                            </Frame>
+                        </StackLayout>
+                        <StackLayout
+                            Margin="0, 0, 0, 10">
+                            <Button
+                                Text="Registrarse"
+                                BackgroundColor="#E63488"
+                                TextColor="White"
+                                CornerRadius="10"
+                                Margin="0, 0, 0, 5"
+                                HeightRequest="50"
+                                x:Name="btnRegistrar"/>
+                        </StackLayout>
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

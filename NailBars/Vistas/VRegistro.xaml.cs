@@ -19,5 +19,15 @@ namespace NailBars.Vistas
             var statusbar = new VMPrincipal();
             statusbar.Translucido();
         }
+
+        private async void GoBackTapped(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }
+
+        private void ImageTapped(object sender, EventArgs e)
+        {
+
+        }
     }
 }
