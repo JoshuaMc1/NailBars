@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NailBars.Vistas.VIntro"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundImageSource="drawable-xxxhdpi/Pantallapresentacion">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <Image
+                    Source="logo2"
+                    Aspect="AspectFill"/>
+            </StackLayout>
+            <StackLayout
+                VerticalOptions="EndAndExpand"
+                Padding="60">
+                <Button
+                    Text="Iniciar sesión"
+                    BackgroundColor="#E63488"
+                    TextColor="White"
+                    CornerRadius="10"
+                    Margin="0, 0, 0, 5"
+                    x:Name="btnIniciarSesion"
+                    Clicked="btnIniciarSesion_Clicked"/>
+                <Button
+                    Text="Registrarse"
+                    BackgroundColor="#E63488"
+                    TextColor="White"
+                    CornerRadius="10"
+                    x:Name="btnRegistrarse"
+                    Clicked="btnRegistrarse_Clicked"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
