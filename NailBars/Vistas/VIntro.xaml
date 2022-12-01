@@ -8,6 +8,7 @@
         <StackLayout>
             <StackLayout>
                 <Image
+                    x:Name="logo"
                     Source="logo2"
                     Aspect="AspectFill"/>
             </StackLayout>

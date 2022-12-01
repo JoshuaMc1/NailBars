@@ -257,7 +257,7 @@ namespace NailBars.Vistas
         private void btncerrar_Clicked(object sender, EventArgs e)
         {
             Preferences.Remove("MyFirebaseRefreshToken");
-            Application.Current.MainPage = new NavigationPage(new Login());
+            Application.Current.MainPage = new NavigationPage(new VIntro());
         }
 
 

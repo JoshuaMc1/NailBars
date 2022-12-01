@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:estrellas="clr-namespace:Messier16.Forms.Controls;assembly=Messier16.Forms.Controls"
-             x:Class="NailBars.Vistas.DashboardClientas">
+             x:Class="NailBars.Vistas.DashboardClientas"
+             NavigationPage.HasNavigationBar="False">
 
 
     <StackLayout>

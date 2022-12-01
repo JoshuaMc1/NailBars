@@ -4,7 +4,8 @@
              xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
              xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              xmlns:estrellas="clr-namespace:Messier16.Forms.Controls;assembly=Messier16.Forms.Controls"
-             x:Class="NailBars.Vistas.Calificar">
+             x:Class="NailBars.Vistas.Calificar"
+             NavigationPage.HasNavigationBar="False">
     
     <Grid Margin="30">
         <yummy:PancakeView  CornerRadius="5"

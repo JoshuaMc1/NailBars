@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:forms1="http://xamarin.com/schemas/2014/forms"
              BackgroundImageSource="FondoSUR"
-             x:Class="NailBars.Vistas.MapsNormal">
+             x:Class="NailBars.Vistas.MapsNormal"
+             NavigationPage.HasNavigationBar="False">
 
     <StackLayout >
         <Label Text="Salón NailBars"

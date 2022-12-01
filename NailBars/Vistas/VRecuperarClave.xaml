@@ -58,6 +58,7 @@
                         CornerRadius="6"
                         HasShadow="True">
                         <Entry
+                            x:Name="txtCorreo"
                             TextColor="White"
                             BackgroundColor="#E63488"
                             Keyboard="Email"
@@ -91,7 +92,8 @@
                         CornerRadius="10"
                         Margin="0, 0, 0, 5"
                         HeightRequest="50"
-                        x:Name="btnRecuperar"/>
+                        x:Name="btnRecuperar"
+                        Clicked="btnRecuperar_Clicked"/>
                 </StackLayout>
             </StackLayout>
         </StackLayout>

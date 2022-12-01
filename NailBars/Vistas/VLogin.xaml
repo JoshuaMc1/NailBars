@@ -61,6 +61,7 @@
                         CornerRadius="6"
                         HasShadow="True">
                         <Entry
+                            x:Name="txtUsuercorreo"
                             TextColor="White"
                             BackgroundColor="#E63488"
                             Keyboard="Email"
@@ -83,6 +84,7 @@
                         CornerRadius="6"
                         HasShadow="True">
                         <Entry
+                            x:Name="txtUserPassword"
                             TextColor="White"
                             BackgroundColor="#E63488"
                             Keyboard="Text"
@@ -118,7 +120,8 @@
                         CornerRadius="10"
                         Margin="0, 0, 0, 5"
                         HeightRequest="50"
-                        x:Name="btnIniciarSesion"/>
+                        x:Name="btnIniciarSesion"
+                        Clicked="btnIniciarSesion_Clicked"/>
                 </StackLayout>
             </StackLayout>
         </StackLayout>

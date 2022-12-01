@@ -7,7 +7,8 @@
             BarTextColor="#5A0F2E"
             BarBackgroundColor=" #FFA67E"
             SelectedTabColor="White"
-            UnselectedTabColor="#5A0F2E">
+            UnselectedTabColor="#5A0F2E"
+            NavigationPage.HasNavigationBar="False">
     
  
     <local2:Servicios Title="Historial"

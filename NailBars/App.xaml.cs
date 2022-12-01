@@ -11,8 +11,8 @@ namespace NailBars
         {
             InitializeComponent();
 
-            //MainPage = new NavigationPage(new VIntro());
-            MainPage = new NavigationPage(new Presentacion());
+            MainPage = new NavigationPage(new VIntro());
+            //MainPage = new NavigationPage(new Presentacion());
         }
 
         protected override void OnStart()
