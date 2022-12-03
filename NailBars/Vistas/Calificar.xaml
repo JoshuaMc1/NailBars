@@ -6,16 +6,16 @@
              xmlns:estrellas="clr-namespace:Messier16.Forms.Controls;assembly=Messier16.Forms.Controls"
              x:Class="NailBars.Vistas.Calificar"
              NavigationPage.HasNavigationBar="False">
-    
-    <Grid Margin="30">
+
+    <Grid Margin="30" HeightRequest="540" VerticalOptions="Center" HorizontalOptions="Center">
         <yummy:PancakeView  CornerRadius="5"
                             BackgroundGradientStartPoint="0,1"
                             BackgroundGradientEndPoint="0,0">
             <yummy:PancakeView.BackgroundGradientStops>
                 <yummy:GradientStopCollection>
-                    <yummy:GradientStop Color="#F54B30"
+                    <yummy:GradientStop Color="	#FFFFFF"
                                         Offset="0" />
-                    <yummy:GradientStop Color="#E83C40"
+                    <yummy:GradientStop Color="	#FFFFFF"
                                         Offset="0.8" />
                 </yummy:GradientStopCollection>
             </yummy:PancakeView.BackgroundGradientStops>
@@ -30,7 +30,7 @@
                        Text="Tu calificación es importante"
                        HorizontalOptions="Center"
                        FontAttributes="Bold"
-                       TextColor="White"
+                       TextColor="Black"
                        FontSize="18"
                        VerticalOptions="Center"
                        x:Name="lblTitulo" />
@@ -41,15 +41,16 @@
                                      FillColor="#F8AB37" />
                 <Entry Grid.Row="2"
                        Placeholder="Deja una reseña, cuenta tu experiencia"
-                       TextColor="White"
+                       TextColor="Black"
                        PlaceholderColor="White"
                        FontSize="16"
                        x:Name="txtreseña"
                        Margin="7,0,7,0" />
                 <Button Grid.Row="3"
-                        TextColor="#262626"
+                        TextColor="White"
                         FontAttributes="Bold"
-                        BackgroundColor="#FFD33F"
+                        BackgroundColor="#bc246c
+"
                         CornerRadius="5"
                         HorizontalOptions="Center"
                         WidthRequest="120"
