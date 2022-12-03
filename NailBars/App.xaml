@@ -4,5 +4,72 @@
              xmlns:Platform="Using:Xamarin.Forms.Platform"
              x:Class="NailBars.App">
     <Application.Resources>
+        <Style 
+            x:Key="stlMainFrame" 
+            TargetType="Frame">
+            <Setter 
+                Property="TranslationY"    
+                Value="{OnPlatform iOS='-150', Android='-33'}"/>
+            <Setter 
+                Property="HeightRequest"   
+                Value="{OnPlatform iOS='120', Android='340'}"/>
+            <Setter 
+                Property="HasShadow"       
+                Value="False" />
+        </Style>
+
+        <Style 
+            x:Key="stlContactBtn" 
+            TargetType="Button">
+            <Setter 
+                Property="TranslationY"     
+                Value="-50"/>
+            <Setter 
+                Property="TranslationX"     
+                Value="45"/>
+            <Setter 
+                Property="BackgroundColor"  
+                Value="#2193f3"/>
+            <Setter 
+                Property="WidthRequest"     
+                Value="56"/>
+            <Setter 
+                Property="HeightRequest"    
+                Value="56"/>
+            <Setter 
+                Property="CornerRadius"     
+                Value="28"/>
+        </Style>
+
+        <Style 
+            x:Key="stlBoardTitle" 
+            TargetType="Label">
+            <Setter
+                Property="Padding"           
+                Value="0,30,0,5"/>
+            <Setter 
+                Property="TextColor"         
+                Value="#a5a2a2"/>
+            <Setter 
+                Property="FontSize"          
+                Value="16"/>
+            <Setter 
+                Property="HorizontalOptions" 
+                Value="Center"/>
+        </Style>
+
+        <Style 
+            x:Key="stlBoardDesc" 
+            TargetType="Label">
+            <Setter 
+                Property="FontAttributes"    
+                Value="Bold"/>
+            <Setter 
+                Property="FontSize"          
+                Value="16" />
+            <Setter 
+                Property="HorizontalOptions" 
+                Value="Center"/>
+        </Style>
     </Application.Resources>
 </Application>

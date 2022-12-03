@@ -3,11 +3,61 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NailBars.Vistas.VPerfil"
              Visual="Material"
-             NavigationPage.HasNavigationBar="False"
-             BackgroundImageSource="drawable-xxxhdpi/Pantallapresentacion">
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout>
-            
+            <Grid BackgroundColor="White">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Image 
+                    x:Name="imagenCelular"
+                    Grid.Row="0" 
+                    Source="https://fotografias.antena3.com/clipping/cmsimages01/2021/05/02/26E03450-C5FB-4D16-BC9B-B282AE784352/57.jpg" 
+                    VerticalOptions="Start"
+                    Aspect="AspectFill"
+                    HeightRequest="380"/>
+            </Grid>
+            <StackLayout Grid.Row="0" BackgroundColor="White" VerticalOptions="End">
+                <Frame CornerRadius="40" Style="{StaticResource stlMainFrame}">
+                    <StackLayout>
+                        <StackLayout
+                            Margin="0, 0, 0, 12">
+                            <Frame
+                                Padding="0"
+                                CornerRadius="6"
+                                HasShadow="True">
+                                <Entry 
+                                    x:Name="txtNombres"
+                                    TextColor="White"
+                                    BackgroundColor="#E63488"
+                                    Keyboard="Email"
+                                    Placeholder="Nombres"
+                                    PlaceholderColor="White"
+                                    IsTextPredictionEnabled="True"
+                                    ClearButtonVisibility="WhileEditing"/>
+                            </Frame>
+                        </StackLayout>
+                        <StackLayout
+                            Margin="0, 0, 0, 12">
+                            <Frame
+                                Padding="0"
+                                CornerRadius="6"
+                                HasShadow="True">
+                                <Entry 
+                                    x:Name="txtUsuercorreo"
+                                    TextColor="White"
+                                    BackgroundColor="#E63488"
+                                    Keyboard="Email"
+                                    Placeholder="Correo electrónico"
+                                    PlaceholderColor="White"
+                                    IsTextPredictionEnabled="True"
+                                    ClearButtonVisibility="WhileEditing"/>
+                            </Frame>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
