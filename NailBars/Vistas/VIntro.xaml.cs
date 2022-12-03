@@ -23,8 +23,8 @@ namespace NailBars.Vistas
         {
             InitializeComponent(); 
             var statusbar = new VMPrincipal();
-            statusbar.Translucido();
-            UserDialogs.Instance.ShowLoading("Buscando sesión activa...");
+            statusbar.CambiarColor();
+            UserDialogs.Instance.ShowLoading("Buscando sesión activa");
             ObtenerIdusuario();
             Cerrarsesion();
         }

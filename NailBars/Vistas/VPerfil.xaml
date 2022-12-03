@@ -6,56 +6,157 @@
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout>
-            <Grid BackgroundColor="White">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-                <Image 
-                    x:Name="imagenCelular"
-                    Grid.Row="0" 
-                    Source="https://fotografias.antena3.com/clipping/cmsimages01/2021/05/02/26E03450-C5FB-4D16-BC9B-B282AE784352/57.jpg" 
-                    VerticalOptions="Start"
-                    Aspect="AspectFill"
-                    HeightRequest="380"/>
-            </Grid>
+            <AbsoluteLayout>
+                <Grid BackgroundColor="White">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Image 
+                        x:Name="imagenCelular"
+                        Grid.Row="0" 
+                        VerticalOptions="Start"
+                        Aspect="Fill"
+                        HeightRequest="345"
+                        WidthRequest="393"/>
+                </Grid>
+                <RelativeLayout>
+                    <ImageButton
+                        Source="cameraicon"
+                        WidthRequest="50"
+                        HeightRequest="50"
+                        Aspect="AspectFill"
+                        CornerRadius="25"
+                        RelativeLayout.XConstraint="330"
+                        RelativeLayout.YConstraint="230"
+                        RelativeLayout.WidthConstraint="50"
+                        RelativeLayout.HeightConstraint="50"
+                        BackgroundColor="#E63488"/>
+                </RelativeLayout>
+            </AbsoluteLayout>
             <StackLayout Grid.Row="0" BackgroundColor="White" VerticalOptions="End">
                 <Frame CornerRadius="40" Style="{StaticResource stlMainFrame}">
-                    <StackLayout>
-                        <StackLayout
-                            Margin="0, 0, 0, 12">
-                            <Frame
-                                Padding="0"
-                                CornerRadius="6"
-                                HasShadow="True">
-                                <Entry 
-                                    x:Name="txtNombres"
-                                    TextColor="White"
-                                    BackgroundColor="#E63488"
-                                    Keyboard="Email"
-                                    Placeholder="Nombres"
-                                    PlaceholderColor="White"
-                                    IsTextPredictionEnabled="True"
-                                    ClearButtonVisibility="WhileEditing"/>
-                            </Frame>
+                    <ScrollView>
+                        <StackLayout>
+                            <StackLayout
+                                Margin="0, 0, 0, 20">
+                                <Label
+                                    Text="Datos personales"
+                                    TextColor="DarkGray"
+                                    FontAttributes="Bold"/>
+                                <StackLayout
+                                    Margin="0, 0, 0, 12">
+                                    <Frame
+                                        Padding="0"
+                                        CornerRadius="6"
+                                        HasShadow="True">
+                                        <Entry 
+                                            x:Name="txtNombres"
+                                            TextColor="White"
+                                            BackgroundColor="#E63488"
+                                            Keyboard="Plain"
+                                            Placeholder="Nombres"
+                                            PlaceholderColor="White"
+                                            IsTextPredictionEnabled="True"
+                                            ClearButtonVisibility="WhileEditing"/>
+                                    </Frame>
+                                </StackLayout>
+                                <StackLayout
+                                    Margin="0, 0, 0, 12">
+                                    <Frame
+                                        Padding="0"
+                                        CornerRadius="6"
+                                        HasShadow="True">
+                                        <Entry 
+                                            x:Name="txtUsuercorreo"
+                                            TextColor="White"
+                                            BackgroundColor="#E63488"
+                                            Keyboard="Email"
+                                            Placeholder="Correo electrónico"
+                                            PlaceholderColor="White"
+                                            IsTextPredictionEnabled="True"
+                                            ClearButtonVisibility="WhileEditing"/>
+                                    </Frame>
+                                </StackLayout>
+                                <StackLayout>
+                                    <Button
+                                        Text="Actualizar datos"
+                                        TextColor="White"
+                                        CornerRadius="6"
+                                        BackgroundColor="#bc246c"/>
+                                </StackLayout>
+                            </StackLayout>
+                            <StackLayout
+                                Margin="0, 0, 0, 20">
+                                <Label
+                                    Text="Cambio de contraseña"
+                                    TextColor="DarkGray"
+                                    FontAttributes="Bold"/>
+                                <StackLayout
+                                    Margin="0, 0, 0, 12">
+                                    <Frame
+                                        Padding="0"
+                                        CornerRadius="6"
+                                        HasShadow="True">
+                                        <Entry 
+                                            x:Name="txtOldPassword"
+                                            TextColor="White"
+                                            BackgroundColor="#E63488"
+                                            Keyboard="Plain"
+                                            Placeholder="Contraseña actual"
+                                            PlaceholderColor="White"
+                                            IsTextPredictionEnabled="True"
+                                            ClearButtonVisibility="WhileEditing"
+                                            IsPassword="True"/>
+                                    </Frame>
+                                </StackLayout>
+                                <StackLayout
+                                    Margin="0, 0, 0, 12">
+                                    <Frame
+                                        Padding="0"
+                                        CornerRadius="6"
+                                        HasShadow="True">
+                                        <Entry 
+                                            x:Name="txtNewPassword"
+                                            TextColor="White"
+                                            BackgroundColor="#E63488"
+                                            Keyboard="Plain"
+                                            Placeholder="Nueva contraseña"
+                                            PlaceholderColor="White"
+                                            IsTextPredictionEnabled="True"
+                                            ClearButtonVisibility="WhileEditing"
+                                            IsPassword="True"/>
+                                    </Frame>
+                                </StackLayout>
+                                <StackLayout>
+                                    <Button
+                                        Text="Actualizar contraseña"
+                                        TextColor="White"
+                                        CornerRadius="6"
+                                        BackgroundColor="#bc246c"/>
+                                </StackLayout>
+                            </StackLayout>
+                            <StackLayout>
+                                <Label
+                                    Text="Opciónes de cuenta"
+                                    TextColor="DarkGray"
+                                    FontAttributes="Bold"/>
+                                <StackLayout>
+                                    <Button
+                                        Text="Cerrar sesión"
+                                        TextColor="White"
+                                        CornerRadius="6"
+                                        BackgroundColor="#AB1B1B"/>
+                                </StackLayout>
+                                <StackLayout>
+                                    <Button
+                                        Text="Eliminar cuenta"
+                                        TextColor="White"
+                                        CornerRadius="6"
+                                        BackgroundColor="#AB1B1B"/>
+                                </StackLayout>
+                            </StackLayout>
                         </StackLayout>
-                        <StackLayout
-                            Margin="0, 0, 0, 12">
-                            <Frame
-                                Padding="0"
-                                CornerRadius="6"
-                                HasShadow="True">
-                                <Entry 
-                                    x:Name="txtUsuercorreo"
-                                    TextColor="White"
-                                    BackgroundColor="#E63488"
-                                    Keyboard="Email"
-                                    Placeholder="Correo electrónico"
-                                    PlaceholderColor="White"
-                                    IsTextPredictionEnabled="True"
-                                    ClearButtonVisibility="WhileEditing"/>
-                            </Frame>
-                        </StackLayout>
-                    </StackLayout>
+                    </ScrollView>
                 </Frame>
             </StackLayout>
         </StackLayout>

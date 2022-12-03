@@ -22,6 +22,8 @@ namespace NailBars.Vistas
         public VPerfil()
         {
             InitializeComponent();
+            var statusbar = new VMPrincipal();
+            statusbar.CambiarColor();
             ObtenerIdusuario();
         }
 
@@ -43,11 +45,8 @@ namespace NailBars.Vistas
             }
             catch (Exception)
             {
-
                 await DisplayAlert("Alerta", "Sesion expirada", "OK");
             }
-
-
         }
 
         private async Task ObtenerDatoUsuario()

@@ -18,7 +18,7 @@
                        IconImageSource="dashboard.png" />
     <local1:MapsNormal Title="Mapa"   
                        IconImageSource="mapa.png" />
-    <local1:MiPerfil   Title="Perfil"               
+    <local1:VPerfil   Title="Perfil"               
                        IconImageSource="user.png" />
 
 </TabbedPage>
