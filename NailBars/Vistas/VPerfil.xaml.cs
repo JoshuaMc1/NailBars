@@ -97,11 +97,11 @@ namespace NailBars.Vistas
         private async void btnActualizarClave_Clicked(object sender, EventArgs e)
         {
             UserDialogs.Instance.ShowLoading("Procesando Solicitud...");
-            if (txtOldPassword.Text.Trim().Length > 0 && txtOldPassword.Text.Trim().Length > 6)
+            if (!string.IsNullOrEmpty(txtOldPassword.Text))
             {
-                if (txtNewPassword.Text.Trim().Length > 0 && txtNewPassword.Text.Trim().Length > 6)
+                if (!string.IsNullOrEmpty(txtNewPassword.Text))
                 {
-                    if (txtOldPassword.Text.Trim().Equals(txtNewPassword.Text.Trim()))
+                    if (txtOldPassword.Text.Equals(txtNewPassword.Text))
                     {
                         VMusuarios funcion = new VMusuarios();
                         bool response = await funcion.ChangePassword(txtNewPassword.Text.Trim());

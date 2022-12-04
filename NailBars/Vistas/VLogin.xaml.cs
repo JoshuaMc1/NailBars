@@ -39,19 +39,16 @@ namespace NailBars.Vistas
             {
                 if (!string.IsNullOrEmpty(txtUserPassword.Text))
                 {
-                    UserDialogs.Instance.ShowLoading("Validando Usuario...");
-
-                    await validarDatos();
+                    if (txtUsuercorreo.Text.Contains("@") && txtUsuercorreo.Text.Contains("."))
+                    {
+                        UserDialogs.Instance.ShowLoading("Validando Usuario...");
+                        await validarDatos();
+                    }
+                    else await App.Current.MainPage.Navigation.PushPopupAsync(new JMDialog("Advertencia", "El correo electrónico no es valido.", JMDialog.Warning), true);
                 }
-                else
-                {
-                    await App.Current.MainPage.Navigation.PushPopupAsync(new JMDialog("Advertencia", "Debe ingresar su contraseña.", JMDialog.Warning), true);
-                }
+                else await App.Current.MainPage.Navigation.PushPopupAsync(new JMDialog("Advertencia", "Debe ingresar su contraseña.", JMDialog.Warning), true);
             }
-            else
-            {
-                await App.Current.MainPage.Navigation.PushPopupAsync(new JMDialog("Advertencia", "Debe ingresar su correo electrónico.", JMDialog.Warning), true);
-            }
+            else await App.Current.MainPage.Navigation.PushPopupAsync(new JMDialog("Advertencia", "Debe ingresar su correo electrónico.", JMDialog.Warning), true);
         }
 
         private async Task validarDatos()

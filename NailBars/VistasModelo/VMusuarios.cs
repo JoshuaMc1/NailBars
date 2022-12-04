@@ -41,7 +41,6 @@ namespace NailBars.VistasModelo
                 parametros.Correo = rdr.Object.Correo;
                 parametros.IdUsuariosClientes = rdr.Object.IdUsuariosClientes;
                 Usuarios.Add(parametros);
-
             }
             return Usuarios;
         }

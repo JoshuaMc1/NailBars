@@ -11,16 +11,16 @@
             NavigationPage.HasNavigationBar="False">
     
     
-    <local1:Categorias Title="Menu"
-                       IconImageSource="home.png" />
+    <!--<local1:Categorias Title="Menu"
+                       IconImageSource="home.png" />-->
     
     <local2:Servicios Title="Historial"
                       IconImageSource="servicios.png" />
-    
-    <local1:MiPerfil   Title="Mi Cuenta"
-                       IconImageSource="user.png" />
-    
-    <local1:AgregarEmpledos Title="Agregar Empleado"
+
+    <local1:VAgregarEmpleado Title="Agregar Empleado"
                             IconImageSource="user.png" />
-    
+
+    <local1:VPerfil   Title="Mi Cuenta"
+                       IconImageSource="user.png" />
+
 </TabbedPage>

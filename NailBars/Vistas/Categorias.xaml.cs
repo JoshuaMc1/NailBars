@@ -22,15 +22,8 @@ namespace NailBars.Vistas
             InitializeComponent();
         }
 
-        private async Task mostrarCategorias()
-        {
-            var funcion = new VMcategorias();
-            var dt = await funcion.MostrarCategoriasNormal();
-        }
-
         protected override async void OnAppearing()
         {
-            await mostrarCategorias();
             await ObtenerIdusuario();
         }
 
@@ -40,12 +33,8 @@ namespace NailBars.Vistas
             {
                 var authProvider = new FirebaseAuthProvider(new FirebaseConfig(Conexionfirebase.WebapyFirebase));
                 var guardarId = JsonConvert.DeserializeObject<FirebaseAuth>(Preferences.Get("MyFirebaseRefreshToken", ""));
-                var RefrescarContenido = await authProvider.RefreshAuthAsync(guardarId);
-                Preferences.Set("MyFirebaseRefreshToken", JsonConvert.SerializeObject(RefrescarContenido));
                 IdusuarioUser = guardarId.User.LocalId;
 
-                await validarTipoUser();
-                await validarTipoUser();
                 await validarTipoUser();
             }
             catch (Exception)
