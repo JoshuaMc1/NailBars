@@ -35,6 +35,7 @@ namespace NailBars.VistasModelo
             var content = await auth.GetFreshAuthAsync();
             var serializartoken = JsonConvert.SerializeObject(auth);
             Preferences.Set("MyFirebaseRefreshToken", serializartoken);
+            Preferences.Set("MyToken", gettoken);
 
             if (content.User.IsEmailVerified == false)
             {
@@ -50,6 +51,7 @@ namespace NailBars.VistasModelo
             var content = await auth.GetFreshAuthAsync();
             var serializartoken = JsonConvert.SerializeObject(auth);
             Preferences.Set("MyFirebaseRefreshToken", serializartoken);
+            Preferences.Set("MyToken", gettoken);
             string message = "";
             bool send = false;
 

@@ -1,12 +1,16 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Firebase.Auth;
 using Firebase.Database.Query;
 using Firebase.Storage;
+using NailBars.Components;
 using NailBars.Modelo;
 using NailBars.Servicios;
-
+using Rg.Plugins.Popup.Extensions;
+using Xamarin.Essentials;
 
 namespace NailBars.VistasModelo
 {
@@ -64,7 +68,7 @@ namespace NailBars.VistasModelo
 
         public async Task<string> SubirImagenesStorage(Stream ImagenStream, string Idusuarios)
         {
-            var dataAlmacenamiento = await new FirebaseStorage("nailbars-9dde3.appspot.com")
+            var dataAlmacenamiento = await new FirebaseStorage("nailbars-c75a5.appspot.com")
                 .Child("UsuariosClientes")
                 .Child(Idusuarios + ".jpg")
                 .PutAsync(ImagenStream);
@@ -93,17 +97,36 @@ namespace NailBars.VistasModelo
                 });
         }
 
-        public async Task EliminarUsuarios(MusuariosClientes parametros)
+        public async Task<bool> EliminarUsuarios(string clientid)
         {
-            var data = (await Conexionfirebase.firebase
-                .Child("UsuariosClientes")
-                .OnceAsync<MusuariosClientes>()).Where((a) => a.Key == parametros.Id_usuario).FirstOrDefault();
-            await Conexionfirebase.firebase.Child("UsuariosClientes").Child(data.Key).DeleteAsync();
+            try
+            {
+                var authProvider = new FirebaseAuthProvider(new FirebaseConfig(Conexionfirebase.WebapyFirebase));
+                await authProvider.DeleteUserAsync(Preferences.Get("MyToken", "default_value"));
+                await Conexionfirebase.firebase.Child("UsuariosClientes/" + clientid).DeleteAsync();
+                return true;
+            } catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public async Task<bool> ChangePassword(string newPassword)
+        {
+            try
+            {
+                var authProvider = new FirebaseAuthProvider(new FirebaseConfig(Conexionfirebase.WebapyFirebase));
+                await authProvider.ChangeUserPassword(Preferences.Get("MyToken", "default_value"), newPassword);
+                return true;
+            } catch(Exception)
+            {
+                return false;
+            }
         }
 
         public async Task EliminarImagen(string nombre)
         {
-            await new FirebaseStorage("nailbars-9dde3.appspot.com")
+            await new FirebaseStorage("nailbars-c75a5.appspot.com")
                 .Child("UsuariosClientes")
                 .Child(nombre)
                 .DeleteAsync();

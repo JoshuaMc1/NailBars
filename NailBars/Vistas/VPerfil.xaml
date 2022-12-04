@@ -21,6 +21,7 @@
                 </Grid>
                 <RelativeLayout>
                     <ImageButton
+                        x:Name="btnFoto"
                         Source="cameraicon"
                         WidthRequest="50"
                         HeightRequest="50"
@@ -30,7 +31,8 @@
                         RelativeLayout.YConstraint="230"
                         RelativeLayout.WidthConstraint="50"
                         RelativeLayout.HeightConstraint="50"
-                        BackgroundColor="#E63488"/>
+                        BackgroundColor="#E63488"
+                        Clicked="btnFoto_Clicked"/>
                 </RelativeLayout>
             </AbsoluteLayout>
             <StackLayout Grid.Row="0" BackgroundColor="White" VerticalOptions="End">
@@ -67,22 +69,25 @@
                                         CornerRadius="6"
                                         HasShadow="True">
                                         <Entry 
-                                            x:Name="txtUsuercorreo"
+                                            x:Name="txtCorreo"
                                             TextColor="White"
                                             BackgroundColor="#E63488"
                                             Keyboard="Email"
                                             Placeholder="Correo electrónico"
                                             PlaceholderColor="White"
                                             IsTextPredictionEnabled="True"
-                                            ClearButtonVisibility="WhileEditing"/>
+                                            ClearButtonVisibility="WhileEditing"
+                                            IsEnabled="False"/>
                                     </Frame>
                                 </StackLayout>
                                 <StackLayout>
                                     <Button
+                                        x:Name="btnActualizarDatos"
                                         Text="Actualizar datos"
                                         TextColor="White"
                                         CornerRadius="6"
-                                        BackgroundColor="#bc246c"/>
+                                        BackgroundColor="#bc246c"
+                                        Clicked="btnActualizarDatos_Clicked"/>
                                 </StackLayout>
                             </StackLayout>
                             <StackLayout
@@ -102,7 +107,7 @@
                                             TextColor="White"
                                             BackgroundColor="#E63488"
                                             Keyboard="Plain"
-                                            Placeholder="Contraseña actual"
+                                            Placeholder="Nueva contraseña"
                                             PlaceholderColor="White"
                                             IsTextPredictionEnabled="True"
                                             ClearButtonVisibility="WhileEditing"
@@ -120,7 +125,7 @@
                                             TextColor="White"
                                             BackgroundColor="#E63488"
                                             Keyboard="Plain"
-                                            Placeholder="Nueva contraseña"
+                                            Placeholder="Repetir nueva contraseña"
                                             PlaceholderColor="White"
                                             IsTextPredictionEnabled="True"
                                             ClearButtonVisibility="WhileEditing"
@@ -129,10 +134,12 @@
                                 </StackLayout>
                                 <StackLayout>
                                     <Button
+                                        x:Name="btnActualizarClave"
                                         Text="Actualizar contraseña"
                                         TextColor="White"
                                         CornerRadius="6"
-                                        BackgroundColor="#bc246c"/>
+                                        BackgroundColor="#bc246c"
+                                        Clicked="btnActualizarClave_Clicked"/>
                                 </StackLayout>
                             </StackLayout>
                             <StackLayout>
@@ -142,17 +149,21 @@
                                     FontAttributes="Bold"/>
                                 <StackLayout>
                                     <Button
+                                        x:Name="btnCerrarSesion"
                                         Text="Cerrar sesión"
                                         TextColor="White"
                                         CornerRadius="6"
-                                        BackgroundColor="#AB1B1B"/>
+                                        BackgroundColor="#AB1B1B"
+                                        Clicked="btnCerrarSesion_Clicked"/>
                                 </StackLayout>
                                 <StackLayout>
                                     <Button
+                                        x:Name="btnEliminarCuenta"
                                         Text="Eliminar cuenta"
                                         TextColor="White"
                                         CornerRadius="6"
-                                        BackgroundColor="#AB1B1B"/>
+                                        BackgroundColor="#AB1B1B"
+                                        Clicked="btnEliminarCuenta_Clicked"/>
                                 </StackLayout>
                             </StackLayout>
                         </StackLayout>
