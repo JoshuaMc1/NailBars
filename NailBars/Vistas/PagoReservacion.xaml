@@ -34,7 +34,8 @@
         </Grid.ColumnDefinitions>
 
         <Label Text="Información de Pago"
-               Margin="0,40,0,60"
+               TextColor="White"
+               Margin="0,20,0,60"
                FontAttributes="Bold"
                Grid.Row="0"
                Grid.Column="0"

@@ -6,7 +6,8 @@
              BackgroundImageSource="FondoSUR.jpeg">
 
     <StackLayout>
-        <Grid>
+        <Grid
+            Margin="0, 0, 0, 5">
             <Grid.RowDefinitions>
                 <RowDefinition Height="95" />
             </Grid.RowDefinitions>
@@ -16,7 +17,8 @@
             <StackLayout
                 Grid.Row="0"
                 Grid.Column="0" 
-                VerticalOptions="CenterAndExpand">
+                VerticalOptions="CenterAndExpand"
+                Margin="0, 30, 0, 0">
 
                 <Label
                     Text="Servicios disponibles"

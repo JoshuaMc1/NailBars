@@ -33,8 +33,6 @@ namespace NailBars.Vistas
         {
             base.OnAppearing();
             await validarTipoUser();
-
-
         }
 
         private async Task ObtenerIdusuario()

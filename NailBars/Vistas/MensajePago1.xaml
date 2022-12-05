@@ -9,52 +9,57 @@
     <ContentPage.Content>
 
         <StackLayout>
-
-            <Label Text="DETALLE"
+            <Label Text="Detalle del pago"
                FontAttributes="Bold"
-               Margin="0,50,0,70"
+               Margin="0,30,0,70"
                FontSize="Title"
                HorizontalTextAlignment="Center"
-               TextColor="Black"/>
+               TextColor="White"/>
             <Label Text="Información de Pago:"
                FontSize="Medium"
-               Margin="15,10,0,0"
+               Margin="20,10,0,0"
                TextColor="Black"/>
-            <StackLayout BackgroundColor="White"
-                     Padding="15"
-                     Margin="20,20,20,20">
+            <Frame
+                BackgroundColor="White"
+                Padding="15"
+                Margin="20,20,20,20"
+                CornerRadius="8">
+                <StackLayout>
 
-                <Label Text="El pago por el servicio se ha completado con éxito!"
+                    <Label Text="El pago por el servicio se ha completado con éxito!"
                    FontSize="20"
                    Margin="5,0,0,0"
                    TextColor="Black"/>
-                <Label Text="Por favor tome una captura del ticket para validar de forma más rápida el pago de su servicio"
+                    <Label Text="Por favor tome una captura del ticket para validar de forma más rápida el pago de su servicio"
                    FontSize="20"
                    Margin="5,0,0,0"
                    TextColor="Black"/>
-                <Label Text="Te esperamos!!"
+                    <Label Text="Te esperamos!!"
                    FontSize="20"
                    Margin="5,0,0,0"
                    TextColor="Black"/>
 
 
-                <Button Text="Aceptar" x:Name="Reservaaa" Clicked="Reservaa_Clicked" CornerRadius="25" Margin="50,15,50,0"
+                    <Button Text="Aceptar" x:Name="Reservaaa" Clicked="Reservaa_Clicked" CornerRadius="25" Margin="50,15,50,0"
                 TextColor="White" BackgroundColor="#bc246c"/>
 
-            </StackLayout>
-            <Label Text="Ciudad de Siguatepeque, Honduras"
-                   FontSize="15"
-                   Margin="5,90,0,0"
-                   TextColor="Black"/>
-            <Label Text="NailBars Corporación"
-                   FontSize="15"
-                   Margin="5,0,0,0"
-                   TextColor="Black"/>
-            <Image Source="logo.png"
+                </StackLayout>
+            </Frame>
+            <StackLayout
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="End"
+                Margin="0, 100, 0, 0">
+                <Image Source="logo2.png"
                    VerticalOptions="Start"
                    HorizontalOptions="Start"
-                   Margin="10,-20,0,0"
-                   WidthRequest="150"/>
+                   Margin="20,-20,0,0"
+                   WidthRequest="130"/>
+                <Label Text="NailBars Corporación"
+                   FontSize="15"
+                   Margin="20,0,0,0"
+                   TextColor="Black"
+                   FontAttributes="Bold"/>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

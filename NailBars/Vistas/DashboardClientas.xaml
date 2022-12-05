@@ -3,18 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:estrellas="clr-namespace:Messier16.Forms.Controls;assembly=Messier16.Forms.Controls"
              x:Class="NailBars.Vistas.DashboardClientas"
-             NavigationPage.HasNavigationBar="False">
+             NavigationPage.HasNavigationBar="False"
+             BackgroundImageSource="FondoSUR">
 
 
     <StackLayout>
         <Label Text="Dashboard" FontAttributes="Bold" Margin="0,40,0,20"
-               TextColor="Black" FontSize="25" HorizontalTextAlignment="Center"/>
+               TextColor="White" FontSize="25" HorizontalTextAlignment="Center"/>
                 <Label Text="Reservaciones pendientes para hoy"
                            x:Name="encabezado1"
+                       HorizontalOptions="CenterAndExpand"
                            FontSize="20"
                            TextColor="Black"
                            FontAttributes="Bold"
-                           Margin="10,0,0,0" />
+                           Margin="10,10,0,0" />
                     <CollectionView 
                                     x:Name="lstReserUser"
                                     VerticalScrollBarVisibility="Always">

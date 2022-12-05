@@ -4,19 +4,16 @@
              x:Class="NailBars.Vistas.ContenedorEmpleado"
             xmlns:local1="clr-namespace:NailBars.Vistas"
             xmlns:local2="clr-namespace:NailBars.Vistas.Configuraciones"
-            BarTextColor="#5A0F2E"
-            BarBackgroundColor=" #FFA67E"
+            BarTextColor="White"
+            BarBackgroundColor="#bc246c"
             SelectedTabColor="White"
-            UnselectedTabColor="#5A0F2E"
+            UnselectedTabColor="White"
             NavigationPage.HasNavigationBar="False">
     
  
     <local2:Servicios Title="Historial"
                       IconImageSource="servicios.png" />
-    
-    <local1:MiPerfil   Title="Mi Cuenta"
+
+    <local1:VPerfil Title="Mi Cuenta"
                        IconImageSource="user.png" />
-    
- 
-    
 </TabbedPage>

@@ -6,11 +6,13 @@
              BackgroundImageSource="drawable-xxxhdpi/Pantallapresentacion">
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout>
+            <StackLayout
+                VerticalOptions="CenterAndExpand">
                 <Image
                     x:Name="logo"
-                    Source="logo2"
-                    Aspect="AspectFill"/>
+                    Source="logo22"
+                    Aspect="AspectFit"
+                    WidthRequest="180"/>
             </StackLayout>
             <StackLayout
                 VerticalOptions="EndAndExpand"

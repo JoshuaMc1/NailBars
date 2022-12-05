@@ -9,13 +9,21 @@ using Newtonsoft.Json;
 using Firebase.Auth;
 using NailBars.Servicios;
 using Xamarin.Essentials;
+using NailBars.Components;
+using Rg.Plugins.Popup.Extensions;
 
 namespace NailBars.Vistas
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Calificar : PopupPage
     {
+        public static string idusuario;
+        public static string idreservacion;
+        public static string reseña = "";
+        public static string calificacion;
+        public static string idcalificacion;
         MoReservaciones DatReservacion = new MoReservaciones();
+
         public Calificar()
         {
             InitializeComponent();
@@ -28,12 +36,6 @@ namespace NailBars.Vistas
             DatReservacion = itemSelect;
             datoscalificar();
         }
-
-        public static string idusuario;
-        public static string idreservacion;
-        public static string reseña = "";
-        public static string calificacion;
-        public static string idcalificacion;
 
         private async Task datoscalificar()
         {
@@ -63,14 +65,11 @@ namespace NailBars.Vistas
             {
                 var authProvider = new FirebaseAuthProvider(new FirebaseConfig(Conexionfirebase.WebapyFirebase));
                 var guardarId = JsonConvert.DeserializeObject<FirebaseAuth>(Preferences.Get("MyFirebaseRefreshToken", ""));
-                var RefrescarContenido = await authProvider.RefreshAuthAsync(guardarId);
-                Preferences.Set("MyFirebaseRefreshToken", JsonConvert.SerializeObject(RefrescarContenido));
-                //el ID
                 idusuario = guardarId.User.LocalId;
             }
             catch (Exception)
             {
-                await DisplayAlert("Alerta", "Sesion expirada", "OK");
+                await App.Current.MainPage.Navigation.PushPopupAsync(new JMDialog("Aviso", "Su sesión a expirado.", JMDialog.Danger), true);
             }
         }
 
@@ -119,15 +118,9 @@ namespace NailBars.Vistas
             }
             else
             {
-                if (!string.IsNullOrEmpty(txtreseña.Text))
-                {
-                    await InsertarReseñas();
-                }
-                else
-                {
-                    await DisplayAlert("Alerta", "Ingrese una reseña", "OK");
-                }
-                await DisplayAlert("Listo", "Gracias por su Calificacion", "OK");
+                if (!string.IsNullOrEmpty(txtreseña.Text)) await InsertarReseñas();
+                else await App.Current.MainPage.Navigation.PushPopupAsync(new JMDialog("Advertencia", "Debe ingresar una reseña.", JMDialog.Warning), true);
+                await App.Current.MainPage.Navigation.PushPopupAsync(new JMDialog("Satisfactorio", "Gracias por su calificación.", JMDialog.Success), true);
             }
         }
     }

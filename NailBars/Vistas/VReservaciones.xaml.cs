@@ -42,7 +42,6 @@ namespace NailBars.Vistas
             this.TipoReservacion = Reservacion;
             this.Data = data;
             this.Precio = Precio;
-            LlenarArrglo();
             if (this.Data.tipoUser == "Cliente")
             {
                 txtPrecio.IsEnabled = false;
@@ -244,25 +243,52 @@ namespace NailBars.Vistas
         private async Task horariosEstilista()
         {
             txtHorario.ItemsSource = HoriosVacios;
-            LlenarArrglo();
 
             int cot = 0;
             MoReservaciones horas = new MoReservaciones();
             VmReservaciones validar = new VmReservaciones();
             horas.fecha_Reserv = FechaReservacion;
             horas.nombreEstilista = NombreEstilista;
-
-            var rest = await validar.getReservacionesStilista(horas);
-            foreach (var rst in rest)
+            string diaActual = DateTime.Now.ToString("d/MM/yyyy");
+            if(FechaReservacion.Equals(diaActual))
             {
-                cot = 0;
-                while (cot < Horario.Count)
+                Int32 horaActual = DateTime.Now.Hour;
+                Int32 minutoActual = DateTime.Now.Minute;
+                Int32 horaFinal = 18;
+                Int32 minutoFinal = 30;
+
+                if (horaActual <= horaFinal && minutoActual <= minutoFinal)
                 {
-                    if (rst.hora_Reserv == Horario[cot])
+                    await LlenarArrglo();
+                    var rest = await validar.getReservacionesStilista(horas);
+                    foreach (var rst in rest)
                     {
-                        Horario.Remove(rst.hora_Reserv);
+                        cot = 0;
+                        while (cot < Horario.Count)
+                        {
+                            if (rst.hora_Reserv == Horario[cot])
+                            {
+                                Horario.Remove(rst.hora_Reserv);
+                            }
+                            cot += 1;
+                        }
                     }
-                    cot += 1;
+                } else await App.Current.MainPage.Navigation.PushPopupAsync(new JMDialog("Información", "Se han agorado las reservaciones para el dia de hoy.", JMDialog.Warning), true);
+            } else
+            {
+                await LlenarArrglo();
+                var rest = await validar.getReservacionesStilista(horas);
+                foreach (var rst in rest)
+                {
+                    cot = 0;
+                    while (cot < Horario.Count)
+                    {
+                        if (rst.hora_Reserv == Horario[cot])
+                        {
+                            Horario.Remove(rst.hora_Reserv);
+                        }
+                        cot += 1;
+                    }
                 }
             }
             txtHorario.ItemsSource = Horario;

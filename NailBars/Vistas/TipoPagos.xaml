@@ -7,8 +7,8 @@
     <ContentPage.Content>
         <StackLayout>
 
-            <Label Text="Seleccione el tipo de Pago:" FontAttributes="Bold" Margin="0,55,0,100"
-               FontSize="Title" HorizontalTextAlignment="Center" TextColor="Black"/>
+            <Label Text="Seleccione el tipo de Pago:" FontAttributes="Bold" Margin="0,30,0,100"
+               FontSize="Title" HorizontalTextAlignment="Center" TextColor="White"/>
 
             <Button 
                  Margin="60,0,60,10" 
@@ -30,7 +30,8 @@
                FontSize="Title" HorizontalTextAlignment="Center" TextColor="Black"/>
 
             <ScrollView>
-                <Frame>
+                <Frame
+                    BackgroundColor="#f0f4ec">
                     <StackLayout 
                         HorizontalOptions="FillAndExpand" 
                         Orientation="Horizontal">
@@ -55,7 +56,8 @@
                 </Frame>
             </ScrollView>
             <ScrollView>
-                <Frame>
+                <Frame
+                    BackgroundColor="#f0f4ec">
                     <StackLayout 
                         HorizontalOptions="FillAndExpand" 
                         Orientation="Horizontal">

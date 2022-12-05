@@ -20,15 +20,13 @@ namespace NailBars.Vistas
 
         private async void ButtonPagarSitio_Clicked(object sender, EventArgs e)
         {
-            await App.Current.MainPage.Navigation.PushPopupAsync(new JMDialog("Aviso", "¿Desea pagar en el local?", JMDialog.Danger), true);
+            await App.Current.MainPage.Navigation.PushPopupAsync(new JMDialog("Información", "Gracias por su reservación.", JMDialog.Information), true);
             Application.Current.MainPage = new NavigationPage(new Contenedor());
         }
 
         private async void ButtonPagarTarjeta_Clicked(object sender, EventArgs e)
         {
-            await App.Current.MainPage.Navigation.PushPopupAsync(new JMDialog("Aviso", "¿Desea pagar con Tarjeta Crédito o Debito?", JMDialog.Danger), true);
             Application.Current.MainPage = new NavigationPage(new PagoReservacion());
         }
-
     }
 }
