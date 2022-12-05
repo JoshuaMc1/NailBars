@@ -1,11 +1,7 @@
 ﻿using NailBars.Components;
+using NailBars.VistasModelo;
 using Rg.Plugins.Popup.Extensions;
 using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -18,6 +14,8 @@ namespace NailBars.Vistas
         public TipoPagos()
         {
             InitializeComponent();
+            var statusbar = new VMPrincipal();
+            statusbar.CambiarColor();
         }
 
         private async void ButtonPagarSitio_Clicked(object sender, EventArgs e)

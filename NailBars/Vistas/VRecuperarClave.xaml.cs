@@ -14,8 +14,10 @@ namespace NailBars.Vistas
 	{
 		public VRecuperarClave ()
 		{
-			InitializeComponent ();
-		}
+			InitializeComponent();
+            var statusbar = new VMPrincipal();
+            statusbar.Transparente();
+        }
 
         private async void GoBackTapped(object sender, EventArgs e)
         {

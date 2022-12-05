@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
 using NailBars.VistasModelo;
@@ -12,8 +9,6 @@ using Xamarin.Forms.Xaml;
 using Newtonsoft.Json;
 using Firebase.Auth;
 using NailBars.Servicios;
-using Rg.Plugins.Popup.Services;
-using Acr.UserDialogs;
 
 namespace NailBars.Vistas
 {
@@ -29,6 +24,8 @@ namespace NailBars.Vistas
         public DashboardClientas()
         {
             InitializeComponent();
+            var statusbar = new VMPrincipal();
+            statusbar.CambiarColor();
             ObtenerIdusuario();
             validarTipoUser();
         }
@@ -45,42 +42,26 @@ namespace NailBars.Vistas
             try
             {
                 var authProvider = new FirebaseAuthProvider(new FirebaseConfig(Conexionfirebase.WebapyFirebase));
-
-                //validar si el usuario se ha validado o no dentro de la aplicacion
                 var guardarId = JsonConvert.DeserializeObject<FirebaseAuth>(Preferences.Get("MyFirebaseRefreshToken", ""));
-
-                var RefrescarContenido = await authProvider.RefreshAuthAsync(guardarId);
-                Preferences.Set("MyFirebaseRefreshToken", JsonConvert.SerializeObject(RefrescarContenido));
-                //el ID
                 Idusuario = guardarId.User.LocalId;
-
                 validarTipoUser();
-
-
             }
             catch (Exception)
             {
-
                 await DisplayAlert("Alerta", "Sesion expirada", "OK");
             }
-
         }
 
         private async Task validarTipoUser()
         {
-
             VMusuarios funcion = new VMusuarios();
             MusuariosClientes parametro = new MusuariosClientes();
             parametro.Id_usuario = Idusuario;
             var datos = await funcion.getadmin(parametro);
             foreach (var rdr in datos)
             {
-                //var nombre = new MusuariosClientes();
-
                 tipo = rdr.tipoUser;
                 nombreestilista = rdr.Nombres;
-                // datUser.IdUsuariosClientes = rdr.IdUsuariosClientes;
-
             }
 
             date = DateTime.Now.ToString("d/M/yyyy");
@@ -89,23 +70,16 @@ namespace NailBars.Vistas
             {
                 encabezado1.Text = "Reservaciones pendientes para Hoy";
 
-
                 VmReservaciones consulta2 = new VmReservaciones();
                 MoReservaciones parametro2 = new MoReservaciones();
                 parametro2.id_Cliente = Idusuario;
                 parametro2.fecha_Reserv = date;
 
                 lstReserUser.ItemsSource = await consulta2.ObtenerDatosHoy(parametro2);
-
-
-
-
-
             }
             else if (tipo == "admin")
             {
                 encabezado1.Text = "Reservaciones pendientes para Hoy!!";
-
 
                 string fec = DateTime.Now.ToString("d/M/yyyy");
 
@@ -115,14 +89,10 @@ namespace NailBars.Vistas
                 parametro1.fecha_Reserv = fec;
 
                 lstReserUser.ItemsSource = await consulta2.getResrOfDate(fec, "Pendiente");
-                //lstGeneral.ItemsSource = await consulta.getReservaciones(parametro1);
-                //lista2 = await consulta.getReservaciones(parametro1);
-
             }
             else if (tipo == "Empleado")
             {
                 encabezado1.Text = "Reservaciones pendientes para Hoy!!";
-
 
                 string fec = DateTime.Now.ToString("d/M/yyyy");
 
@@ -133,20 +103,8 @@ namespace NailBars.Vistas
                 parametro1.status = "Pendiente";
                 parametro1.nombreEstilista = nombreestilista;
 
-
                 lstReserUser.ItemsSource = await consulta2.getResevacionesEstilista(parametro1);
-                //lstGeneral.ItemsSource = await consulta.getGeneralEstilista(parametro1);
-                //lista2 = await consulta.getReservaciones(parametro1);
-
             }
-
-
         }
-
-
-
-
-
-
     }
 }

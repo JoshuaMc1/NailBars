@@ -26,6 +26,8 @@ namespace NailBars.Vistas
         public VAgregarEmpleado()
         {
             InitializeComponent();
+            var statusbar = new VMPrincipal();
+            statusbar.CambiarColor();
         }
 
         private async void btnAgregarEmpleado_Clicked(object sender, EventArgs e)

@@ -1,10 +1,5 @@
-﻿using Firebase.Auth;
-using NailBars.Modelo;
+﻿using NailBars.Modelo;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -22,6 +17,8 @@ namespace NailBars.Vistas
         {
             InitializeComponent();
             this.BindingContext = new MainPageViewModel();
+            var statusbar = new VMPrincipal();
+            statusbar.CambiarColor();
         }
 
 
@@ -33,7 +30,6 @@ namespace NailBars.Vistas
             if (ntarjeta == null || cvv == null || expiracion == null)
             {
                 await App.Current.MainPage.Navigation.PushPopupAsync(new JMDialog("Advertencia", "Hay campos vacios", JMDialog.Warning), true);
-                
             }
             else
             {

@@ -21,9 +21,9 @@ namespace NailBars.Vistas
 
         public VIntro()
         {
-            InitializeComponent(); 
+            InitializeComponent();
             var statusbar = new VMPrincipal();
-            statusbar.CambiarColor();
+            statusbar.Transparente();
             UserDialogs.Instance.ShowLoading("Buscando sesión activa");
             ObtenerIdusuario();
             Cerrarsesion();

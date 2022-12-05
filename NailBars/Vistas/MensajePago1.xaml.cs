@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using NailBars.VistasModelo;
+using System;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -15,12 +12,13 @@ namespace NailBars.Vistas
         public MensajePago1()
         {
             InitializeComponent();
+            var statusbar = new VMPrincipal();
+            statusbar.CambiarColor();
         }
 
         public async void Reservaa_Clicked(object sender, EventArgs e)
         {
             Application.Current.MainPage = new NavigationPage(new Contenedor());
-
         }
     }
 }

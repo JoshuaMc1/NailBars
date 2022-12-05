@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
+using NailBars.VistasModelo;
 
 namespace NailBars.Vistas
 {
@@ -16,13 +17,9 @@ namespace NailBars.Vistas
         public Contenedor()
         {
             InitializeComponent();
-            //aqui es para especificar donde quiere que aparesca el menu arriba, abajo etc.
-          On<Xamarin.Forms.PlatformConfiguration.Android>().SetToolbarPlacement(ToolbarPlacement.Bottom);
-
-          
-
-            
-
+            var statusbar = new VMPrincipal();
+            statusbar.CambiarColor();
+            On<Xamarin.Forms.PlatformConfiguration.Android>().SetToolbarPlacement(ToolbarPlacement.Bottom);
         }
     }
 }

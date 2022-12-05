@@ -20,7 +20,7 @@ namespace NailBars.Vistas
         {
             InitializeComponent();
             var statusbar = new VMPrincipal();
-            statusbar.Translucido();
+            statusbar.Transparente();
         }
 
         private async void RecuperarClaveTapped(object sender, EventArgs e)

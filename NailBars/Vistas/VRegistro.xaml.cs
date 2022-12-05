@@ -30,7 +30,7 @@ namespace NailBars.Vistas
         {
             InitializeComponent();
             var statusbar = new VMPrincipal();
-            statusbar.Translucido();
+            statusbar.Transparente();
         }
 
         private async void GoBackTapped(object sender, EventArgs e)
